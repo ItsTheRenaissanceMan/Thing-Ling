@@ -1,0 +1,46 @@
+THING LING FOR WINDOWS 10 / WINDOWS 11
+
+1. Right-click Thing-Ling-Windows.zip and choose Extract All.
+2. Open the extracted folder.
+3. Double-click Play Thing Ling.cmd.
+4. Your default browser opens the game. Edge and Chrome are recommended.
+
+Keep the launcher window open while playing. Close it when you are finished.
+The game does not need Node.js, Python, administrator rights, an account, or
+an internet connection for its core gameplay.
+
+Choose German, Japanese, Spanish, or Chinese in the top-right menu.
+Say hello to Theo or open your wordbook to begin your first little favor.
+
+YOUR PROGRESS
+
+Use the same browser and profile each time. The launcher always uses the same
+local address, so moving this folder does not change where your browser saves.
+Export a backup from the game's Settings before clearing browser data or moving
+to another computer. To bring progress from an older HTML copy, export it there,
+then import that backup in the new game's Settings.
+
+IF THE LAUNCHER DOES NOT OPEN
+
+- Extract the whole ZIP first; do not launch it from inside the ZIP preview.
+- If port 43127 is already in use, close the earlier Thing Ling launcher and retry.
+- You can also double-click Thing-Ling.html to play directly in your browser.
+  Direct-file play uses a different save location; use Export/Import to move saves.
+- If your browser cannot display the 3D island, check that graphics acceleration
+  is enabled and your graphics driver is current. All words, lessons and quests
+  are also available from the wordbook and navigation.
+
+The launcher serves only the included game file to your own computer using
+built-in Windows PowerShell. It does not install a service or change Windows
+security settings. Windows may restrict command scripts on managed PCs; follow
+your organization's rules or use the HTML option.
+
+Audio uses your installed browser/device language voices; written readings are
+available when a voice is missing. Microphone input is optional and depends on
+your browser. Core play does not need microphone access.
+
+This package was built and the game was tested in Chromium on Linux. The launcher
+was reviewed for Windows PowerShell 5.1 compatibility; native Windows execution
+has not been tested in this workspace.
+
+The editable game source and full documentation are included in source/.
