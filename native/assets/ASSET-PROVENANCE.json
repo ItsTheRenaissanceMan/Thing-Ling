@@ -1,0 +1,22 @@
+{
+  "font": {
+    "name": "Noto Sans CJK SC Regular",
+    "source": "https://github.com/notofonts/noto-cjk/blob/main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf",
+    "gitBlobSha1": "dc15562470b4f842321894787a0d066879ccff8b",
+    "sha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b",
+    "license": "SIL Open Font License 1.1",
+    "unmodified": true
+  },
+  "godotTemplate": {
+    "version": "4.6.3-stable",
+    "source": "https://github.com/godotengine/godot-builds/releases/tag/4.6.3-stable",
+    "officialArchiveSha256": "3fbe2c0e2dec9d537ab9ec97bcf8da91dcf23357fc51f67092dd068d839290a8",
+    "template": "windows_release_x86_64.exe",
+    "archiveVerifiedBeforeExtraction": true
+  },
+  "audio": {
+    "source": "Original deterministic synthesis, native/audio/generate_audio.py",
+    "externalSamples": false,
+    "externalMusic": false
+  }
+}

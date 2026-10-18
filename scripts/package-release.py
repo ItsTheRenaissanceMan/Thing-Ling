@@ -1,6 +1,7 @@
-"""Publish complete, reproducible download packages using Python's standard library.
+"""Publish the historical v1.1 browser packages using Python's standard library.
 
-Run `npm run package:windows` first. End users do not need Python to play.
+Run `npm run package:browser-windows` first. The native Windows ZIP is separate
+and is never replaced by this script. End users do not need Python to play.
 """
 
 from hashlib import sha256
@@ -50,24 +51,25 @@ def main():
                 WINDOWS / "START-HERE.txt", WINDOWS / "THIRD-PARTY-NOTICES.txt"]
     for path in required:
         if not path.is_file():
-            raise SystemExit("Missing " + str(path) + "; run npm run package:windows first.")
+            raise SystemExit("Missing " + str(path) + "; run npm run package:browser-windows first.")
     if game.read_bytes() != (WINDOWS / "Thing-Ling.html").read_bytes():
-        raise SystemExit("Windows HTML is stale; run npm run package:windows first.")
+        raise SystemExit("Windows HTML is stale; run npm run package:browser-windows first.")
     ARTIFACTS.mkdir(exist_ok=True)
     DOWNLOADS.mkdir(exist_ok=True)
     copyfile(game, ARTIFACTS / "Thing-Ling.html")
     instructions = (
-        "THING LING - A little world of words\n\n"
+        "THING LING - Historical browser edition 1.1\n\n"
         "Extract this archive and open Thing-Ling.html in a modern browser.\n"
         "Choose German, Japanese, Spanish, or Mandarin Chinese.\n"
         "Open Island atlas and visit Almanac Courtyard for Theo's first favor.\n"
         "Use Labels or Objects here; complete tasks, pass the check, and return to Theo.\n"
-        "On Windows, the separate Thing-Ling-Windows.zip includes a double-click launcher.\n"
+        "The separate Thing-Ling-Browser-Windows.zip has this browser game's launcher.\n"
+        "Thing-Ling-Windows.zip is the newer native game, with Thing Ling.exe.\n"
         "If local HTML is restricted, run a local server or use that Windows package.\n\n"
         "Core gameplay embeds all assets and needs no account or internet connection.\n"
         "Progress lives in your browser. Use Settings to export/import backups.\n"
         "Audio uses installed device voices; written readings are always available.\n\n"
-        "The source folder includes the editable project, tests, Windows launcher,\n"
+        "The source folder includes the editable browser project, tests, browser launcher,\n"
         "packaging scripts, research report, validation notes, and license notices.\n"
         "See source/README.md for development and release commands.\n"
     )
@@ -78,7 +80,7 @@ def main():
         add_file(archive, ARTIFACTS / "HOW-TO-PLAY.txt", "HOW-TO-PLAY.txt")
         add_file(archive, ROOT / "docs/THIRD_PARTY_LICENSES.txt", "THIRD-PARTY-NOTICES.txt")
         add_source(archive)
-    windows_archive = ARTIFACTS / "Thing-Ling-Windows.zip"
+    windows_archive = ARTIFACTS / "Thing-Ling-Browser-Windows.zip"
     with ZipFile(windows_archive, "w", ZIP_DEFLATED, compresslevel=9) as archive:
         for path in sorted(WINDOWS.iterdir()):
             if path.is_file():
@@ -94,14 +96,27 @@ def main():
                          "windows/launcher.ps1", "windows/START-HERE.txt"):
                 if "source/" + name not in archive.namelist():
                     raise SystemExit("Missing source file: " + name)
-    checksums = []
+    # Preserve checksums for the independent native export and other published
+    # artifacts. Recompute preserved entries from disk so stale hashes cannot be
+    # carried forward when a native export was refreshed before this script.
+    checksums = {}
+    checksum_path = DOWNLOADS / "SHA256SUMS"
+    if checksum_path.is_file():
+        for line in checksum_path.read_text(encoding="ascii").splitlines():
+            fields = line.split("  ", 1)
+            if len(fields) != 2:
+                continue
+            name = fields[1]
+            target = DOWNLOADS / name
+            if Path(name).name == name and target.is_file():
+                checksums[name] = sha256(target.read_bytes()).hexdigest()
     for path in (ARTIFACTS / "Thing-Ling.html", generic, windows_archive):
         target = DOWNLOADS / path.name
         copyfile(path, target)
         digest = sha256(target.read_bytes()).hexdigest()
-        checksums.append(digest + "  " + target.name)
+        checksums[target.name] = digest
         print(target.name + ": " + str(target.stat().st_size) + " bytes; verified")
-    (DOWNLOADS / "SHA256SUMS").write_text("\n".join(checksums) + "\n", encoding="ascii")
+    checksum_path.write_text("".join(checksums[name] + "  " + name + "\n" for name in sorted(checksums)), encoding="ascii")
 
 
 if __name__ == "__main__":

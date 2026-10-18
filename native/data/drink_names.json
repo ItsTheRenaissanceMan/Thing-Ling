@@ -1,0 +1,946 @@
+{
+  "version": 1,
+  "description": "Recipe-aware names and complete staff confirmations. Replace {dish} with native name and {reading} with menu reading; no template changes the requested recipe.",
+  "recipes": {
+    "espresso": {
+      "id": "espresso",
+      "translations": {
+        "de": {
+          "name": "Espresso",
+          "reading": "Espresso"
+        },
+        "ja": {
+          "name": "エスプレッソ",
+          "reading": "esupuresso"
+        },
+        "es": {
+          "name": "espresso",
+          "reading": "espresso"
+        },
+        "zh": {
+          "name": "意式浓缩咖啡",
+          "reading": "Yìshì nóngsuō kāfēi"
+        }
+      }
+    },
+    "americano": {
+      "id": "americano",
+      "translations": {
+        "de": {
+          "name": "Americano",
+          "reading": "Americano"
+        },
+        "ja": {
+          "name": "アメリカーノ",
+          "reading": "amerikāno"
+        },
+        "es": {
+          "name": "café americano",
+          "reading": "café americano"
+        },
+        "zh": {
+          "name": "美式咖啡",
+          "reading": "Měishì kāfēi"
+        }
+      }
+    },
+    "black-tea": {
+      "id": "black-tea",
+      "translations": {
+        "de": {
+          "name": "schwarzer Tee",
+          "reading": "schwarzer Tee"
+        },
+        "ja": {
+          "name": "紅茶",
+          "reading": "kōcha"
+        },
+        "es": {
+          "name": "té negro",
+          "reading": "té negro"
+        },
+        "zh": {
+          "name": "红茶",
+          "reading": "Hóngchá"
+        }
+      }
+    },
+    "milk-tea": {
+      "id": "milk-tea",
+      "translations": {
+        "de": {
+          "name": "Milchtee",
+          "reading": "Milchtee"
+        },
+        "ja": {
+          "name": "ミルクティー",
+          "reading": "miruku tī"
+        },
+        "es": {
+          "name": "té con leche",
+          "reading": "té con leche"
+        },
+        "zh": {
+          "name": "奶茶",
+          "reading": "Nǎichá"
+        }
+      }
+    },
+    "latte": {
+      "id": "latte",
+      "translations": {
+        "de": {
+          "name": "Caffè Latte",
+          "reading": "Caffè Latte"
+        },
+        "ja": {
+          "name": "カフェラテ",
+          "reading": "kafe rate"
+        },
+        "es": {
+          "name": "café con leche",
+          "reading": "café con leche"
+        },
+        "zh": {
+          "name": "拿铁咖啡",
+          "reading": "Nátiě kāfēi"
+        }
+      }
+    },
+    "cappuccino": {
+      "id": "cappuccino",
+      "translations": {
+        "de": {
+          "name": "Cappuccino",
+          "reading": "Cappuccino"
+        },
+        "ja": {
+          "name": "カプチーノ",
+          "reading": "kapuchīno"
+        },
+        "es": {
+          "name": "capuchino",
+          "reading": "capuchino"
+        },
+        "zh": {
+          "name": "卡布奇诺",
+          "reading": "Kǎbùqínuò"
+        }
+      }
+    },
+    "flat-white": {
+      "id": "flat-white",
+      "translations": {
+        "de": {
+          "name": "Flat White",
+          "reading": "Flat White"
+        },
+        "ja": {
+          "name": "フラットホワイト",
+          "reading": "furatto howaito"
+        },
+        "es": {
+          "name": "flat white",
+          "reading": "flat white"
+        },
+        "zh": {
+          "name": "馥芮白咖啡",
+          "reading": "Fùruìbái kāfēi"
+        }
+      }
+    },
+    "double-espresso": {
+      "id": "double-espresso",
+      "translations": {
+        "de": {
+          "name": "doppelter Espresso",
+          "reading": "doppelter Espresso"
+        },
+        "ja": {
+          "name": "ダブルエスプレッソ",
+          "reading": "daburu esupuresso"
+        },
+        "es": {
+          "name": "espresso doble",
+          "reading": "espresso doble"
+        },
+        "zh": {
+          "name": "双份浓缩咖啡",
+          "reading": "Shuāngfèn nóngsuō kāfēi"
+        }
+      }
+    },
+    "mocha": {
+      "id": "mocha",
+      "translations": {
+        "de": {
+          "name": "Caffè Mocha",
+          "reading": "Caffè Mocha"
+        },
+        "ja": {
+          "name": "モカ",
+          "reading": "moka"
+        },
+        "es": {
+          "name": "moca",
+          "reading": "moca"
+        },
+        "zh": {
+          "name": "摩卡咖啡",
+          "reading": "Mókǎ kāfēi"
+        }
+      }
+    },
+    "honey-latte": {
+      "id": "honey-latte",
+      "translations": {
+        "de": {
+          "name": "Honiglatte",
+          "reading": "Honiglatte"
+        },
+        "ja": {
+          "name": "はちみつラテ",
+          "reading": "hachimitsu rate"
+        },
+        "es": {
+          "name": "latte con miel",
+          "reading": "latte con miel"
+        },
+        "zh": {
+          "name": "蜂蜜拿铁",
+          "reading": "Fēngmì nátiě"
+        }
+      }
+    },
+    "vanilla-latte": {
+      "id": "vanilla-latte",
+      "translations": {
+        "de": {
+          "name": "Vanillelatte",
+          "reading": "Vanillelatte"
+        },
+        "ja": {
+          "name": "バニララテ",
+          "reading": "banira rate"
+        },
+        "es": {
+          "name": "latte de vainilla",
+          "reading": "latte de vainilla"
+        },
+        "zh": {
+          "name": "香草拿铁",
+          "reading": "Xiāngcǎo nátiě"
+        }
+      }
+    },
+    "iced-latte": {
+      "id": "iced-latte",
+      "translations": {
+        "de": {
+          "name": "Iced Latte",
+          "reading": "Iced Latte"
+        },
+        "ja": {
+          "name": "アイスラテ",
+          "reading": "aisu rate"
+        },
+        "es": {
+          "name": "latte helado",
+          "reading": "latte helado"
+        },
+        "zh": {
+          "name": "冰拿铁",
+          "reading": "Bīng nátiě"
+        }
+      }
+    },
+    "iced-coffee": {
+      "id": "iced-coffee",
+      "translations": {
+        "de": {
+          "name": "Kaffee mit Eiswürfeln",
+          "reading": "Kaffee mit Eiswürfeln"
+        },
+        "ja": {
+          "name": "アイスコーヒー",
+          "reading": "aisu kōhī"
+        },
+        "es": {
+          "name": "café con hielo",
+          "reading": "café con hielo"
+        },
+        "zh": {
+          "name": "冰咖啡",
+          "reading": "Bīng kāfēi"
+        }
+      }
+    },
+    "iced-mocha": {
+      "id": "iced-mocha",
+      "translations": {
+        "de": {
+          "name": "Iced Caffè Mocha",
+          "reading": "Iced Caffè Mocha"
+        },
+        "ja": {
+          "name": "アイスモカ",
+          "reading": "aisu moka"
+        },
+        "es": {
+          "name": "moca helado",
+          "reading": "moca helado"
+        },
+        "zh": {
+          "name": "冰摩卡",
+          "reading": "Bīng mókǎ"
+        }
+      }
+    },
+    "lemon-tea": {
+      "id": "lemon-tea",
+      "translations": {
+        "de": {
+          "name": "Zitronentee",
+          "reading": "Zitronentee"
+        },
+        "ja": {
+          "name": "レモンティー",
+          "reading": "remon tī"
+        },
+        "es": {
+          "name": "té con limón",
+          "reading": "té con limón"
+        },
+        "zh": {
+          "name": "柠檬茶",
+          "reading": "Níngméng chá"
+        }
+      }
+    },
+    "mint-tea": {
+      "id": "mint-tea",
+      "translations": {
+        "de": {
+          "name": "Minztee",
+          "reading": "Minztee"
+        },
+        "ja": {
+          "name": "ミントティー",
+          "reading": "minto tī"
+        },
+        "es": {
+          "name": "té de menta",
+          "reading": "té de menta"
+        },
+        "zh": {
+          "name": "薄荷红茶",
+          "reading": "Bòhe hóngchá"
+        }
+      }
+    },
+    "honey-tea": {
+      "id": "honey-tea",
+      "translations": {
+        "de": {
+          "name": "Honigtee",
+          "reading": "Honigtee"
+        },
+        "ja": {
+          "name": "はちみつ紅茶",
+          "reading": "hachimitsu kōcha"
+        },
+        "es": {
+          "name": "té con miel",
+          "reading": "té con miel"
+        },
+        "zh": {
+          "name": "蜂蜜红茶",
+          "reading": "Fēngmì hóngchá"
+        }
+      }
+    },
+    "cinnamon-tea": {
+      "id": "cinnamon-tea",
+      "translations": {
+        "de": {
+          "name": "Zimt-Milchtee",
+          "reading": "Zimt-Milchtee"
+        },
+        "ja": {
+          "name": "シナモンミルクティー",
+          "reading": "shinamon miruku tī"
+        },
+        "es": {
+          "name": "té con leche y canela",
+          "reading": "té con leche y canela"
+        },
+        "zh": {
+          "name": "肉桂奶茶",
+          "reading": "Ròuguì nǎichá"
+        }
+      }
+    },
+    "iced-tea": {
+      "id": "iced-tea",
+      "translations": {
+        "de": {
+          "name": "Eistee",
+          "reading": "Eistee"
+        },
+        "ja": {
+          "name": "アイスティー",
+          "reading": "aisu tī"
+        },
+        "es": {
+          "name": "té helado",
+          "reading": "té helado"
+        },
+        "zh": {
+          "name": "冰茶",
+          "reading": "Bīngchá"
+        }
+      }
+    },
+    "hot-chocolate": {
+      "id": "hot-chocolate",
+      "translations": {
+        "de": {
+          "name": "heiße Schokolade",
+          "reading": "heiße Schokolade"
+        },
+        "ja": {
+          "name": "ホットチョコレート",
+          "reading": "hotto chokorēto"
+        },
+        "es": {
+          "name": "chocolate caliente",
+          "reading": "chocolate caliente"
+        },
+        "zh": {
+          "name": "热巧克力",
+          "reading": "Rè qiǎokèlì"
+        }
+      }
+    },
+    "cinnamon-chocolate": {
+      "id": "cinnamon-chocolate",
+      "translations": {
+        "de": {
+          "name": "heiße Schokolade mit Zimt",
+          "reading": "heiße Schokolade mit Zimt"
+        },
+        "ja": {
+          "name": "シナモンホットチョコレート",
+          "reading": "shinamon hotto chokorēto"
+        },
+        "es": {
+          "name": "chocolate caliente con canela",
+          "reading": "chocolate caliente con canela"
+        },
+        "zh": {
+          "name": "肉桂热巧克力",
+          "reading": "Ròuguì rè qiǎokèlì"
+        }
+      }
+    },
+    "strawberry-milk": {
+      "id": "strawberry-milk",
+      "translations": {
+        "de": {
+          "name": "Erdbeermilch",
+          "reading": "Erdbeermilch"
+        },
+        "ja": {
+          "name": "いちごミルク",
+          "reading": "ichigo miruku"
+        },
+        "es": {
+          "name": "leche con fresas",
+          "reading": "leche con fresas"
+        },
+        "zh": {
+          "name": "草莓牛奶",
+          "reading": "Cǎoméi niúnǎi"
+        }
+      }
+    },
+    "banana-milk": {
+      "id": "banana-milk",
+      "translations": {
+        "de": {
+          "name": "Bananenmilch",
+          "reading": "Bananenmilch"
+        },
+        "ja": {
+          "name": "バナナミルク",
+          "reading": "banana miruku"
+        },
+        "es": {
+          "name": "leche con plátano",
+          "reading": "leche con plátano"
+        },
+        "zh": {
+          "name": "香蕉牛奶",
+          "reading": "Xiāngjiāo niúnǎi"
+        }
+      }
+    },
+    "honey-lemon": {
+      "id": "honey-lemon",
+      "translations": {
+        "de": {
+          "name": "warmes Honig-Zitronen-Wasser",
+          "reading": "warmes Honig-Zitronen-Wasser"
+        },
+        "ja": {
+          "name": "ホットはちみつレモン",
+          "reading": "hotto hachimitsu remon"
+        },
+        "es": {
+          "name": "bebida de miel y limón",
+          "reading": "bebida de miel y limón"
+        },
+        "zh": {
+          "name": "蜂蜜柠檬水",
+          "reading": "Fēngmì níngméng shuǐ"
+        }
+      }
+    },
+    "toast": {
+      "id": "toast",
+      "translations": {
+        "de": {
+          "name": "Buttertoast",
+          "reading": "Buttertoast"
+        },
+        "ja": {
+          "name": "バタートースト",
+          "reading": "batā tōsuto"
+        },
+        "es": {
+          "name": "tostada con mantequilla",
+          "reading": "tostada con mantequilla"
+        },
+        "zh": {
+          "name": "黄油吐司",
+          "reading": "Huángyóu tǔsī"
+        }
+      }
+    },
+    "cheese-sandwich": {
+      "id": "cheese-sandwich",
+      "translations": {
+        "de": {
+          "name": "Käsesandwich",
+          "reading": "Käsesandwich"
+        },
+        "ja": {
+          "name": "チーズサンドイッチ",
+          "reading": "chīzu sandoitchi"
+        },
+        "es": {
+          "name": "sándwich de queso",
+          "reading": "sándwich de queso"
+        },
+        "zh": {
+          "name": "奶酪三明治",
+          "reading": "Nǎilào sānmíngzhì"
+        }
+      }
+    },
+    "omelette": {
+      "id": "omelette",
+      "translations": {
+        "de": {
+          "name": "Käseomelett",
+          "reading": "Käseomelett"
+        },
+        "ja": {
+          "name": "チーズオムレツ",
+          "reading": "chīzu omuretsu"
+        },
+        "es": {
+          "name": "tortilla de queso",
+          "reading": "tortilla de queso"
+        },
+        "zh": {
+          "name": "奶酪煎蛋卷",
+          "reading": "Nǎilào jiāndànjuǎn"
+        }
+      }
+    },
+    "salad": {
+      "id": "salad",
+      "translations": {
+        "de": {
+          "name": "Erntesalat",
+          "reading": "Erntesalat"
+        },
+        "ja": {
+          "name": "収穫サラダ",
+          "reading": "shūkaku sarada"
+        },
+        "es": {
+          "name": "ensalada de la huerta",
+          "reading": "ensalada de la huerta"
+        },
+        "zh": {
+          "name": "田园沙拉",
+          "reading": "Tiányuán shālā"
+        }
+      }
+    },
+    "soup": {
+      "id": "soup",
+      "translations": {
+        "de": {
+          "name": "Gemüsesuppe",
+          "reading": "Gemüsesuppe"
+        },
+        "ja": {
+          "name": "野菜スープ",
+          "reading": "yasai sūpu"
+        },
+        "es": {
+          "name": "sopa de verduras",
+          "reading": "sopa de verduras"
+        },
+        "zh": {
+          "name": "蔬菜汤",
+          "reading": "Shūcài tāng"
+        }
+      }
+    },
+    "pasta": {
+      "id": "pasta",
+      "translations": {
+        "de": {
+          "name": "Tomatenpasta",
+          "reading": "Tomatenpasta"
+        },
+        "ja": {
+          "name": "トマトパスタ",
+          "reading": "tomato pasuta"
+        },
+        "es": {
+          "name": "pasta con tomate",
+          "reading": "pasta con tomate"
+        },
+        "zh": {
+          "name": "番茄意大利面",
+          "reading": "Fānqié Yìdàlì miàn"
+        }
+      }
+    }
+  },
+  "templates": {
+    "1": {
+      "tier": 1,
+      "prompt": "Confirm that you will prepare the customer’s actual order.",
+      "grammar": "A complete staff confirmation; subject–verb agreement and polite service",
+      "translations": {
+        "de": {
+          "answer": "Ich bereite Ihre Bestellung „{dish}“ für Sie zu.",
+          "reading": "",
+          "tokens": [
+            "Ich",
+            "bereite",
+            "Ihre Bestellung",
+            "„{dish}“",
+            "für Sie",
+            "zu."
+          ],
+          "accepted": [],
+          "choices": [
+            "Ich bereite Ihre Bestellung „{dish}“ für Sie zu.",
+            "Ich bereiten Ihre Bestellung jetzt zu.",
+            "Ich habe Ihre Bestellung bereits storniert."
+          ],
+          "explanation": "Ich takes the finite verb bereite. Zubereiten is separable: zu moves to the end in this present-tense main clause. The quoted menu name does not need an invented article.",
+          "choiceNotes": {
+            "Ich bereite Ihre Bestellung „{dish}“ für Sie zu.": "Correct: confirm this actual order before preparing it.",
+            "Ich bereiten Ihre Bestellung jetzt zu.": "Ich bereiten has a verb ending for the wrong subject.",
+            "Ich habe Ihre Bestellung bereits storniert.": "This cancels the order instead of confirming preparation."
+          }
+        },
+        "ja": {
+          "answer": "ご注文の「{dish}」をお作りします。",
+          "reading": "Gochūmon no {reading} o otsukuri shimasu.",
+          "tokens": [
+            "ご注文の",
+            "「{dish}」を",
+            "お作りします。"
+          ],
+          "accepted": [],
+          "choices": [
+            "ご注文の「{dish}」をお作りします。",
+            "ご注文を作るます。",
+            "ご注文はすでにキャンセルしました。"
+          ],
+          "explanation": "を marks the item being prepared. お作りします is a polite staff form; do not attach ます directly to the dictionary form 作る.",
+          "choiceNotes": {
+            "ご注文の「{dish}」をお作りします。": "Correct: confirm this actual order before preparing it.",
+            "ご注文を作るます。": "作るます is not the correct conjugation; use 作ります or the polite お作りします.",
+            "ご注文はすでにキャンセルしました。": "This says the order has already been cancelled."
+          }
+        },
+        "es": {
+          "answer": "Voy a preparar su pedido de «{dish}».",
+          "reading": "",
+          "tokens": [
+            "Voy",
+            "a preparar",
+            "su pedido de",
+            "«{dish}»."
+          ],
+          "accepted": [],
+          "choices": [
+            "Voy a preparar su pedido de «{dish}».",
+            "Yo preparar su pedido ahora.",
+            "Ya he cancelado su pedido."
+          ],
+          "explanation": "Voy a + infinitive expresses an intended action. Su is a polite possessive; the quoted menu name identifies the actual order.",
+          "choiceNotes": {
+            "Voy a preparar su pedido de «{dish}».": "Correct: confirm this actual order before preparing it.",
+            "Yo preparar su pedido ahora.": "A standalone yo clause needs a conjugated verb: voy a preparar or preparo.",
+            "Ya he cancelado su pedido.": "This cancels the order rather than agreeing to prepare it."
+          }
+        },
+        "zh": {
+          "answer": "我来为您准备「{dish}」。",
+          "reading": "Wǒ lái wèi nín zhǔnbèi {reading}.",
+          "tokens": [
+            "我来",
+            "为您",
+            "准备",
+            "「{dish}」",
+            "。"
+          ],
+          "accepted": [],
+          "choices": [
+            "我来为您准备「{dish}」。",
+            "我把准备您的订单。",
+            "我已经取消了您的订单。"
+          ],
+          "explanation": "为您 politely identifies the recipient. 准备 is followed by the item being prepared; 来 expresses taking on this task.",
+          "choiceNotes": {
+            "我来为您准备「{dish}」。": "Correct: confirm this actual order before preparing it.",
+            "我把准备您的订单。": "把 must be followed by its object before the verb: 把您的订单准备好.",
+            "我已经取消了您的订单。": "This says the order has already been cancelled."
+          }
+        }
+      }
+    },
+    "2": {
+      "tier": 2,
+      "prompt": "Confirm this menu item, checking its ingredients before preparing it according to the recipe.",
+      "grammar": "Sequence: first check the ingredients, then follow the recipe",
+      "translations": {
+        "de": {
+          "answer": "Ich prüfe zuerst die Zutaten für „{dish}“ und bereite die Bestellung dann nach dem Rezept zu.",
+          "reading": "",
+          "tokens": [
+            "Ich prüfe",
+            "zuerst",
+            "die Zutaten für",
+            "„{dish}“",
+            "und bereite",
+            "die Bestellung dann",
+            "nach dem Rezept",
+            "zu."
+          ],
+          "accepted": [],
+          "choices": [
+            "Ich prüfe zuerst die Zutaten für „{dish}“ und bereite die Bestellung dann nach dem Rezept zu.",
+            "Bevor ich prüfe die Zutaten, ich bereite die Bestellung zu.",
+            "Ich serviere die Bestellung, bevor ich die Zutaten prüfe."
+          ],
+          "explanation": "Zuerst and dann make the sequence explicit. The finite verbs are prüfe and bereite; nach takes dative dem Rezept.",
+          "choiceNotes": {
+            "Ich prüfe zuerst die Zutaten für „{dish}“ und bereite die Bestellung dann nach dem Rezept zu.": "Correct: confirm this actual order before preparing it.",
+            "Bevor ich prüfe die Zutaten, ich bereite die Bestellung zu.": "A bevor subordinate clause needs its finite verb at the end; the following main clause also needs the verb before ich.",
+            "Ich serviere die Bestellung, bevor ich die Zutaten prüfe.": "This serves the order before its ingredients have been checked."
+          }
+        },
+        "ja": {
+          "answer": "「{dish}」の材料を先に確認してから、レシピどおりに作ります。",
+          "reading": "{reading} no zairyō o saki ni kakunin shite kara, reshipi dōri ni tsukurimasu.",
+          "tokens": [
+            "「{dish}」の材料を",
+            "先に確認してから、",
+            "レシピどおりに",
+            "作ります。"
+          ],
+          "accepted": [],
+          "choices": [
+            "「{dish}」の材料を先に確認してから、レシピどおりに作ります。",
+            "材料を確認してからを、料理を作ります。",
+            "材料を確認する前に、料理を提供しました。"
+          ],
+          "explanation": "確認してから means after checking, so the recipe action follows the ingredient check. レシピどおりに means according to the recipe.",
+          "choiceNotes": {
+            "「{dish}」の材料を先に確認してから、レシピどおりに作ります。": "Correct: confirm this actual order before preparing it.",
+            "材料を確認してからを、料理を作ります。": "を cannot be inserted after the connective してから here.",
+            "材料を確認する前に、料理を提供しました。": "This says the food was served before the ingredients were checked."
+          }
+        },
+        "es": {
+          "answer": "Primero comprobaré los ingredientes de «{dish}» y después prepararé el pedido según la receta.",
+          "reading": "",
+          "tokens": [
+            "Primero comprobaré",
+            "los ingredientes de",
+            "«{dish}»",
+            "y después",
+            "prepararé el pedido",
+            "según la receta."
+          ],
+          "accepted": [],
+          "choices": [
+            "Primero comprobaré los ingredientes de «{dish}» y después prepararé el pedido según la receta.",
+            "Antes de que preparo el pedido, comprobaré los ingredientes.",
+            "Serviré el pedido antes de comprobar los ingredientes."
+          ],
+          "explanation": "Primero and después make the order explicit. Comprobaré and prepararé are first-person future forms; según la receta means according to the recipe.",
+          "choiceNotes": {
+            "Primero comprobaré los ingredientes de «{dish}» y después prepararé el pedido según la receta.": "Correct: confirm this actual order before preparing it.",
+            "Antes de que preparo el pedido, comprobaré los ingredientes.": "A future, not-yet-real event after antes de que requires subjunctive prepare, not indicative preparo.",
+            "Serviré el pedido antes de comprobar los ingredientes.": "This serves the order before checking the ingredients."
+          }
+        },
+        "zh": {
+          "answer": "我会先核对「{dish}」的原料，再按照配方制作。",
+          "reading": "Wǒ huì xiān héduì {reading} de yuánliào, zài ànzhào pèifāng zhìzuò.",
+          "tokens": [
+            "我会先",
+            "核对",
+            "「{dish}」的原料，",
+            "再",
+            "按照配方",
+            "制作",
+            "。"
+          ],
+          "accepted": [],
+          "choices": [
+            "我会先核对「{dish}」的原料，再按照配方制作。",
+            "我先再核对原料按照制作配方。",
+            "我先把订单上桌，然后才检查原料。"
+          ],
+          "explanation": "先…再… marks first and then. 按照配方 is an adverbial phrase before 制作; the recipe name specifies which ingredients you will check.",
+          "choiceNotes": {
+            "我会先核对「{dish}」的原料，再按照配方制作。": "Correct: confirm this actual order before preparing it.",
+            "我先再核对原料按照制作配方。": "先 and 再 need separate action phrases; 按照配方 must stay together before the main action.",
+            "我先把订单上桌，然后才检查原料。": "This serves the order before checking its ingredients."
+          }
+        }
+      }
+    },
+    "3": {
+      "tier": 3,
+      "prompt": "Politely confirm the ingredients, then promise to follow this recipe and serve only when everything is ready.",
+      "grammar": "Conditional agreement, recipe fidelity, and waiting until preparation is complete",
+      "translations": {
+        "de": {
+          "answer": "Wenn Sie mit den Zutaten einverstanden sind, bereite ich Ihre Bestellung „{dish}“ nach dem Rezept zu und serviere sie erst, wenn alles fertig ist.",
+          "reading": "",
+          "tokens": [
+            "Wenn Sie mit den Zutaten",
+            "einverstanden sind,",
+            "bereite ich Ihre Bestellung",
+            "„{dish}“",
+            "nach dem Rezept zu",
+            "und serviere sie erst,",
+            "wenn alles fertig ist."
+          ],
+          "accepted": [],
+          "choices": [
+            "Wenn Sie mit den Zutaten einverstanden sind, bereite ich Ihre Bestellung „{dish}“ nach dem Rezept zu und serviere sie erst, wenn alles fertig ist.",
+            "Wenn Sie sind einverstanden, ich bereite Ihre Bestellung zu.",
+            "Ich ändere die Zutaten ohne Rückfrage und serviere sofort."
+          ],
+          "explanation": "After each wenn, the finite verb goes last: einverstanden sind and fertig ist. The initial condition is followed by verb–subject bereite ich. Erst marks that service waits for completion.",
+          "choiceNotes": {
+            "Wenn Sie mit den Zutaten einverstanden sind, bereite ich Ihre Bestellung „{dish}“ nach dem Rezept zu und serviere sie erst, wenn alles fertig ist.": "Correct: confirm this actual order before preparing it.",
+            "Wenn Sie sind einverstanden, ich bereite Ihre Bestellung zu.": "The subordinate verb and main-clause inversion are both in the wrong positions.",
+            "Ich ändere die Zutaten ohne Rückfrage und serviere sofort.": "The customer has not agreed to unannounced ingredient changes, and preparation is not yet complete."
+          }
+        },
+        "ja": {
+          "answer": "材料に問題がなければ、「{dish}」をレシピどおりに作り、すべての準備が整ってからお出しします。",
+          "reading": "Zairyō ni mondai ga nakereba, {reading} o reshipi dōri ni tsukuri, subete no junbi ga totonotte kara odashi shimasu.",
+          "tokens": [
+            "材料に問題がなければ、",
+            "「{dish}」を",
+            "レシピどおりに作り、",
+            "すべての準備が",
+            "整ってから",
+            "お出しします。"
+          ],
+          "accepted": [],
+          "choices": [
+            "材料に問題がなければ、「{dish}」をレシピどおりに作り、すべての準備が整ってからお出しします。",
+            "材料に問題がなければです、料理を作ります。",
+            "材料は相談せずに変えて、準備の前にお出しします。"
+          ],
+          "explanation": "なければ gives the condition if there is no problem. 整ってから means only after everything is ready; お出しします is a considerate staff expression.",
+          "choiceNotes": {
+            "材料に問題がなければ、「{dish}」をレシピどおりに作り、すべての準備が整ってからお出しします。": "Correct: confirm this actual order before preparing it.",
+            "材料に問題がなければです、料理を作ります。": "The connective なければ cannot take です before the next clause.",
+            "材料は相談せずに変えて、準備の前にお出しします。": "This changes ingredients without asking and promises service before preparation."
+          }
+        },
+        "es": {
+          "answer": "Si está de acuerdo con los ingredientes, prepararé su pedido de «{dish}» según la receta y lo serviré cuando todo esté listo.",
+          "reading": "",
+          "tokens": [
+            "Si está de acuerdo",
+            "con los ingredientes,",
+            "prepararé su pedido de",
+            "«{dish}»",
+            "según la receta",
+            "y lo serviré",
+            "cuando todo esté listo."
+          ],
+          "accepted": [],
+          "choices": [
+            "Si está de acuerdo con los ingredientes, prepararé su pedido de «{dish}» según la receta y lo serviré cuando todo esté listo.",
+            "Si está de acuerdo, prepararé el pedido cuando todo está listo.",
+            "Cambiaré los ingredientes sin preguntar y serviré enseguida."
+          ],
+          "explanation": "Si está de acuerdo states a real condition. The future time clause cuando todo esté listo takes subjunctive esté because readiness has not occurred yet. Lo refers to the pedido.",
+          "choiceNotes": {
+            "Si está de acuerdo con los ingredientes, prepararé su pedido de «{dish}» según la receta y lo serviré cuando todo esté listo.": "Correct: confirm this actual order before preparing it.",
+            "Si está de acuerdo, prepararé el pedido cuando todo está listo.": "For this future time clause, use subjunctive esté after cuando; indicative está presents it as an established present fact.",
+            "Cambiaré los ingredientes sin preguntar y serviré enseguida.": "This changes ingredients without permission and does not wait for completion."
+          }
+        },
+        "zh": {
+          "answer": "如果您确认原料没有问题，我就按照配方制作「{dish}」，等全部准备好以后再上桌。",
+          "reading": "Rúguǒ nín quèrèn yuánliào méiyǒu wèntí, wǒ jiù ànzhào pèifāng zhìzuò {reading}, děng quánbù zhǔnbèi hǎo yǐhòu zài shàng zhuō.",
+          "tokens": [
+            "如果您确认",
+            "原料没有问题，",
+            "我就",
+            "按照配方",
+            "制作「{dish}」，",
+            "等全部准备好以后",
+            "再上桌",
+            "。"
+          ],
+          "accepted": [],
+          "choices": [
+            "如果您确认原料没有问题，我就按照配方制作「{dish}」，等全部准备好以后再上桌。",
+            "如果您确认原料，才我就按配方制作。",
+            "我不问您就换原料，还没做好就上桌。"
+          ],
+          "explanation": "如果…就… sets the condition and consequence. 等…以后再… delays serving until preparation is complete. The recipe remains the customer’s chosen recipe.",
+          "choiceNotes": {
+            "如果您确认原料没有问题，我就按照配方制作「{dish}」，等全部准备好以后再上桌。": "Correct: confirm this actual order before preparing it.",
+            "如果您确认原料，才我就按配方制作。": "The extra 才 and subject placement break the 如果…就… construction.",
+            "我不问您就换原料，还没做好就上桌。": "This changes ingredients without asking and serves the order before it is ready."
+          }
+        }
+      }
+    }
+  }
+}

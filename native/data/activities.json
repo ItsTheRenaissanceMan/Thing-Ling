@@ -1,0 +1,4667 @@
+{
+  "version": 2,
+  "currency": "EUR",
+  "prices": {
+    "apple": 80,
+    "bread": 220,
+    "milk": 140,
+    "cheese": 260,
+    "egg": 40,
+    "banana": 70,
+    "orange": 90,
+    "pear": 85,
+    "yogurt": 110,
+    "coffee": 350,
+    "tea": 280,
+    "sugar": 120,
+    "honey": 290,
+    "chocolate": 180,
+    "juice": 190,
+    "lettuce": 130,
+    "tomato": 60,
+    "carrot": 45,
+    "potato": 55,
+    "onion": 50,
+    "rice": 210,
+    "pasta": 170,
+    "soap": 160
+  },
+  "recipes": {
+    "espresso": {
+      "id": "espresso",
+      "name": "Espresso",
+      "ingredients": {
+        "coffee": 1,
+        "cup": 1
+      },
+      "steps": [
+        "grind",
+        "brew",
+        "pour_coffee"
+      ],
+      "tier": 1,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "Espresso",
+          "reading": "Espresso"
+        },
+        "ja": {
+          "name": "エスプレッソ",
+          "reading": "esupuresso"
+        },
+        "es": {
+          "name": "espresso",
+          "reading": "espresso"
+        },
+        "zh": {
+          "name": "意式浓缩咖啡",
+          "reading": "Yìshì nóngsuō kāfēi"
+        }
+      }
+    },
+    "americano": {
+      "id": "americano",
+      "name": "Americano",
+      "ingredients": {
+        "coffee": 1,
+        "water": 1,
+        "cup": 1
+      },
+      "steps": [
+        "grind",
+        "brew",
+        "heat_water",
+        "pour_coffee",
+        "add_water"
+      ],
+      "tier": 1,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "Americano",
+          "reading": "Americano"
+        },
+        "ja": {
+          "name": "アメリカーノ",
+          "reading": "amerikāno"
+        },
+        "es": {
+          "name": "café americano",
+          "reading": "café americano"
+        },
+        "zh": {
+          "name": "美式咖啡",
+          "reading": "Měishì kāfēi"
+        }
+      }
+    },
+    "black-tea": {
+      "id": "black-tea",
+      "name": "Black tea",
+      "ingredients": {
+        "tea": 1,
+        "water": 1,
+        "cup": 1
+      },
+      "steps": [
+        "heat_water",
+        "steep",
+        "pour_tea"
+      ],
+      "tier": 1,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "schwarzer Tee",
+          "reading": "schwarzer Tee"
+        },
+        "ja": {
+          "name": "紅茶",
+          "reading": "kōcha"
+        },
+        "es": {
+          "name": "té negro",
+          "reading": "té negro"
+        },
+        "zh": {
+          "name": "红茶",
+          "reading": "Hóngchá"
+        }
+      }
+    },
+    "milk-tea": {
+      "id": "milk-tea",
+      "name": "Milk tea",
+      "ingredients": {
+        "tea": 1,
+        "water": 1,
+        "milk": 1,
+        "cup": 1
+      },
+      "steps": [
+        "heat_water",
+        "steep",
+        "heat_milk",
+        "pour_tea",
+        "pour_milk"
+      ],
+      "tier": 1,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "Milchtee",
+          "reading": "Milchtee"
+        },
+        "ja": {
+          "name": "ミルクティー",
+          "reading": "miruku tī"
+        },
+        "es": {
+          "name": "té con leche",
+          "reading": "té con leche"
+        },
+        "zh": {
+          "name": "奶茶",
+          "reading": "Nǎichá"
+        }
+      }
+    },
+    "latte": {
+      "id": "latte",
+      "name": "Caffè latte",
+      "ingredients": {
+        "coffee": 1,
+        "milk": 1,
+        "cup": 1
+      },
+      "steps": [
+        "grind",
+        "brew",
+        "heat_milk",
+        "froth",
+        "pour_coffee",
+        "pour_milk"
+      ],
+      "tier": 2,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "Caffè Latte",
+          "reading": "Caffè Latte"
+        },
+        "ja": {
+          "name": "カフェラテ",
+          "reading": "kafe rate"
+        },
+        "es": {
+          "name": "café con leche",
+          "reading": "café con leche"
+        },
+        "zh": {
+          "name": "拿铁咖啡",
+          "reading": "Nátiě kāfēi"
+        }
+      }
+    },
+    "cappuccino": {
+      "id": "cappuccino",
+      "name": "Cappuccino",
+      "ingredients": {
+        "coffee": 1,
+        "milk": 1,
+        "cup": 1
+      },
+      "steps": [
+        "grind",
+        "brew",
+        "heat_milk",
+        "froth",
+        "pour_coffee",
+        "add_foam"
+      ],
+      "tier": 2,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "Cappuccino",
+          "reading": "Cappuccino"
+        },
+        "ja": {
+          "name": "カプチーノ",
+          "reading": "kapuchīno"
+        },
+        "es": {
+          "name": "capuchino",
+          "reading": "capuchino"
+        },
+        "zh": {
+          "name": "卡布奇诺",
+          "reading": "Kǎbùqínuò"
+        }
+      }
+    },
+    "flat-white": {
+      "id": "flat-white",
+      "name": "Flat white",
+      "ingredients": {
+        "coffee": 2,
+        "milk": 1,
+        "cup": 1
+      },
+      "steps": [
+        "grind",
+        "brew",
+        "heat_milk",
+        "microfoam",
+        "pour_coffee",
+        "pour_milk"
+      ],
+      "tier": 2,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "Flat White",
+          "reading": "Flat White"
+        },
+        "ja": {
+          "name": "フラットホワイト",
+          "reading": "furatto howaito"
+        },
+        "es": {
+          "name": "flat white",
+          "reading": "flat white"
+        },
+        "zh": {
+          "name": "馥芮白咖啡",
+          "reading": "Fùruìbái kāfēi"
+        }
+      }
+    },
+    "double-espresso": {
+      "id": "double-espresso",
+      "name": "Double espresso",
+      "ingredients": {
+        "coffee": 2,
+        "cup": 1
+      },
+      "steps": [
+        "grind",
+        "dose_double",
+        "brew",
+        "pour_coffee"
+      ],
+      "tier": 2,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "doppelter Espresso",
+          "reading": "doppelter Espresso"
+        },
+        "ja": {
+          "name": "ダブルエスプレッソ",
+          "reading": "daburu esupuresso"
+        },
+        "es": {
+          "name": "espresso doble",
+          "reading": "espresso doble"
+        },
+        "zh": {
+          "name": "双份浓缩咖啡",
+          "reading": "Shuāngfèn nóngsuō kāfēi"
+        }
+      }
+    },
+    "mocha": {
+      "id": "mocha",
+      "name": "Chocolate mocha",
+      "ingredients": {
+        "coffee": 1,
+        "milk": 1,
+        "chocolate": 1,
+        "cup": 1
+      },
+      "steps": [
+        "grind",
+        "brew",
+        "melt_chocolate",
+        "heat_milk",
+        "mix_chocolate",
+        "pour_coffee",
+        "pour_milk"
+      ],
+      "tier": 3,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "Mokka",
+          "reading": "Mokka"
+        },
+        "ja": {
+          "name": "モカ",
+          "reading": "moka"
+        },
+        "es": {
+          "name": "moca",
+          "reading": "moca"
+        },
+        "zh": {
+          "name": "摩卡咖啡",
+          "reading": "Mókǎ kāfēi"
+        }
+      }
+    },
+    "honey-latte": {
+      "id": "honey-latte",
+      "name": "Honey latte",
+      "ingredients": {
+        "coffee": 1,
+        "milk": 1,
+        "honey": 1,
+        "cup": 1
+      },
+      "steps": [
+        "grind",
+        "brew",
+        "heat_milk",
+        "stir_honey",
+        "froth",
+        "pour_coffee",
+        "pour_milk"
+      ],
+      "tier": 3,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "Honiglatte",
+          "reading": "Honiglatte"
+        },
+        "ja": {
+          "name": "はちみつラテ",
+          "reading": "hachimitsu rate"
+        },
+        "es": {
+          "name": "latte con miel",
+          "reading": "latte con miel"
+        },
+        "zh": {
+          "name": "蜂蜜拿铁",
+          "reading": "Fēngmì nátiě"
+        }
+      }
+    },
+    "vanilla-latte": {
+      "id": "vanilla-latte",
+      "name": "Vanilla latte",
+      "ingredients": {
+        "coffee": 1,
+        "milk": 1,
+        "vanilla": 1,
+        "cup": 1
+      },
+      "steps": [
+        "grind",
+        "brew",
+        "heat_milk",
+        "add_vanilla",
+        "froth",
+        "pour_coffee",
+        "pour_milk"
+      ],
+      "tier": 3,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "Vanillelatte",
+          "reading": "Vanillelatte"
+        },
+        "ja": {
+          "name": "バニララテ",
+          "reading": "banira rate"
+        },
+        "es": {
+          "name": "latte de vainilla",
+          "reading": "latte de vainilla"
+        },
+        "zh": {
+          "name": "香草拿铁",
+          "reading": "Xiāngcǎo nátiě"
+        }
+      }
+    },
+    "iced-latte": {
+      "id": "iced-latte",
+      "name": "Iced latte",
+      "ingredients": {
+        "coffee": 1,
+        "milk": 1,
+        "ice": 1,
+        "cup": 1
+      },
+      "steps": [
+        "grind",
+        "brew",
+        "cool_coffee",
+        "add_ice",
+        "pour_coffee",
+        "pour_milk"
+      ],
+      "tier": 2,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "Iced Latte",
+          "reading": "Iced Latte"
+        },
+        "ja": {
+          "name": "アイスラテ",
+          "reading": "aisu rate"
+        },
+        "es": {
+          "name": "latte helado",
+          "reading": "latte helado"
+        },
+        "zh": {
+          "name": "冰拿铁",
+          "reading": "Bīng nátiě"
+        }
+      }
+    },
+    "iced-coffee": {
+      "id": "iced-coffee",
+      "name": "Iced coffee",
+      "ingredients": {
+        "coffee": 1,
+        "water": 1,
+        "ice": 1,
+        "cup": 1
+      },
+      "steps": [
+        "grind",
+        "brew",
+        "cool_coffee",
+        "add_ice",
+        "pour_coffee",
+        "add_water"
+      ],
+      "tier": 2,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "Eiskaffee",
+          "reading": "Eiskaffee"
+        },
+        "ja": {
+          "name": "アイスコーヒー",
+          "reading": "aisu kōhī"
+        },
+        "es": {
+          "name": "café con hielo",
+          "reading": "café con hielo"
+        },
+        "zh": {
+          "name": "冰咖啡",
+          "reading": "Bīng kāfēi"
+        }
+      }
+    },
+    "iced-mocha": {
+      "id": "iced-mocha",
+      "name": "Iced mocha",
+      "ingredients": {
+        "coffee": 1,
+        "milk": 1,
+        "chocolate": 1,
+        "ice": 1,
+        "cup": 1
+      },
+      "steps": [
+        "grind",
+        "brew",
+        "melt_chocolate",
+        "mix_chocolate",
+        "cool_coffee",
+        "add_ice",
+        "pour_coffee",
+        "pour_milk"
+      ],
+      "tier": 3,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "Iced Mokka",
+          "reading": "Iced Mokka"
+        },
+        "ja": {
+          "name": "アイスモカ",
+          "reading": "aisu moka"
+        },
+        "es": {
+          "name": "moca helado",
+          "reading": "moca helado"
+        },
+        "zh": {
+          "name": "冰摩卡",
+          "reading": "Bīng mókǎ"
+        }
+      }
+    },
+    "lemon-tea": {
+      "id": "lemon-tea",
+      "name": "Lemon tea",
+      "ingredients": {
+        "tea": 1,
+        "water": 1,
+        "lemon": 1,
+        "cup": 1
+      },
+      "steps": [
+        "heat_water",
+        "steep",
+        "slice_lemon",
+        "pour_tea",
+        "garnish_lemon"
+      ],
+      "tier": 2,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "Zitronentee",
+          "reading": "Zitronentee"
+        },
+        "ja": {
+          "name": "レモンティー",
+          "reading": "remon tī"
+        },
+        "es": {
+          "name": "té con limón",
+          "reading": "té con limón"
+        },
+        "zh": {
+          "name": "柠檬茶",
+          "reading": "Níngméng chá"
+        }
+      }
+    },
+    "mint-tea": {
+      "id": "mint-tea",
+      "name": "Mint tea",
+      "ingredients": {
+        "tea": 1,
+        "water": 1,
+        "mint": 1,
+        "cup": 1
+      },
+      "steps": [
+        "heat_water",
+        "steep",
+        "crush_mint",
+        "pour_tea",
+        "garnish_mint"
+      ],
+      "tier": 2,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "Minztee",
+          "reading": "Minztee"
+        },
+        "ja": {
+          "name": "ミントティー",
+          "reading": "minto tī"
+        },
+        "es": {
+          "name": "té de menta",
+          "reading": "té de menta"
+        },
+        "zh": {
+          "name": "薄荷茶",
+          "reading": "Bòhe chá"
+        }
+      }
+    },
+    "honey-tea": {
+      "id": "honey-tea",
+      "name": "Honey tea",
+      "ingredients": {
+        "tea": 1,
+        "water": 1,
+        "honey": 1,
+        "cup": 1
+      },
+      "steps": [
+        "heat_water",
+        "steep",
+        "stir_honey",
+        "pour_tea"
+      ],
+      "tier": 1,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "Honigtee",
+          "reading": "Honigtee"
+        },
+        "ja": {
+          "name": "はちみつ紅茶",
+          "reading": "hachimitsu kōcha"
+        },
+        "es": {
+          "name": "té con miel",
+          "reading": "té con miel"
+        },
+        "zh": {
+          "name": "蜂蜜红茶",
+          "reading": "Fēngmì hóngchá"
+        }
+      }
+    },
+    "cinnamon-tea": {
+      "id": "cinnamon-tea",
+      "name": "Spiced cinnamon tea",
+      "ingredients": {
+        "tea": 1,
+        "water": 1,
+        "cinnamon": 1,
+        "milk": 1,
+        "cup": 1
+      },
+      "steps": [
+        "heat_water",
+        "steep",
+        "heat_milk",
+        "add_cinnamon",
+        "pour_tea",
+        "pour_milk"
+      ],
+      "tier": 3,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "Zimttee",
+          "reading": "Zimttee"
+        },
+        "ja": {
+          "name": "シナモンティー",
+          "reading": "shinamon tī"
+        },
+        "es": {
+          "name": "té de canela",
+          "reading": "té de canela"
+        },
+        "zh": {
+          "name": "肉桂茶",
+          "reading": "Ròuguì chá"
+        }
+      }
+    },
+    "iced-tea": {
+      "id": "iced-tea",
+      "name": "Iced tea",
+      "ingredients": {
+        "tea": 1,
+        "water": 1,
+        "ice": 1,
+        "lemon": 1,
+        "cup": 1
+      },
+      "steps": [
+        "heat_water",
+        "steep",
+        "cool_tea",
+        "add_ice",
+        "pour_tea",
+        "garnish_lemon"
+      ],
+      "tier": 3,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "Eistee",
+          "reading": "Eistee"
+        },
+        "ja": {
+          "name": "アイスティー",
+          "reading": "aisu tī"
+        },
+        "es": {
+          "name": "té helado",
+          "reading": "té helado"
+        },
+        "zh": {
+          "name": "冰茶",
+          "reading": "Bīngchá"
+        }
+      }
+    },
+    "hot-chocolate": {
+      "id": "hot-chocolate",
+      "name": "Hot chocolate",
+      "ingredients": {
+        "milk": 1,
+        "chocolate": 1,
+        "cup": 1
+      },
+      "steps": [
+        "heat_milk",
+        "melt_chocolate",
+        "mix_chocolate",
+        "pour_milk"
+      ],
+      "tier": 1,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "heiße Schokolade",
+          "reading": "heiße Schokolade"
+        },
+        "ja": {
+          "name": "ホットチョコレート",
+          "reading": "hotto chokorēto"
+        },
+        "es": {
+          "name": "chocolate caliente",
+          "reading": "chocolate caliente"
+        },
+        "zh": {
+          "name": "热巧克力",
+          "reading": "Rè qiǎokèlì"
+        }
+      }
+    },
+    "cinnamon-chocolate": {
+      "id": "cinnamon-chocolate",
+      "name": "Cinnamon hot chocolate",
+      "ingredients": {
+        "milk": 1,
+        "chocolate": 1,
+        "cinnamon": 1,
+        "cream": 1,
+        "cup": 1
+      },
+      "steps": [
+        "heat_milk",
+        "melt_chocolate",
+        "mix_chocolate",
+        "add_cinnamon",
+        "pour_milk",
+        "garnish_cream"
+      ],
+      "tier": 3,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "Zimtschokolade",
+          "reading": "Zimtschokolade"
+        },
+        "ja": {
+          "name": "シナモンホットチョコレート",
+          "reading": "shinamon hotto chokorēto"
+        },
+        "es": {
+          "name": "chocolate caliente con canela",
+          "reading": "chocolate caliente con canela"
+        },
+        "zh": {
+          "name": "肉桂热巧克力",
+          "reading": "Ròuguì rè qiǎokèlì"
+        }
+      }
+    },
+    "strawberry-milk": {
+      "id": "strawberry-milk",
+      "name": "Strawberry milk",
+      "ingredients": {
+        "strawberry": 2,
+        "milk": 1,
+        "honey": 1,
+        "cup": 1
+      },
+      "steps": [
+        "wash_fruit",
+        "mash_fruit",
+        "pour_milk",
+        "stir_honey",
+        "mix"
+      ],
+      "tier": 2,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "Erdbeermilch",
+          "reading": "Erdbeermilch"
+        },
+        "ja": {
+          "name": "いちごミルク",
+          "reading": "ichigo miruku"
+        },
+        "es": {
+          "name": "leche con fresas",
+          "reading": "leche con fresas"
+        },
+        "zh": {
+          "name": "草莓牛奶",
+          "reading": "Cǎoméi niúnǎi"
+        }
+      }
+    },
+    "banana-milk": {
+      "id": "banana-milk",
+      "name": "Banana milk",
+      "ingredients": {
+        "banana": 1,
+        "milk": 1,
+        "cup": 1
+      },
+      "steps": [
+        "peel_fruit",
+        "slice_fruit",
+        "pour_milk",
+        "mix"
+      ],
+      "tier": 1,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "Bananenmilch",
+          "reading": "Bananenmilch"
+        },
+        "ja": {
+          "name": "バナナミルク",
+          "reading": "banana miruku"
+        },
+        "es": {
+          "name": "leche con plátano",
+          "reading": "leche con plátano"
+        },
+        "zh": {
+          "name": "香蕉牛奶",
+          "reading": "Xiāngjiāo niúnǎi"
+        }
+      }
+    },
+    "honey-lemon": {
+      "id": "honey-lemon",
+      "name": "Warm honey and lemon",
+      "ingredients": {
+        "water": 1,
+        "honey": 1,
+        "lemon": 1,
+        "cup": 1
+      },
+      "steps": [
+        "heat_water",
+        "slice_lemon",
+        "stir_honey",
+        "add_water",
+        "garnish_lemon"
+      ],
+      "tier": 1,
+      "category": "drink",
+      "translations": {
+        "de": {
+          "name": "warmer Honig-Zitronen-Trunk",
+          "reading": "warmer Honig-Zitronen-Trunk"
+        },
+        "ja": {
+          "name": "ホットはちみつレモン",
+          "reading": "hotto hachimitsu remon"
+        },
+        "es": {
+          "name": "bebida de miel y limón",
+          "reading": "bebida de miel y limón"
+        },
+        "zh": {
+          "name": "蜂蜜柠檬水",
+          "reading": "Fēngmì níngméng shuǐ"
+        }
+      }
+    },
+    "toast": {
+      "id": "toast",
+      "name": "Buttered toast",
+      "ingredients": {
+        "bread": 2,
+        "butter": 1,
+        "plate": 1
+      },
+      "steps": [
+        "slice_bread",
+        "toast",
+        "spread_butter",
+        "plate_food"
+      ],
+      "tier": 1,
+      "category": "food",
+      "translations": {
+        "de": {
+          "name": "Buttertoast",
+          "reading": "Buttertoast"
+        },
+        "ja": {
+          "name": "バタートースト",
+          "reading": "batā tōsuto"
+        },
+        "es": {
+          "name": "tostada con mantequilla",
+          "reading": "tostada con mantequilla"
+        },
+        "zh": {
+          "name": "黄油吐司",
+          "reading": "Huángyóu tǔsī"
+        }
+      }
+    },
+    "cheese-sandwich": {
+      "id": "cheese-sandwich",
+      "name": "Garden cheese sandwich",
+      "ingredients": {
+        "bread": 2,
+        "cheese": 1,
+        "tomato": 1,
+        "lettuce": 1,
+        "plate": 1
+      },
+      "steps": [
+        "wash_vegetables",
+        "slice_bread",
+        "slice_tomato",
+        "slice_cheese",
+        "assemble",
+        "plate_food"
+      ],
+      "tier": 2,
+      "category": "food",
+      "translations": {
+        "de": {
+          "name": "Käsesandwich",
+          "reading": "Käsesandwich"
+        },
+        "ja": {
+          "name": "チーズサンドイッチ",
+          "reading": "chīzu sandoitchi"
+        },
+        "es": {
+          "name": "sándwich de queso",
+          "reading": "sándwich de queso"
+        },
+        "zh": {
+          "name": "奶酪三明治",
+          "reading": "Nǎilào sānmíngzhì"
+        }
+      }
+    },
+    "omelette": {
+      "id": "omelette",
+      "name": "Cheese omelette",
+      "ingredients": {
+        "egg": 2,
+        "milk": 1,
+        "cheese": 1,
+        "butter": 1,
+        "plate": 1
+      },
+      "steps": [
+        "crack_eggs",
+        "whisk",
+        "heat_pan",
+        "melt_butter",
+        "cook",
+        "fold",
+        "plate_food"
+      ],
+      "tier": 3,
+      "category": "food",
+      "translations": {
+        "de": {
+          "name": "Käseomelett",
+          "reading": "Käseomelett"
+        },
+        "ja": {
+          "name": "チーズオムレツ",
+          "reading": "chīzu omuretsu"
+        },
+        "es": {
+          "name": "tortilla de queso",
+          "reading": "tortilla de queso"
+        },
+        "zh": {
+          "name": "奶酪煎蛋卷",
+          "reading": "Nǎilào jiāndànjuǎn"
+        }
+      }
+    },
+    "salad": {
+      "id": "salad",
+      "name": "Harvest salad",
+      "ingredients": {
+        "lettuce": 1,
+        "tomato": 2,
+        "cucumber": 1,
+        "cheese": 1,
+        "bowl": 1
+      },
+      "steps": [
+        "wash_vegetables",
+        "slice_tomato",
+        "slice_cucumber",
+        "slice_cheese",
+        "mix",
+        "plate_food"
+      ],
+      "tier": 1,
+      "category": "food",
+      "translations": {
+        "de": {
+          "name": "Erntesalat",
+          "reading": "Erntesalat"
+        },
+        "ja": {
+          "name": "収穫サラダ",
+          "reading": "shūkaku sarada"
+        },
+        "es": {
+          "name": "ensalada de la huerta",
+          "reading": "ensalada de la huerta"
+        },
+        "zh": {
+          "name": "田园沙拉",
+          "reading": "Tiányuán shālā"
+        }
+      }
+    },
+    "soup": {
+      "id": "soup",
+      "name": "Garden vegetable soup",
+      "ingredients": {
+        "carrot": 2,
+        "onion": 1,
+        "potato": 1,
+        "water": 1,
+        "bowl": 1
+      },
+      "steps": [
+        "wash_vegetables",
+        "chop_vegetables",
+        "heat_pan",
+        "add_water",
+        "simmer",
+        "season",
+        "plate_food"
+      ],
+      "tier": 2,
+      "category": "food",
+      "translations": {
+        "de": {
+          "name": "Gemüsesuppe",
+          "reading": "Gemüsesuppe"
+        },
+        "ja": {
+          "name": "野菜スープ",
+          "reading": "yasai sūpu"
+        },
+        "es": {
+          "name": "sopa de verduras",
+          "reading": "sopa de verduras"
+        },
+        "zh": {
+          "name": "蔬菜汤",
+          "reading": "Shūcài tāng"
+        }
+      }
+    },
+    "pasta": {
+      "id": "pasta",
+      "name": "Tomato pasta",
+      "ingredients": {
+        "pasta": 1,
+        "water": 1,
+        "tomato": 2,
+        "cheese": 1,
+        "plate": 1
+      },
+      "steps": [
+        "heat_water",
+        "boil_pasta",
+        "slice_tomato",
+        "heat_pan",
+        "cook_sauce",
+        "drain",
+        "combine",
+        "plate_food"
+      ],
+      "tier": 3,
+      "category": "food",
+      "translations": {
+        "de": {
+          "name": "Tomatenpasta",
+          "reading": "Tomatenpasta"
+        },
+        "ja": {
+          "name": "トマトパスタ",
+          "reading": "tomato pasuta"
+        },
+        "es": {
+          "name": "pasta con tomate",
+          "reading": "pasta con tomate"
+        },
+        "zh": {
+          "name": "番茄意大利面",
+          "reading": "Fānqié Yìdàlì miàn"
+        }
+      }
+    }
+  },
+  "venues": {
+    "kettle-on": {
+      "id": "kettle-on",
+      "title": "Tea House welcome service",
+      "kind": "cafe",
+      "challenge": "tea-order",
+      "description": "Prepare three complete drinks in order: collect ingredients, perform each preparation step, then serve your guests.",
+      "rounds": [],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      },
+      "queues": {
+        "1": [
+          "black-tea",
+          "espresso",
+          "honey-tea"
+        ],
+        "2": [
+          "milk-tea",
+          "latte",
+          "lemon-tea"
+        ],
+        "3": [
+          "cinnamon-tea",
+          "honey-latte",
+          "iced-mocha"
+        ]
+      },
+      "menu": [
+        "espresso",
+        "americano",
+        "black-tea",
+        "milk-tea",
+        "latte",
+        "cappuccino",
+        "flat-white",
+        "double-espresso",
+        "mocha",
+        "honey-latte",
+        "vanilla-latte",
+        "iced-latte",
+        "iced-coffee",
+        "iced-mocha",
+        "lemon-tea",
+        "mint-tea",
+        "honey-tea",
+        "cinnamon-tea",
+        "iced-tea",
+        "hot-chocolate",
+        "cinnamon-chocolate",
+        "strawberry-milk",
+        "banana-milk",
+        "honey-lemon"
+      ]
+    },
+    "lantern-cafe": {
+      "id": "lantern-cafe",
+      "title": "Lantern Café barista shift",
+      "kind": "cafe",
+      "challenge": "tea-order",
+      "description": "A three-customer café shift with a pantry, coffee grinder, steaming station, and 24 drink recipes, with a fresh rotating menu every shift.",
+      "rounds": [],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      },
+      "queues": {
+        "1": [
+          "espresso",
+          "hot-chocolate",
+          "banana-milk"
+        ],
+        "2": [
+          "cappuccino",
+          "iced-latte",
+          "strawberry-milk"
+        ],
+        "3": [
+          "flat-white",
+          "vanilla-latte",
+          "cinnamon-chocolate"
+        ]
+      },
+      "menu": [
+        "espresso",
+        "americano",
+        "black-tea",
+        "milk-tea",
+        "latte",
+        "cappuccino",
+        "flat-white",
+        "double-espresso",
+        "mocha",
+        "honey-latte",
+        "vanilla-latte",
+        "iced-latte",
+        "iced-coffee",
+        "iced-mocha",
+        "lemon-tea",
+        "mint-tea",
+        "honey-tea",
+        "cinnamon-tea",
+        "iced-tea",
+        "hot-chocolate",
+        "cinnamon-chocolate",
+        "strawberry-milk",
+        "banana-milk",
+        "honey-lemon"
+      ]
+    },
+    "breakfast-club": {
+      "id": "breakfast-club",
+      "title": "Sunrise breakfast kitchen",
+      "kind": "cafe",
+      "challenge": "breakfast-order",
+      "description": "Make breakfast from individual ingredients, prepare every step safely, and serve three orders.",
+      "rounds": [],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      },
+      "queues": {
+        "1": [
+          "toast",
+          "banana-milk",
+          "hot-chocolate"
+        ],
+        "2": [
+          "toast",
+          "cheese-sandwich",
+          "milk-tea"
+        ],
+        "3": [
+          "cheese-sandwich",
+          "omelette",
+          "honey-latte"
+        ]
+      },
+      "menu": [
+        "toast",
+        "cheese-sandwich",
+        "omelette",
+        "banana-milk",
+        "hot-chocolate",
+        "milk-tea",
+        "honey-latte"
+      ]
+    },
+    "restaurant": {
+      "id": "restaurant",
+      "title": "Harvest Restaurant kitchen",
+      "kind": "cafe",
+      "challenge": "venue-restaurant",
+      "description": "Run the kitchen pass, sequence full recipes, and serve complete meals to three diners.",
+      "rounds": [],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      },
+      "queues": {
+        "1": [
+          "salad",
+          "toast",
+          "lemon-tea"
+        ],
+        "2": [
+          "salad",
+          "soup",
+          "cheese-sandwich"
+        ],
+        "3": [
+          "soup",
+          "omelette",
+          "pasta"
+        ]
+      },
+      "menu": [
+        "toast",
+        "cheese-sandwich",
+        "omelette",
+        "salad",
+        "soup",
+        "pasta",
+        "lemon-tea",
+        "black-tea",
+        "honey-tea"
+      ]
+    },
+    "supermarket": {
+      "id": "supermarket",
+      "title": "Market checkout & shopping trips",
+      "kind": "market",
+      "challenge": "venue-supermarket",
+      "description": "Work the checkout with quantities, scanned receipts, payments and change, or walk the aisles as a customer with a real shopping list and budget.",
+      "rounds": [],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      },
+      "customers": [
+        {
+          "name": "Ada",
+          "basket": {
+            "apple": 2,
+            "bread": 1
+          },
+          "tender": 500
+        },
+        {
+          "name": "Ken",
+          "basket": {
+            "milk": 1,
+            "egg": 3,
+            "banana": 2
+          },
+          "tender": 1000
+        },
+        {
+          "name": "Lin",
+          "basket": {
+            "cheese": 1,
+            "tomato": 3,
+            "rice": 1
+          },
+          "tender": 1000
+        }
+      ],
+      "shopping": {
+        "1": {
+          "items": {
+            "apple": 1,
+            "bread": 1,
+            "milk": 1
+          },
+          "budget": 500
+        },
+        "2": {
+          "items": {
+            "apple": 2,
+            "bread": 1,
+            "milk": 1,
+            "cheese": 1
+          },
+          "budget": 800,
+          "unavailable": "milk",
+          "alternatives": [
+            "yogurt",
+            "juice",
+            "chocolate"
+          ],
+          "replacement": "yogurt"
+        },
+        "3": {
+          "items": {
+            "apple": 2,
+            "bread": 1,
+            "milk": 2,
+            "rice": 1,
+            "carrot": 2
+          },
+          "budget": 920,
+          "unavailable": "milk",
+          "alternatives": [
+            "yogurt",
+            "cheese",
+            "juice"
+          ],
+          "replacement": "yogurt"
+        }
+      }
+    },
+    "little-hello": {
+      "id": "little-hello",
+      "title": "Almanac field-catalogue desk",
+      "kind": "tasks",
+      "challenge": "hello-request",
+      "description": "Almanac field-catalogue desk — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "A living record",
+          "request": "Record the courtyard discoveries without damaging them.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "Which record describes a living plant?",
+              "answer": "flower",
+              "options": [
+                {
+                  "value": "stone",
+                  "label": "A smooth stone"
+                },
+                {
+                  "value": "flower",
+                  "label": "A flower with a stem and petals"
+                },
+                {
+                  "value": "book",
+                  "label": "A bound paper book"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "sequence",
+              "prompt": "Catalogue a specimen in a responsible order.",
+              "sequence": [
+                "observe",
+                "sketch",
+                "label",
+                "return"
+              ],
+              "labels": {
+                "observe": "Observe the flower",
+                "sketch": "Sketch its shape",
+                "label": "Write its name and date",
+                "return": "Leave it growing in the courtyard"
+              },
+              "options": [
+                "return",
+                "label",
+                "sketch",
+                "observe"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Shelf order",
+          "request": "Arrange three records so a neighbor can find them.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "File an apple under…",
+              "answer": "fruit",
+              "options": [
+                {
+                  "value": "tool",
+                  "label": "Tools"
+                },
+                {
+                  "value": "fruit",
+                  "label": "Fruit"
+                },
+                {
+                  "value": "furniture",
+                  "label": "Furniture"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "number",
+              "prompt": "The Almanac has 12 pages. Four are filled. How many empty pages remain?",
+              "answer": 8,
+              "unit": "pages"
+            }
+          ]
+        },
+        {
+          "title": "Welcome packet",
+          "request": "Build a useful welcome record.",
+          "tasks": [
+            {
+              "type": "set",
+              "prompt": "Select the three objects needed to write and file a new record.",
+              "answer": [
+                "book",
+                "pencil",
+                "paper"
+              ],
+              "options": [
+                {
+                  "value": "book",
+                  "label": "Book"
+                },
+                {
+                  "value": "pencil",
+                  "label": "Pencil"
+                },
+                {
+                  "value": "paper",
+                  "label": "Paper"
+                },
+                {
+                  "value": "fish",
+                  "label": "Fish"
+                },
+                {
+                  "value": "shoe",
+                  "label": "Shoe"
+                }
+              ]
+            },
+            {
+              "type": "sequence",
+              "prompt": "Prepare the welcome page.",
+              "sequence": [
+                "date",
+                "describe",
+                "review",
+                "file"
+              ],
+              "labels": {
+                "date": "Date",
+                "describe": "Describe",
+                "review": "Review",
+                "file": "File"
+              },
+              "options": [
+                "file",
+                "review",
+                "describe",
+                "date"
+              ]
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    },
+    "first-seedlings": {
+      "id": "first-seedlings",
+      "title": "Seedling Terraces growing beds",
+      "kind": "tasks",
+      "challenge": "garden-plan",
+      "description": "Seedling Terraces growing beds — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "Carrot bed",
+          "request": "Sow carrots in the prepared bed.",
+          "tasks": [
+            {
+              "type": "sequence",
+              "prompt": "Use the growing cycle in the right order.",
+              "sequence": [
+                "loosen_soil",
+                "sow_seed",
+                "cover_seed",
+                "water",
+                "thin",
+                "harvest"
+              ],
+              "labels": {
+                "loosen_soil": "Loosen soil",
+                "sow_seed": "Sow seed",
+                "cover_seed": "Cover seed",
+                "water": "Water",
+                "thin": "Thin",
+                "harvest": "Harvest"
+              },
+              "options": [
+                "harvest",
+                "thin",
+                "water",
+                "cover_seed",
+                "sow_seed",
+                "loosen_soil"
+              ]
+            },
+            {
+              "type": "number",
+              "prompt": "Each row needs four seeds. There are three rows. How many seeds?",
+              "answer": 12,
+              "unit": "seeds"
+            }
+          ]
+        },
+        {
+          "title": "Tomato care",
+          "request": "A tomato seedling needs support and a sensible watering plan.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "The soil feels dry below the surface. What should you do?",
+              "answer": "water_roots",
+              "options": [
+                {
+                  "value": "water_roots",
+                  "label": "Water the roots gently"
+                },
+                {
+                  "value": "soak_leaves",
+                  "label": "Soak every leaf at noon"
+                },
+                {
+                  "value": "harvest",
+                  "label": "Harvest the green seedling"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "sequence",
+              "prompt": "Transplant and support the tomato.",
+              "sequence": [
+                "dig",
+                "plant",
+                "firm_soil",
+                "add_support",
+                "water"
+              ],
+              "labels": {
+                "dig": "Dig",
+                "plant": "Plant",
+                "firm_soil": "Firm soil",
+                "add_support": "Add support",
+                "water": "Water"
+              },
+              "options": [
+                "water",
+                "add_support",
+                "firm_soil",
+                "plant",
+                "dig"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Strawberry harvest",
+          "request": "Harvest fruit without damaging the plants.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "Which berries are ready?",
+              "answer": "red",
+              "options": [
+                {
+                  "value": "green",
+                  "label": "Hard green berries"
+                },
+                {
+                  "value": "red",
+                  "label": "Fully red, ripe berries"
+                },
+                {
+                  "value": "flower",
+                  "label": "New flowers"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "sequence",
+              "prompt": "Finish the harvest.",
+              "sequence": [
+                "check_ripe",
+                "pick_gently",
+                "sort",
+                "label_basket",
+                "water_bed"
+              ],
+              "labels": {
+                "check_ripe": "Check ripe",
+                "pick_gently": "Pick gently",
+                "sort": "Sort",
+                "label_basket": "Label basket",
+                "water_bed": "Water bed"
+              },
+              "options": [
+                "water_bed",
+                "label_basket",
+                "sort",
+                "pick_gently",
+                "check_ripe"
+              ]
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    },
+    "orchard-colors": {
+      "id": "orchard-colors",
+      "title": "Citrus Grove harvest grading",
+      "kind": "tasks",
+      "challenge": "orchard-quantity",
+      "description": "Citrus Grove harvest grading — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "Harvest basket",
+          "request": "Prepare an order of ripe fruit.",
+          "tasks": [
+            {
+              "type": "set",
+              "prompt": "Choose the three citrus-grove harvest fruits.",
+              "answer": [
+                "orange",
+                "lemon",
+                "banana"
+              ],
+              "options": [
+                {
+                  "value": "orange",
+                  "label": "Orange"
+                },
+                {
+                  "value": "lemon",
+                  "label": "Lemon"
+                },
+                {
+                  "value": "banana",
+                  "label": "Banana"
+                },
+                {
+                  "value": "stone",
+                  "label": "Stone"
+                },
+                {
+                  "value": "seed",
+                  "label": "Seed"
+                }
+              ]
+            },
+            {
+              "type": "number",
+              "prompt": "Four baskets each need three oranges. How many oranges?",
+              "answer": 12,
+              "unit": "oranges"
+            }
+          ]
+        },
+        {
+          "title": "Quality check",
+          "request": "Grade the harvest before sending it to the café.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "A bruised orange should be…",
+              "answer": "separate",
+              "options": [
+                {
+                  "value": "premium",
+                  "label": "Hidden in the premium basket"
+                },
+                {
+                  "value": "separate",
+                  "label": "Separated for immediate kitchen use"
+                },
+                {
+                  "value": "green",
+                  "label": "Labeled as unripe"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "sequence",
+              "prompt": "Prepare a traceable harvest.",
+              "sequence": [
+                "inspect",
+                "sort",
+                "weigh",
+                "label",
+                "store"
+              ],
+              "labels": {
+                "inspect": "Inspect",
+                "sort": "Sort",
+                "weigh": "Weigh",
+                "label": "Label",
+                "store": "Store"
+              },
+              "options": [
+                "store",
+                "label",
+                "weigh",
+                "sort",
+                "inspect"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Pollinator route",
+          "request": "Protect the pollinators while harvesting.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "A butterfly is resting on a flower.",
+              "answer": "leave",
+              "options": [
+                {
+                  "value": "leave",
+                  "label": "Leave the flower and harvest another branch"
+                },
+                {
+                  "value": "catch",
+                  "label": "Catch it for the basket"
+                },
+                {
+                  "value": "spray",
+                  "label": "Spray the flower"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "number",
+              "prompt": "You picked 18 lemons. Six go to the café and four to the tea house. How many remain?",
+              "answer": 8,
+              "unit": "lemons"
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    },
+    "small-neighbors": {
+      "id": "small-neighbors",
+      "title": "Willow animal care rounds",
+      "kind": "tasks",
+      "challenge": "animal-care",
+      "description": "Willow animal care rounds — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "Rabbit breakfast",
+          "request": "Prepare breakfast for the rabbit, with fresh water.",
+          "tasks": [
+            {
+              "type": "set",
+              "prompt": "Choose suitable rabbit-care supplies.",
+              "answer": [
+                "hay",
+                "water"
+              ],
+              "options": [
+                {
+                  "value": "hay",
+                  "label": "Hay"
+                },
+                {
+                  "value": "water",
+                  "label": "Water"
+                },
+                {
+                  "value": "coffee",
+                  "label": "Coffee"
+                },
+                {
+                  "value": "chocolate",
+                  "label": "Chocolate"
+                }
+              ]
+            },
+            {
+              "type": "sequence",
+              "prompt": "Care for the enclosure.",
+              "sequence": [
+                "check_animal",
+                "remove_old_food",
+                "refresh_water",
+                "add_hay",
+                "record"
+              ],
+              "labels": {
+                "check_animal": "Check animal",
+                "remove_old_food": "Remove old food",
+                "refresh_water": "Refresh water",
+                "add_hay": "Add hay",
+                "record": "Record"
+              },
+              "options": [
+                "record",
+                "add_hay",
+                "refresh_water",
+                "remove_old_food",
+                "check_animal"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Bird station",
+          "request": "The bird feeder needs safe maintenance.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "Choose the appropriate bird food.",
+              "answer": "seed",
+              "options": [
+                {
+                  "value": "seed",
+                  "label": "Clean bird seed"
+                },
+                {
+                  "value": "coffee",
+                  "label": "Coffee grounds"
+                },
+                {
+                  "value": "cheese",
+                  "label": "Salted cheese"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "sequence",
+              "prompt": "Clean and refill the feeder.",
+              "sequence": [
+                "empty",
+                "clean",
+                "dry",
+                "fill_seed",
+                "hang"
+              ],
+              "labels": {
+                "empty": "Empty",
+                "clean": "Clean",
+                "dry": "Dry",
+                "fill_seed": "Fill seed",
+                "hang": "Hang"
+              },
+              "options": [
+                "hang",
+                "fill_seed",
+                "dry",
+                "clean",
+                "empty"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Dog care",
+          "request": "Check the dog and report an injury to the trained carer.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "The dog is limping. What is your next action?",
+              "answer": "carer",
+              "options": [
+                {
+                  "value": "walk",
+                  "label": "Force a long walk"
+                },
+                {
+                  "value": "carer",
+                  "label": "Tell the animal carer and keep the dog calm"
+                },
+                {
+                  "value": "ignore",
+                  "label": "Ignore the limp"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "number",
+              "prompt": "Three bowls each hold 250 millilitres. How much water fills them?",
+              "answer": 750,
+              "unit": "ml"
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    },
+    "garden-in-bloom": {
+      "id": "garden-in-bloom",
+      "title": "Skyglass weather observatory",
+      "kind": "tasks",
+      "challenge": "weather-observation",
+      "description": "Skyglass weather observatory — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "Rain gauge",
+          "request": "Read the weather station before planning the garden work.",
+          "tasks": [
+            {
+              "type": "number",
+              "prompt": "The gauge held 7 mm yesterday and now reads 19 mm. How much rain fell?",
+              "answer": 12,
+              "unit": "mm"
+            },
+            {
+              "type": "choice",
+              "prompt": "After heavy rain the garden beds should first be…",
+              "answer": "drain",
+              "options": [
+                {
+                  "value": "drain",
+                  "label": "Checked for drainage"
+                },
+                {
+                  "value": "flood",
+                  "label": "Watered heavily again"
+                },
+                {
+                  "value": "dig",
+                  "label": "Dug while saturated"
+                }
+              ],
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "title": "Cloud record",
+          "request": "Make a consistent weather observation.",
+          "tasks": [
+            {
+              "type": "sequence",
+              "prompt": "Collect and file the weather reading.",
+              "sequence": [
+                "check_time",
+                "read_gauge",
+                "observe_cloud",
+                "record",
+                "compare"
+              ],
+              "labels": {
+                "check_time": "Check time",
+                "read_gauge": "Read gauge",
+                "observe_cloud": "Observe cloud",
+                "record": "Record",
+                "compare": "Compare"
+              },
+              "options": [
+                "compare",
+                "record",
+                "observe_cloud",
+                "read_gauge",
+                "check_time"
+              ]
+            },
+            {
+              "type": "choice",
+              "prompt": "A mountain is hidden by low cloud. Visibility is…",
+              "answer": "low",
+              "options": [
+                {
+                  "value": "high",
+                  "label": "High"
+                },
+                {
+                  "value": "low",
+                  "label": "Low"
+                },
+                {
+                  "value": "zero_rain",
+                  "label": "Proof that no rain can fall"
+                }
+              ],
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "title": "Planting forecast",
+          "request": "Use the forecast to choose a sensible plan.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "A frost is forecast tonight. Protect the seedlings by…",
+              "answer": "cover",
+              "options": [
+                {
+                  "value": "cover",
+                  "label": "Covering them before evening"
+                },
+                {
+                  "value": "uncover",
+                  "label": "Removing every cover"
+                },
+                {
+                  "value": "harvest",
+                  "label": "Harvesting their roots immediately"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "number",
+              "prompt": "The temperature is 9 °C and falls by 6 degrees. What is the new temperature?",
+              "answer": 3,
+              "unit": "°C"
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    },
+    "water-edge": {
+      "id": "water-edge",
+      "title": "Driftwood Cove harbor inspection",
+      "kind": "tasks",
+      "challenge": "harbor-safety",
+      "description": "Driftwood Cove harbor inspection — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "Mooring checks",
+          "request": "Secure the boat before loading the supplies.",
+          "tasks": [
+            {
+              "type": "sequence",
+              "prompt": "Make the mooring inspection.",
+              "sequence": [
+                "check_weather",
+                "inspect_rope",
+                "secure_boat",
+                "check_bridge",
+                "log"
+              ],
+              "labels": {
+                "check_weather": "Check weather",
+                "inspect_rope": "Inspect rope",
+                "secure_boat": "Secure boat",
+                "check_bridge": "Check bridge",
+                "log": "Log"
+              },
+              "options": [
+                "log",
+                "check_bridge",
+                "secure_boat",
+                "inspect_rope",
+                "check_weather"
+              ]
+            },
+            {
+              "type": "choice",
+              "prompt": "A mooring rope is visibly frayed.",
+              "answer": "replace",
+              "options": [
+                {
+                  "value": "load",
+                  "label": "Load more cargo"
+                },
+                {
+                  "value": "replace",
+                  "label": "Report and replace it before using the berth"
+                },
+                {
+                  "value": "hide",
+                  "label": "Hide the damage"
+                }
+              ],
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "title": "Cargo balance",
+          "request": "Distribute the supplies within the boat’s capacity.",
+          "tasks": [
+            {
+              "type": "number",
+              "prompt": "The boat can carry 120 kg. Cargo already weighs 75 kg. What capacity remains?",
+              "answer": 45,
+              "unit": "kg"
+            },
+            {
+              "type": "choice",
+              "prompt": "Heavy crates belong…",
+              "answer": "low",
+              "options": [
+                {
+                  "value": "high",
+                  "label": "On top of the cabin"
+                },
+                {
+                  "value": "low",
+                  "label": "Low and evenly balanced"
+                },
+                {
+                  "value": "side",
+                  "label": "All on one side"
+                }
+              ],
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "title": "Shore wildlife",
+          "request": "Keep the crossing and shore ready for visitors.",
+          "tasks": [
+            {
+              "type": "set",
+              "prompt": "Select the two safety supplies for this inspection.",
+              "answer": [
+                "rope",
+                "lantern"
+              ],
+              "options": [
+                {
+                  "value": "rope",
+                  "label": "Rope"
+                },
+                {
+                  "value": "lantern",
+                  "label": "Lantern"
+                },
+                {
+                  "value": "cake",
+                  "label": "Cake"
+                },
+                {
+                  "value": "pillow",
+                  "label": "Pillow"
+                }
+              ]
+            },
+            {
+              "type": "sequence",
+              "prompt": "Open the route only after checks.",
+              "sequence": [
+                "inspect_bridge",
+                "remove_obstruction",
+                "check_lights",
+                "report_clear"
+              ],
+              "labels": {
+                "inspect_bridge": "Inspect bridge",
+                "remove_obstruction": "Remove obstruction",
+                "check_lights": "Check lights",
+                "report_clear": "Report clear"
+              },
+              "options": [
+                "report_clear",
+                "check_lights",
+                "remove_obstruction",
+                "inspect_bridge"
+              ]
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    },
+    "lost-and-found": {
+      "id": "lost-and-found",
+      "title": "Parcel Exchange property returns",
+      "kind": "tasks",
+      "challenge": "parcel-description",
+      "description": "Parcel Exchange property returns — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "Identify the owner",
+          "request": "Return items only after checking their description.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "A visitor describes a blue bag with a red strap. The matching item is…",
+              "answer": "bag",
+              "options": [
+                {
+                  "value": "hat",
+                  "label": "A plain hat"
+                },
+                {
+                  "value": "bag",
+                  "label": "The blue bag with its red strap"
+                },
+                {
+                  "value": "shoe",
+                  "label": "A brown shoe"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "sequence",
+              "prompt": "Process a safe return.",
+              "sequence": [
+                "ask_description",
+                "match_record",
+                "verify_details",
+                "record_return",
+                "hand_over"
+              ],
+              "labels": {
+                "ask_description": "Ask description",
+                "match_record": "Match record",
+                "verify_details": "Verify details",
+                "record_return": "Record return",
+                "hand_over": "Hand over"
+              },
+              "options": [
+                "hand_over",
+                "record_return",
+                "verify_details",
+                "match_record",
+                "ask_description"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Shelf sorting",
+          "request": "Organize the left-behind items.",
+          "tasks": [
+            {
+              "type": "set",
+              "prompt": "Which two items belong in the clothing section?",
+              "answer": [
+                "hat",
+                "shoe"
+              ],
+              "options": [
+                {
+                  "value": "hat",
+                  "label": "Hat"
+                },
+                {
+                  "value": "shoe",
+                  "label": "Shoe"
+                },
+                {
+                  "value": "bicycle",
+                  "label": "Bicycle"
+                },
+                {
+                  "value": "book",
+                  "label": "Book"
+                }
+              ]
+            },
+            {
+              "type": "number",
+              "prompt": "Nine items were found and four returned. How many remain?",
+              "answer": 5,
+              "unit": "items"
+            }
+          ]
+        },
+        {
+          "title": "Unclaimed bicycle",
+          "request": "The bicycle requires a claim record.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "What must be checked before returning a bicycle?",
+              "answer": "details",
+              "options": [
+                {
+                  "value": "details",
+                  "label": "The owner’s specific description and claim details"
+                },
+                {
+                  "value": "first",
+                  "label": "Whoever asks first"
+                },
+                {
+                  "value": "none",
+                  "label": "No details"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "sequence",
+              "prompt": "Store an unclaimed item.",
+              "sequence": [
+                "tag",
+                "photograph",
+                "register",
+                "shelve"
+              ],
+              "labels": {
+                "tag": "Tag",
+                "photograph": "Photograph",
+                "register": "Register",
+                "shelve": "Shelve"
+              },
+              "options": [
+                "shelve",
+                "register",
+                "photograph",
+                "tag"
+              ]
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    },
+    "homecoming-parcel": {
+      "id": "homecoming-parcel",
+      "title": "Hearth Cottage welcome preparations",
+      "kind": "tasks",
+      "challenge": "cottage-arrival",
+      "description": "Hearth Cottage welcome preparations — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "The welcome parcel",
+          "request": "Prepare the cottage in a practical order.",
+          "tasks": [
+            {
+              "type": "sequence",
+              "prompt": "Make the cottage ready.",
+              "sequence": [
+                "verify_address",
+                "unlock",
+                "check_room",
+                "deliver_parcel",
+                "record_key"
+              ],
+              "labels": {
+                "verify_address": "Verify address",
+                "unlock": "Unlock",
+                "check_room": "Check room",
+                "deliver_parcel": "Deliver parcel",
+                "record_key": "Record key"
+              },
+              "options": [
+                "record_key",
+                "deliver_parcel",
+                "check_room",
+                "unlock",
+                "verify_address"
+              ]
+            },
+            {
+              "type": "choice",
+              "prompt": "The parcel address differs from the cottage address.",
+              "answer": "verify",
+              "options": [
+                {
+                  "value": "leave",
+                  "label": "Leave it anywhere"
+                },
+                {
+                  "value": "verify",
+                  "label": "Check the address with Theo before delivery"
+                },
+                {
+                  "value": "open",
+                  "label": "Open the parcel yourself"
+                }
+              ],
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "title": "A comfortable bed",
+          "request": "Prepare a clean sleeping space.",
+          "tasks": [
+            {
+              "type": "set",
+              "prompt": "Choose the three bedding items.",
+              "answer": [
+                "pillow",
+                "blanket",
+                "bed"
+              ],
+              "options": [
+                {
+                  "value": "pillow",
+                  "label": "Pillow"
+                },
+                {
+                  "value": "blanket",
+                  "label": "Blanket"
+                },
+                {
+                  "value": "bed",
+                  "label": "Bed"
+                },
+                {
+                  "value": "net",
+                  "label": "Net"
+                },
+                {
+                  "value": "hammer",
+                  "label": "Hammer"
+                }
+              ]
+            },
+            {
+              "type": "sequence",
+              "prompt": "Prepare the bed.",
+              "sequence": [
+                "air_room",
+                "clean_surface",
+                "fit_sheet",
+                "add_pillow",
+                "fold_blanket"
+              ],
+              "labels": {
+                "air_room": "Air room",
+                "clean_surface": "Clean surface",
+                "fit_sheet": "Fit sheet",
+                "add_pillow": "Add pillow",
+                "fold_blanket": "Fold blanket"
+              },
+              "options": [
+                "fold_blanket",
+                "add_pillow",
+                "fit_sheet",
+                "clean_surface",
+                "air_room"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Final inspection",
+          "request": "Report faults before the neighbor arrives.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "A window will not close properly.",
+              "answer": "report",
+              "options": [
+                {
+                  "value": "hide",
+                  "label": "Hide it with a curtain"
+                },
+                {
+                  "value": "report",
+                  "label": "Record the fault and ask for a repair"
+                },
+                {
+                  "value": "ignore",
+                  "label": "Ignore it"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "number",
+              "prompt": "There are six welcome envelopes and each needs two keys. How many keys?",
+              "answer": 12,
+              "unit": "keys"
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    },
+    "harbor-lanterns": {
+      "id": "harbor-lanterns",
+      "title": "Moonrise Lighthouse signaling watch",
+      "kind": "tasks",
+      "challenge": "lantern-arrangements",
+      "description": "Moonrise Lighthouse signaling watch — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "Prepare the lantern",
+          "request": "Complete the lighthouse’s evening check.",
+          "tasks": [
+            {
+              "type": "sequence",
+              "prompt": "Ready the lantern safely.",
+              "sequence": [
+                "check_power",
+                "clean_lens",
+                "check_signal",
+                "secure_door",
+                "log_watch"
+              ],
+              "labels": {
+                "check_power": "Check power",
+                "clean_lens": "Clean lens",
+                "check_signal": "Check signal",
+                "secure_door": "Secure door",
+                "log_watch": "Log watch"
+              },
+              "options": [
+                "log_watch",
+                "secure_door",
+                "check_signal",
+                "clean_lens",
+                "check_power"
+              ]
+            },
+            {
+              "type": "choice",
+              "prompt": "The lens is fogged. First…",
+              "answer": "clean",
+              "options": [
+                {
+                  "value": "clean",
+                  "label": "Clean and inspect it before signaling"
+                },
+                {
+                  "value": "signal",
+                  "label": "Signal without checking"
+                },
+                {
+                  "value": "cover",
+                  "label": "Cover the light"
+                }
+              ],
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "title": "Navigation signal",
+          "request": "Repeat the authored harbor signal in the correct order.",
+          "tasks": [
+            {
+              "type": "sequence",
+              "prompt": "Transmit the welcome signal.",
+              "sequence": [
+                "short",
+                "short",
+                "long",
+                "short"
+              ],
+              "labels": {
+                "short": "Short flash",
+                "long": "Long flash"
+              },
+              "options": [
+                "short",
+                "long",
+                "short",
+                "short"
+              ]
+            },
+            {
+              "type": "number",
+              "prompt": "A signal repeats every 12 seconds. How many repetitions occur in one minute?",
+              "answer": 5,
+              "unit": "signals"
+            }
+          ]
+        },
+        {
+          "title": "Community evening",
+          "request": "Prepare the lookout for the neighbors.",
+          "tasks": [
+            {
+              "type": "set",
+              "prompt": "Choose the evening lookout supplies.",
+              "answer": [
+                "lantern",
+                "bench",
+                "blanket"
+              ],
+              "options": [
+                {
+                  "value": "lantern",
+                  "label": "Lantern"
+                },
+                {
+                  "value": "bench",
+                  "label": "Bench"
+                },
+                {
+                  "value": "blanket",
+                  "label": "Blanket"
+                },
+                {
+                  "value": "fishingRod",
+                  "label": "Fishingrod"
+                },
+                {
+                  "value": "stove",
+                  "label": "Stove"
+                }
+              ]
+            },
+            {
+              "type": "sequence",
+              "prompt": "Finish the harbor watch.",
+              "sequence": [
+                "check_path",
+                "light_lanterns",
+                "welcome_neighbors",
+                "log_signal"
+              ],
+              "labels": {
+                "check_path": "Check path",
+                "light_lanterns": "Light lanterns",
+                "welcome_neighbors": "Welcome neighbors",
+                "log_signal": "Log signal"
+              },
+              "options": [
+                "log_signal",
+                "welcome_neighbors",
+                "light_lanterns",
+                "check_path"
+              ]
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    },
+    "post-office": {
+      "id": "post-office",
+      "title": "Post Office sorting & postage",
+      "kind": "tasks",
+      "challenge": "venue-post-office",
+      "description": "Post Office sorting & postage — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "Local parcel",
+          "request": "Weigh the parcel, choose service, and calculate postage.",
+          "tasks": [
+            {
+              "type": "number",
+              "prompt": "The scale shows 0.75 kg. Enter the weight in grams.",
+              "answer": 750,
+              "unit": "g"
+            },
+            {
+              "type": "choice",
+              "prompt": "Local parcels up to 1 kg cost €3.20. Choose the correct label.",
+              "answer": "local_1",
+              "options": [
+                {
+                  "value": "letter",
+                  "label": "Letter €1.10"
+                },
+                {
+                  "value": "local_1",
+                  "label": "Local parcel up to 1 kg — €3.20"
+                },
+                {
+                  "value": "international",
+                  "label": "International parcel — €8.50"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "number",
+              "prompt": "The customer gives €5.00. How much change in cents?",
+              "answer": 180,
+              "unit": "cents"
+            }
+          ]
+        },
+        {
+          "title": "Address sorting",
+          "request": "Route letters using the postcode.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "Postcode 20xxx goes to the east district. Sort 20418.",
+              "answer": "east",
+              "options": [
+                {
+                  "value": "north",
+                  "label": "North route"
+                },
+                {
+                  "value": "east",
+                  "label": "East route"
+                },
+                {
+                  "value": "west",
+                  "label": "West route"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "sequence",
+              "prompt": "Prepare outgoing post.",
+              "sequence": [
+                "check_address",
+                "weigh",
+                "price",
+                "stamp",
+                "sort"
+              ],
+              "labels": {
+                "check_address": "Check address",
+                "weigh": "Weigh",
+                "price": "Price",
+                "stamp": "Stamp",
+                "sort": "Sort"
+              },
+              "options": [
+                "sort",
+                "stamp",
+                "price",
+                "weigh",
+                "check_address"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "International parcel",
+          "request": "A 1.4 kg parcel needs a customs note and the 2 kg service.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "Choose a service that covers 1.4 kg.",
+              "answer": "two_kg",
+              "options": [
+                {
+                  "value": "one_kg",
+                  "label": "Up to 1 kg"
+                },
+                {
+                  "value": "two_kg",
+                  "label": "Up to 2 kg"
+                },
+                {
+                  "value": "letter",
+                  "label": "Letter service"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "number",
+              "prompt": "Postage is €8.50 and the customer pays €10.00. Change in cents?",
+              "answer": 150,
+              "unit": "cents"
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    },
+    "school": {
+      "id": "school",
+      "title": "Town School sentence workshop",
+      "kind": "tasks",
+      "challenge": "venue-school",
+      "description": "Town School sentence workshop — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "Introduce yourself",
+          "request": "Build a complete introduction, then identify its purpose.",
+          "tasks": [
+            {
+              "type": "sentence",
+              "prompt": "Compose a polite introduction.",
+              "challenge": "hello-introduction"
+            },
+            {
+              "type": "choice",
+              "prompt": "Which part tells the listener who is speaking?",
+              "answer": "subject",
+              "options": [
+                {
+                  "value": "subject",
+                  "label": "The subject"
+                },
+                {
+                  "value": "punctuation",
+                  "label": "The final punctuation"
+                },
+                {
+                  "value": "adjective",
+                  "label": "A color adjective"
+                }
+              ],
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "title": "A polite request",
+          "request": "Turn an item into a useful request.",
+          "tasks": [
+            {
+              "type": "sentence",
+              "prompt": "Ask to borrow a book using a complete sentence.",
+              "challenge": "venue-library"
+            },
+            {
+              "type": "choice",
+              "prompt": "A polite request should include…",
+              "answer": "politeness",
+              "options": [
+                {
+                  "value": "command",
+                  "label": "Only a bare command"
+                },
+                {
+                  "value": "politeness",
+                  "label": "A request structure and appropriate politeness"
+                },
+                {
+                  "value": "noun",
+                  "label": "Only the item’s noun"
+                }
+              ],
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "title": "Explain your plan",
+          "request": "Connect a future action and its reason.",
+          "tasks": [
+            {
+              "type": "sentence",
+              "prompt": "Explain your garden plan.",
+              "challenge": "garden-plan"
+            },
+            {
+              "type": "sentence",
+              "prompt": "Arrange a meeting using a complete sentence.",
+              "challenge": "lantern-arrangements"
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    },
+    "clinic": {
+      "id": "clinic",
+      "title": "Clinic reception & priority desk",
+      "kind": "tasks",
+      "challenge": "venue-clinic",
+      "description": "Clinic reception & priority desk — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "Urgent arrival",
+          "request": "A visitor reports difficulty breathing. Route them to trained staff immediately.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "Reception priority?",
+              "answer": "urgent",
+              "options": [
+                {
+                  "value": "routine",
+                  "label": "Routine queue"
+                },
+                {
+                  "value": "urgent",
+                  "label": "Call the clinical team immediately"
+                },
+                {
+                  "value": "tomorrow",
+                  "label": "Offer an appointment next week"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "sequence",
+              "prompt": "Make the handover.",
+              "sequence": [
+                "alert_staff",
+                "confirm_location",
+                "record_arrival",
+                "handover"
+              ],
+              "labels": {
+                "alert_staff": "Alert staff",
+                "confirm_location": "Confirm location",
+                "record_arrival": "Record arrival",
+                "handover": "Handover"
+              },
+              "options": [
+                "handover",
+                "record_arrival",
+                "confirm_location",
+                "alert_staff"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Appointment booking",
+          "request": "A routine visitor needs an available appointment.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "The visitor can arrive after 14:00. Which appointment works?",
+              "answer": "1430",
+              "options": [
+                {
+                  "value": "0930",
+                  "label": "09:30"
+                },
+                {
+                  "value": "1330",
+                  "label": "13:30"
+                },
+                {
+                  "value": "1430",
+                  "label": "14:30"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "number",
+              "prompt": "An appointment starts at 14:30 and lasts 20 minutes. Enter the finishing minute past 14:00.",
+              "answer": 50,
+              "unit": "minutes"
+            }
+          ]
+        },
+        {
+          "title": "Privacy and supplies",
+          "request": "Keep reception records private and arrange clean supplies.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "A stranger asks for another visitor’s records.",
+              "answer": "private",
+              "options": [
+                {
+                  "value": "share",
+                  "label": "Read them aloud"
+                },
+                {
+                  "value": "private",
+                  "label": "Keep them private and refer the request to staff"
+                },
+                {
+                  "value": "display",
+                  "label": "Put them on the noticeboard"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "set",
+              "prompt": "Select the two cleaning supplies.",
+              "answer": [
+                "soap",
+                "towel"
+              ],
+              "options": [
+                {
+                  "value": "soap",
+                  "label": "Soap"
+                },
+                {
+                  "value": "towel",
+                  "label": "Towel"
+                },
+                {
+                  "value": "coffee",
+                  "label": "Coffee"
+                },
+                {
+                  "value": "fish",
+                  "label": "Fish"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    },
+    "workshop": {
+      "id": "workshop",
+      "title": "Repair Workshop assembly bench",
+      "kind": "tasks",
+      "challenge": "venue-workshop",
+      "description": "Repair Workshop assembly bench — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "A stable shelf",
+          "request": "Assemble a shelf from the parts diagram.",
+          "tasks": [
+            {
+              "type": "number",
+              "prompt": "Three brackets need two screws each. How many screws?",
+              "answer": 6,
+              "unit": "screws"
+            },
+            {
+              "type": "sequence",
+              "prompt": "Assemble the shelf.",
+              "sequence": [
+                "inspect_parts",
+                "measure",
+                "align_brackets",
+                "insert_screws",
+                "tighten",
+                "check_level"
+              ],
+              "labels": {
+                "inspect_parts": "Inspect parts",
+                "measure": "Measure",
+                "align_brackets": "Align brackets",
+                "insert_screws": "Insert screws",
+                "tighten": "Tighten",
+                "check_level": "Check level"
+              },
+              "options": [
+                "check_level",
+                "tighten",
+                "insert_screws",
+                "align_brackets",
+                "measure",
+                "inspect_parts"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Bicycle wheel",
+          "request": "Fit a wheel and inspect the repair.",
+          "tasks": [
+            {
+              "type": "set",
+              "prompt": "Choose the required workshop parts.",
+              "answer": [
+                "wheel",
+                "screw",
+                "toolbox"
+              ],
+              "options": [
+                {
+                  "value": "wheel",
+                  "label": "Wheel"
+                },
+                {
+                  "value": "screw",
+                  "label": "Screw"
+                },
+                {
+                  "value": "toolbox",
+                  "label": "Toolbox"
+                },
+                {
+                  "value": "cup",
+                  "label": "Cup"
+                },
+                {
+                  "value": "pillow",
+                  "label": "Pillow"
+                }
+              ]
+            },
+            {
+              "type": "sequence",
+              "prompt": "Complete the wheel repair.",
+              "sequence": [
+                "support_bicycle",
+                "remove_old_wheel",
+                "align_new_wheel",
+                "fasten",
+                "test_spin"
+              ],
+              "labels": {
+                "support_bicycle": "Support bicycle",
+                "remove_old_wheel": "Remove old wheel",
+                "align_new_wheel": "Align new wheel",
+                "fasten": "Fasten",
+                "test_spin": "Test spin"
+              },
+              "options": [
+                "test_spin",
+                "fasten",
+                "align_new_wheel",
+                "remove_old_wheel",
+                "support_bicycle"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Repair estimate",
+          "request": "Quote parts and labor accurately.",
+          "tasks": [
+            {
+              "type": "number",
+              "prompt": "Parts cost €7 and labor costs €12. What is the total in cents?",
+              "answer": 1900,
+              "unit": "cents"
+            },
+            {
+              "type": "choice",
+              "prompt": "A repaired shelf still wobbles.",
+              "answer": "recheck",
+              "options": [
+                {
+                  "value": "return",
+                  "label": "Return it as finished"
+                },
+                {
+                  "value": "recheck",
+                  "label": "Inspect the joints and correct the problem"
+                },
+                {
+                  "value": "hide",
+                  "label": "Hide it behind a curtain"
+                }
+              ],
+              "explanation": ""
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    },
+    "library": {
+      "id": "library",
+      "title": "Library lending & return desk",
+      "kind": "tasks",
+      "challenge": "venue-library",
+      "description": "Library lending & return desk — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "A book return",
+          "request": "Return a borrowed title to the catalogue.",
+          "tasks": [
+            {
+              "type": "sequence",
+              "prompt": "Process a returned book.",
+              "sequence": [
+                "scan_record",
+                "check_condition",
+                "clear_loan",
+                "classify",
+                "shelve"
+              ],
+              "labels": {
+                "scan_record": "Scan record",
+                "check_condition": "Check condition",
+                "clear_loan": "Clear loan",
+                "classify": "Classify",
+                "shelve": "Shelve"
+              },
+              "options": [
+                "shelve",
+                "classify",
+                "clear_loan",
+                "check_condition",
+                "scan_record"
+              ]
+            },
+            {
+              "type": "choice",
+              "prompt": "A gardening handbook belongs under…",
+              "answer": "gardening",
+              "options": [
+                {
+                  "value": "gardening",
+                  "label": "Practical gardening"
+                },
+                {
+                  "value": "travel",
+                  "label": "Rail travel"
+                },
+                {
+                  "value": "music",
+                  "label": "Music scores"
+                }
+              ],
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "title": "A new loan",
+          "request": "A reader wants to borrow a book for 14 days.",
+          "tasks": [
+            {
+              "type": "number",
+              "prompt": "A loan begins on day 6 of a 30-day month. What is its due day?",
+              "answer": 20,
+              "unit": "day"
+            },
+            {
+              "type": "sentence",
+              "prompt": "Explain the borrowing request in a complete sentence.",
+              "challenge": "venue-library"
+            }
+          ]
+        },
+        {
+          "title": "Reservation shelf",
+          "request": "Keep reserved books available to the right reader.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "A reserved book is for Mei. Another reader asks for it.",
+              "answer": "hold",
+              "options": [
+                {
+                  "value": "lend",
+                  "label": "Lend it without checking"
+                },
+                {
+                  "value": "hold",
+                  "label": "Keep the reservation and offer another copy"
+                },
+                {
+                  "value": "hide",
+                  "label": "Hide the reservation record"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "number",
+              "prompt": "The library owns five copies, three are on loan and one is reserved. How many are freely available?",
+              "answer": 1,
+              "unit": "copy"
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    },
+    "hotel": {
+      "id": "hotel",
+      "title": "Hearth Hotel reservations & reception",
+      "kind": "tasks",
+      "challenge": "venue-hotel",
+      "description": "Hearth Hotel reservations & reception — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "Family reservation",
+          "request": "Allocate a room that can hold the whole party.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "Two adults and one child need three sleeping places.",
+              "answer": "family",
+              "options": [
+                {
+                  "value": "single",
+                  "label": "Single room — 1 place"
+                },
+                {
+                  "value": "double",
+                  "label": "Double room — 2 places"
+                },
+                {
+                  "value": "family",
+                  "label": "Family room — 3 places"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "number",
+              "prompt": "A room costs €84 per night for two nights. Total in cents?",
+              "answer": 16800,
+              "unit": "cents"
+            }
+          ]
+        },
+        {
+          "title": "Check-in sequence",
+          "request": "Prepare keys only after confirming the reservation.",
+          "tasks": [
+            {
+              "type": "sequence",
+              "prompt": "Check the guest in.",
+              "sequence": [
+                "greet",
+                "find_booking",
+                "confirm_details",
+                "explain_stay",
+                "issue_key"
+              ],
+              "labels": {
+                "greet": "Greet",
+                "find_booking": "Find booking",
+                "confirm_details": "Confirm details",
+                "explain_stay": "Explain stay",
+                "issue_key": "Issue key"
+              },
+              "options": [
+                "issue_key",
+                "explain_stay",
+                "confirm_details",
+                "find_booking",
+                "greet"
+              ]
+            },
+            {
+              "type": "choice",
+              "prompt": "A guest asks for a quiet room.",
+              "answer": "courtyard",
+              "options": [
+                {
+                  "value": "street",
+                  "label": "Room above the nightclub"
+                },
+                {
+                  "value": "courtyard",
+                  "label": "Available courtyard room"
+                },
+                {
+                  "value": "lift",
+                  "label": "Room beside the busy lift"
+                }
+              ],
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "title": "Check-out",
+          "request": "Calculate the stay and prepare the room for the next guest.",
+          "tasks": [
+            {
+              "type": "number",
+              "prompt": "The room costs €168 and breakfast costs €24. A €50 deposit was paid. What remains in cents?",
+              "answer": 14200,
+              "unit": "cents"
+            },
+            {
+              "type": "sequence",
+              "prompt": "Close the stay.",
+              "sequence": [
+                "confirm_bill",
+                "take_payment",
+                "receive_key",
+                "close_booking",
+                "notify_housekeeping"
+              ],
+              "labels": {
+                "confirm_bill": "Confirm bill",
+                "take_payment": "Take payment",
+                "receive_key": "Receive key",
+                "close_booking": "Close booking",
+                "notify_housekeeping": "Notify housekeeping"
+              },
+              "options": [
+                "notify_housekeeping",
+                "close_booking",
+                "receive_key",
+                "take_payment",
+                "confirm_bill"
+              ]
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    },
+    "tailor": {
+      "id": "tailor",
+      "title": "Tailor outfit & alteration studio",
+      "kind": "tasks",
+      "challenge": "venue-tailor",
+      "description": "Tailor outfit & alteration studio — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "Rainy-day outfit",
+          "request": "Choose clothes for a cold, rainy walk.",
+          "tasks": [
+            {
+              "type": "set",
+              "prompt": "Prepare the practical weather outfit.",
+              "answer": [
+                "coat",
+                "scarf",
+                "shoe",
+                "umbrella"
+              ],
+              "options": [
+                {
+                  "value": "coat",
+                  "label": "Coat"
+                },
+                {
+                  "value": "scarf",
+                  "label": "Scarf"
+                },
+                {
+                  "value": "shoe",
+                  "label": "Shoe"
+                },
+                {
+                  "value": "umbrella",
+                  "label": "Umbrella"
+                },
+                {
+                  "value": "dress",
+                  "label": "Dress"
+                },
+                {
+                  "value": "hat",
+                  "label": "Hat"
+                }
+              ]
+            },
+            {
+              "type": "choice",
+              "prompt": "A coat sleeve is 4 cm too long. The requested alteration is…",
+              "answer": "shorten",
+              "options": [
+                {
+                  "value": "lengthen",
+                  "label": "Lengthen it by 4 cm"
+                },
+                {
+                  "value": "shorten",
+                  "label": "Shorten it by 4 cm"
+                },
+                {
+                  "value": "double",
+                  "label": "Double its length"
+                }
+              ],
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "title": "Measure twice",
+          "request": "Record measurements before cutting.",
+          "tasks": [
+            {
+              "type": "sequence",
+              "prompt": "Prepare an alteration.",
+              "sequence": [
+                "ask_fit",
+                "measure",
+                "mark",
+                "confirm",
+                "cut",
+                "sew"
+              ],
+              "labels": {
+                "ask_fit": "Ask fit",
+                "measure": "Measure",
+                "mark": "Mark",
+                "confirm": "Confirm",
+                "cut": "Cut",
+                "sew": "Sew"
+              },
+              "options": [
+                "sew",
+                "cut",
+                "confirm",
+                "mark",
+                "measure",
+                "ask_fit"
+              ]
+            },
+            {
+              "type": "number",
+              "prompt": "A hem is 92 cm and must be shortened by 7 cm. New length?",
+              "answer": 85,
+              "unit": "cm"
+            }
+          ]
+        },
+        {
+          "title": "Evening fitting",
+          "request": "Prepare an evening outfit and explain the fitting.",
+          "tasks": [
+            {
+              "type": "set",
+              "prompt": "Choose the evening outfit.",
+              "answer": [
+                "dress",
+                "shoe",
+                "jacket"
+              ],
+              "options": [
+                {
+                  "value": "dress",
+                  "label": "Dress"
+                },
+                {
+                  "value": "shoe",
+                  "label": "Shoe"
+                },
+                {
+                  "value": "jacket",
+                  "label": "Jacket"
+                },
+                {
+                  "value": "wateringCan",
+                  "label": "Wateringcan"
+                },
+                {
+                  "value": "toolbox",
+                  "label": "Toolbox"
+                }
+              ]
+            },
+            {
+              "type": "number",
+              "prompt": "Fabric costs €18 and alteration work €22. Total in cents?",
+              "answer": 4000,
+              "unit": "cents"
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    },
+    "station": {
+      "id": "station",
+      "title": "Town Station route & fare desk",
+      "kind": "tasks",
+      "challenge": "venue-station",
+      "description": "Town Station route & fare desk — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "The direct train",
+          "request": "Help a visitor reach the harbor with fewest changes.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "Which route requires no transfer?",
+              "answer": "direct",
+              "options": [
+                {
+                  "value": "via_school",
+                  "label": "Town → School → Harbor"
+                },
+                {
+                  "value": "direct",
+                  "label": "Town → Harbor"
+                },
+                {
+                  "value": "via_garden",
+                  "label": "Town → Garden → School → Harbor"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "number",
+              "prompt": "An adult ticket is €3.40. Two adults travel. Total in cents?",
+              "answer": 680,
+              "unit": "cents"
+            }
+          ]
+        },
+        {
+          "title": "Connection time",
+          "request": "Allow enough time to change trains.",
+          "tasks": [
+            {
+              "type": "number",
+              "prompt": "Your train arrives at 10:42 and the next leaves at 10:55. How many minutes to change?",
+              "answer": 13,
+              "unit": "minutes"
+            },
+            {
+              "type": "choice",
+              "prompt": "A traveler needs step-free access.",
+              "answer": "lift",
+              "options": [
+                {
+                  "value": "stairs",
+                  "label": "Direct them to stairs only"
+                },
+                {
+                  "value": "lift",
+                  "label": "Use the signed lift route"
+                },
+                {
+                  "value": "track",
+                  "label": "Cross the railway tracks"
+                }
+              ],
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "title": "Best fare",
+          "request": "Choose the fare for several journeys.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "Three single journeys cost €10.20. A day pass costs €8.00. Best fare?",
+              "answer": "day",
+              "options": [
+                {
+                  "value": "single",
+                  "label": "Three singles"
+                },
+                {
+                  "value": "day",
+                  "label": "The €8 day pass"
+                },
+                {
+                  "value": "two",
+                  "label": "Two singles for three journeys"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "number",
+              "prompt": "A customer gives €10 for the €8 day pass. Change in cents?",
+              "answer": 200,
+              "unit": "cents"
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    },
+    "museum": {
+      "id": "museum",
+      "title": "Museum collection & exhibit desk",
+      "kind": "tasks",
+      "challenge": "venue-museum",
+      "description": "Museum collection & exhibit desk — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "Object catalogue",
+          "request": "Describe a donated object before placing it on display.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "An old painted ceramic bowl is primarily made of…",
+              "answer": "ceramic",
+              "options": [
+                {
+                  "value": "wood",
+                  "label": "Wood"
+                },
+                {
+                  "value": "ceramic",
+                  "label": "Ceramic"
+                },
+                {
+                  "value": "textile",
+                  "label": "Textile"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "sequence",
+              "prompt": "Register the donation.",
+              "sequence": [
+                "record_owner",
+                "photograph",
+                "measure",
+                "describe",
+                "catalogue",
+                "store"
+              ],
+              "labels": {
+                "record_owner": "Record owner",
+                "photograph": "Photograph",
+                "measure": "Measure",
+                "describe": "Describe",
+                "catalogue": "Catalogue",
+                "store": "Store"
+              },
+              "options": [
+                "store",
+                "catalogue",
+                "describe",
+                "measure",
+                "photograph",
+                "record_owner"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Exhibit dates",
+          "request": "Prepare a consistent exhibition label.",
+          "tasks": [
+            {
+              "type": "number",
+              "prompt": "An artifact was made in 1920 and displayed in 2020. How old was it then?",
+              "answer": 100,
+              "unit": "years"
+            },
+            {
+              "type": "set",
+              "prompt": "Select the three catalogue tools.",
+              "answer": [
+                "camera",
+                "paper",
+                "pencil"
+              ],
+              "options": [
+                {
+                  "value": "camera",
+                  "label": "Camera"
+                },
+                {
+                  "value": "paper",
+                  "label": "Paper"
+                },
+                {
+                  "value": "pencil",
+                  "label": "Pencil"
+                },
+                {
+                  "value": "fish",
+                  "label": "Fish"
+                },
+                {
+                  "value": "bread",
+                  "label": "Bread"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Conservation check",
+          "request": "Handle fragile objects appropriately.",
+          "tasks": [
+            {
+              "type": "choice",
+              "prompt": "A fragile object has a new crack.",
+              "answer": "report",
+              "options": [
+                {
+                  "value": "glue",
+                  "label": "Repair it yourself without a record"
+                },
+                {
+                  "value": "report",
+                  "label": "Stop handling it and notify the conservator"
+                },
+                {
+                  "value": "display",
+                  "label": "Hide the crack in the display"
+                }
+              ],
+              "explanation": ""
+            },
+            {
+              "type": "sequence",
+              "prompt": "Close the exhibit record.",
+              "sequence": [
+                "check_label",
+                "check_case",
+                "record_condition",
+                "sign_log"
+              ],
+              "labels": {
+                "check_label": "Check label",
+                "check_case": "Check case",
+                "record_condition": "Record condition",
+                "sign_log": "Sign log"
+              },
+              "options": [
+                "sign_log",
+                "record_condition",
+                "check_case",
+                "check_label"
+              ]
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    },
+    "bank": {
+      "id": "bank",
+      "title": "Bank denomination & exchange desk",
+      "kind": "tasks",
+      "challenge": "venue-bank",
+      "description": "Bank denomination & exchange desk — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "Exact change",
+          "request": "Prepare €4.85 using the available denominations.",
+          "tasks": [
+            {
+              "type": "change",
+              "prompt": "Make exactly €4.85. Values on the buttons are cents.",
+              "answer": 485,
+              "denominations": [
+                200,
+                100,
+                50,
+                20,
+                10,
+                5
+              ]
+            },
+            {
+              "type": "number",
+              "prompt": "A visitor deposits €25 and withdraws €8. What is the net increase in cents?",
+              "answer": 1700,
+              "unit": "cents"
+            }
+          ]
+        },
+        {
+          "title": "Cash exchange",
+          "request": "Change a note into smaller denominations.",
+          "tasks": [
+            {
+              "type": "change",
+              "prompt": "Exchange €10.00 using €2, €1 and 50-cent coins.",
+              "answer": 1000,
+              "denominations": [
+                200,
+                100,
+                50
+              ]
+            },
+            {
+              "type": "choice",
+              "prompt": "Before changing money you should…",
+              "answer": "confirm",
+              "options": [
+                {
+                  "value": "confirm",
+                  "label": "Confirm the amount and requested denominations"
+                },
+                {
+                  "value": "guess",
+                  "label": "Guess the requested amount"
+                },
+                {
+                  "value": "skip",
+                  "label": "Skip counting"
+                }
+              ],
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "title": "Balance check",
+          "request": "Count and confirm before handing over cash.",
+          "tasks": [
+            {
+              "type": "number",
+              "prompt": "The account has €83. A €17 deposit and €26 withdrawal follow. Balance in cents?",
+              "answer": 7400,
+              "unit": "cents"
+            },
+            {
+              "type": "sequence",
+              "prompt": "Finish the cash transaction.",
+              "sequence": [
+                "count",
+                "confirm_amount",
+                "issue_receipt",
+                "hand_over"
+              ],
+              "labels": {
+                "count": "Count",
+                "confirm_amount": "Confirm amount",
+                "issue_receipt": "Issue receipt",
+                "hand_over": "Hand over"
+              },
+              "options": [
+                "hand_over",
+                "issue_receipt",
+                "confirm_amount",
+                "count"
+              ]
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    },
+    "cinema": {
+      "id": "cinema",
+      "title": "Cinema tickets & seat booking",
+      "kind": "tasks",
+      "challenge": "venue-cinema",
+      "description": "Cinema tickets & seat booking — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "Two seats together",
+          "request": "Book two adjacent seats in the same row.",
+          "tasks": [
+            {
+              "type": "seats",
+              "prompt": "Reserve two adjacent free seats in one row.",
+              "count": 2,
+              "rows": [
+                "A",
+                "B",
+                "C"
+              ],
+              "columns": 6,
+              "occupied": [
+                "A1",
+                "A2",
+                "B3",
+                "C5"
+              ],
+              "accessible": false
+            },
+            {
+              "type": "number",
+              "prompt": "Two tickets cost €8 each. Total in cents?",
+              "answer": 1600,
+              "unit": "cents"
+            }
+          ]
+        },
+        {
+          "title": "Accessible booking",
+          "request": "Choose the marked step-free seating row.",
+          "tasks": [
+            {
+              "type": "seats",
+              "prompt": "Reserve one free accessible seat in row A.",
+              "count": 1,
+              "rows": [
+                "A",
+                "B",
+                "C"
+              ],
+              "columns": 6,
+              "occupied": [
+                "A1",
+                "A2",
+                "B3",
+                "C5"
+              ],
+              "accessible": true
+            },
+            {
+              "type": "choice",
+              "prompt": "The film starts at 19:00. A visitor arrives at 18:45.",
+              "answer": "early",
+              "options": [
+                {
+                  "value": "late",
+                  "label": "They are 15 minutes late"
+                },
+                {
+                  "value": "early",
+                  "label": "They are 15 minutes early"
+                },
+                {
+                  "value": "hour",
+                  "label": "They are one hour early"
+                }
+              ],
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "title": "Family booking",
+          "request": "Keep three visitors seated together.",
+          "tasks": [
+            {
+              "type": "seats",
+              "prompt": "Reserve three adjacent free seats in one row.",
+              "count": 3,
+              "rows": [
+                "A",
+                "B",
+                "C"
+              ],
+              "columns": 6,
+              "occupied": [
+                "A1",
+                "A2",
+                "B3",
+                "C5"
+              ],
+              "accessible": false
+            },
+            {
+              "type": "number",
+              "prompt": "A family ticket is €21. The customer pays €25. Change in cents?",
+              "answer": 400,
+              "unit": "cents"
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    },
+    "nightlife": {
+      "id": "nightlife",
+      "title": "Lantern Club rhythm & guest desk",
+      "kind": "tasks",
+      "challenge": "venue-nightlife",
+      "description": "Lantern Club rhythm & guest desk — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "Warm-up groove",
+          "request": "Follow four evenly spaced beats.",
+          "tasks": [
+            {
+              "type": "rhythm",
+              "prompt": "Tap once to start, then tap four times with 600 ms between beats.",
+              "intervals": [
+                600,
+                600,
+                600,
+                600
+              ]
+            },
+            {
+              "type": "sequence",
+              "prompt": "Repeat the dance-floor direction pattern.",
+              "sequence": [
+                "left",
+                "right",
+                "left",
+                "forward"
+              ],
+              "labels": {
+                "left": "Left",
+                "right": "Right",
+                "forward": "Forward"
+              },
+              "options": [
+                "forward",
+                "left",
+                "right",
+                "left"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "A changing rhythm",
+          "request": "Listen to the long beat in the middle.",
+          "tasks": [
+            {
+              "type": "rhythm",
+              "prompt": "Tap once to start; follow 500, 500, 1000, 500 ms gaps.",
+              "intervals": [
+                500,
+                500,
+                1000,
+                500
+              ]
+            },
+            {
+              "type": "choice",
+              "prompt": "The quiet lounge closes at 23:00. It is now 22:30.",
+              "answer": "thirty",
+              "options": [
+                {
+                  "value": "ten",
+                  "label": "Ten minutes remain"
+                },
+                {
+                  "value": "thirty",
+                  "label": "Thirty minutes remain"
+                },
+                {
+                  "value": "hour",
+                  "label": "One hour remains"
+                }
+              ],
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "title": "Final club pattern",
+          "request": "Alternate shorter and longer beats.",
+          "tasks": [
+            {
+              "type": "rhythm",
+              "prompt": "Tap once to start; follow 450, 900, 450, 900 ms gaps.",
+              "intervals": [
+                450,
+                900,
+                450,
+                900
+              ]
+            },
+            {
+              "type": "sequence",
+              "prompt": "Finish the dance pattern.",
+              "sequence": [
+                "forward",
+                "left",
+                "back",
+                "right"
+              ],
+              "labels": {
+                "forward": "Forward",
+                "left": "Left",
+                "back": "Back",
+                "right": "Right"
+              },
+              "options": [
+                "right",
+                "back",
+                "left",
+                "forward"
+              ]
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    },
+    "music-studio": {
+      "id": "music-studio",
+      "title": "Music Studio rehearsal sessions",
+      "kind": "tasks",
+      "challenge": "venue-music-studio",
+      "description": "Music Studio rehearsal sessions — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "First melody",
+          "request": "Play the notes in the rehearsal score.",
+          "tasks": [
+            {
+              "type": "sequence",
+              "prompt": "Play C, D, E, G, then E. Each key produces its own note.",
+              "sequence": [
+                "C",
+                "D",
+                "E",
+                "G",
+                "E"
+              ],
+              "options": [
+                "C",
+                "D",
+                "E",
+                "F",
+                "G",
+                "A",
+                "B"
+              ],
+              "labels": {
+                "C": "C",
+                "D": "D",
+                "E": "E",
+                "F": "F",
+                "G": "G",
+                "A": "A",
+                "B": "B"
+              },
+              "musical": true
+            },
+            {
+              "type": "number",
+              "prompt": "Four bars have four beats each. Total beats?",
+              "answer": 16,
+              "unit": "beats"
+            }
+          ]
+        },
+        {
+          "title": "Rhythm rehearsal",
+          "request": "Keep a steady tempo before recording.",
+          "tasks": [
+            {
+              "type": "rhythm",
+              "prompt": "Tap once to start, then four beats with 750 ms gaps (80 BPM).",
+              "intervals": [
+                750,
+                750,
+                750,
+                750
+              ]
+            },
+            {
+              "type": "sequence",
+              "prompt": "Play the descending phrase G, E, D, C.",
+              "sequence": [
+                "G",
+                "E",
+                "D",
+                "C"
+              ],
+              "options": [
+                "C",
+                "D",
+                "E",
+                "F",
+                "G",
+                "A",
+                "B"
+              ],
+              "labels": {
+                "C": "C",
+                "D": "D",
+                "E": "E",
+                "F": "F",
+                "G": "G",
+                "A": "A",
+                "B": "B"
+              },
+              "musical": true
+            }
+          ]
+        },
+        {
+          "title": "Recording take",
+          "request": "Prepare the studio and perform the final phrase.",
+          "tasks": [
+            {
+              "type": "sequence",
+              "prompt": "Prepare a recording.",
+              "sequence": [
+                "tune",
+                "check_levels",
+                "count_in",
+                "record",
+                "listen_back"
+              ],
+              "labels": {
+                "tune": "Tune",
+                "check_levels": "Check levels",
+                "count_in": "Count in",
+                "record": "Record",
+                "listen_back": "Listen back"
+              },
+              "options": [
+                "listen_back",
+                "record",
+                "count_in",
+                "check_levels",
+                "tune"
+              ]
+            },
+            {
+              "type": "sequence",
+              "prompt": "Play C, E, G, A, G, E, C.",
+              "sequence": [
+                "C",
+                "E",
+                "G",
+                "A",
+                "G",
+                "E",
+                "C"
+              ],
+              "options": [
+                "C",
+                "D",
+                "E",
+                "F",
+                "G",
+                "A",
+                "B"
+              ],
+              "labels": {
+                "C": "C",
+                "D": "D",
+                "E": "E",
+                "F": "F",
+                "G": "G",
+                "A": "A",
+                "B": "B"
+              },
+              "musical": true
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    },
+    "sports-center": {
+      "id": "sports-center",
+      "title": "Sports Center coordination circuit",
+      "kind": "tasks",
+      "challenge": "venue-sports-center",
+      "description": "Sports Center coordination circuit — listen, respond, and complete real work.",
+      "rounds": [
+        {
+          "title": "Warm-up circuit",
+          "request": "Build coordination before speed.",
+          "tasks": [
+            {
+              "type": "sequence",
+              "prompt": "Complete the warm-up circuit.",
+              "sequence": [
+                "walk",
+                "shoulder_roll",
+                "side_step",
+                "gentle_jog"
+              ],
+              "labels": {
+                "walk": "Walk",
+                "shoulder_roll": "Shoulder roll",
+                "side_step": "Side step",
+                "gentle_jog": "Gentle jog"
+              },
+              "options": [
+                "gentle_jog",
+                "side_step",
+                "shoulder_roll",
+                "walk"
+              ]
+            },
+            {
+              "type": "rhythm",
+              "prompt": "Start, then alternate four controlled steps with 700 ms gaps.",
+              "intervals": [
+                700,
+                700,
+                700,
+                700
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Passing drill",
+          "request": "Alternate left and right passes without skipping a receiver.",
+          "tasks": [
+            {
+              "type": "sequence",
+              "prompt": "Pass in the marked order.",
+              "sequence": [
+                "left",
+                "center",
+                "right",
+                "center",
+                "left"
+              ],
+              "labels": {
+                "left": "Left receiver",
+                "center": "Center receiver",
+                "right": "Right receiver"
+              },
+              "options": [
+                "left",
+                "center",
+                "right",
+                "center",
+                "left"
+              ]
+            },
+            {
+              "type": "number",
+              "prompt": "A circuit has six stations. You complete three rounds. Total station visits?",
+              "answer": 18,
+              "unit": "visits"
+            }
+          ]
+        },
+        {
+          "title": "Pacing challenge",
+          "request": "Follow the slow–quick–quick–slow footwork pattern.",
+          "tasks": [
+            {
+              "type": "rhythm",
+              "prompt": "Start; follow 900, 450, 450, 900 ms gaps.",
+              "intervals": [
+                900,
+                450,
+                450,
+                900
+              ]
+            },
+            {
+              "type": "choice",
+              "prompt": "After the circuit, the best final step is…",
+              "answer": "cool_down",
+              "options": [
+                {
+                  "value": "stop",
+                  "label": "Stop suddenly with no recovery"
+                },
+                {
+                  "value": "cool_down",
+                  "label": "Cool down gradually and drink water"
+                },
+                {
+                  "value": "sprint",
+                  "label": "Sprint again immediately"
+                }
+              ],
+              "explanation": ""
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "xp": 60,
+        "coins": 18
+      }
+    }
+  },
+  "operations": {
+    "grind": "Grind the coffee beans",
+    "brew": "Brew the coffee",
+    "pour_coffee": "Pour the coffee",
+    "heat_water": "Heat the water",
+    "add_water": "Add the water",
+    "steep": "Steep the tea",
+    "pour_tea": "Pour the tea",
+    "heat_milk": "Warm the milk",
+    "pour_milk": "Pour the milk",
+    "froth": "Froth the warm milk",
+    "add_foam": "Spoon the milk foam",
+    "microfoam": "Make fine milk microfoam",
+    "dose_double": "Measure a double coffee dose",
+    "melt_chocolate": "Melt the chocolate",
+    "mix_chocolate": "Mix in the chocolate",
+    "stir_honey": "Stir in the honey",
+    "add_vanilla": "Add vanilla",
+    "cool_coffee": "Let the coffee cool",
+    "add_ice": "Put ice into the cup",
+    "slice_lemon": "Slice the lemon",
+    "garnish_lemon": "Garnish with lemon",
+    "crush_mint": "Gently crush the mint",
+    "garnish_mint": "Garnish with mint",
+    "add_cinnamon": "Add cinnamon",
+    "cool_tea": "Let the tea cool",
+    "garnish_cream": "Finish with cream",
+    "wash_fruit": "Wash the fruit",
+    "mash_fruit": "Mash the strawberries",
+    "mix": "Mix everything gently",
+    "peel_fruit": "Peel the banana",
+    "slice_fruit": "Slice the fruit",
+    "slice_bread": "Slice the bread",
+    "toast": "Toast the bread",
+    "spread_butter": "Spread the butter",
+    "plate_food": "Plate and present the food",
+    "wash_vegetables": "Wash the vegetables",
+    "slice_tomato": "Slice the tomatoes",
+    "slice_cheese": "Slice the cheese",
+    "assemble": "Assemble the sandwich",
+    "crack_eggs": "Crack the eggs",
+    "whisk": "Whisk the eggs and milk",
+    "heat_pan": "Heat the pan",
+    "melt_butter": "Melt the butter in the pan",
+    "cook": "Cook the egg mixture",
+    "fold": "Fold the omelette",
+    "slice_cucumber": "Slice the cucumber",
+    "chop_vegetables": "Chop the vegetables",
+    "simmer": "Simmer until tender",
+    "season": "Season the soup",
+    "boil_pasta": "Boil the pasta",
+    "cook_sauce": "Cook the tomato sauce",
+    "drain": "Drain the pasta",
+    "combine": "Combine pasta and sauce"
+  },
+  "order_templates": {
+    "de": [
+      "Ich hätte gern Folgendes: {dish}, bitte.",
+      "Könnten Sie bitte Folgendes frisch für mich zubereiten: {dish}?",
+      "Ich hätte gern Folgendes: {dish}. Bitte prüfen Sie zuerst die Zutaten und halten Sie dann die richtige Reihenfolge ein."
+    ],
+    "ja": [
+      "{dish}を一つお願いします。",
+      "{dish}を一つ、できたてでお願いできますか。",
+      "{dish}をお願いします。材料を確認してから、手順どおりに作っていただけますか。"
+    ],
+    "es": [
+      "Quisiera {dish}, por favor.",
+      "¿Podría prepararme {dish} al momento, por favor?",
+      "Quisiera {dish}. Por favor, compruebe primero los ingredientes y siga después el orden de preparación."
+    ],
+    "zh": [
+      "请给我一份{dish}。",
+      "请帮我现做一份{dish}，好吗？",
+      "我想要一份{dish}。请先检查原料，然后按照正确的步骤制作。"
+    ]
+  }
+}

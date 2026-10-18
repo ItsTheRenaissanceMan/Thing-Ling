@@ -1,4 +1,6 @@
-# The complete island campaign
+# Historical browser campaign — version 1.1
+
+This document records the earlier browser edition. The current native game has a walkable town, building interiors, expanded story stages and venue jobs; use the [native player manual](NATIVE_GAME.md) and [native validation record](NATIVE_VALIDATION.md) for version 2.0. Counts and controls below apply only to browser version 1.1.
 
 Thing Ling now has **12 playable missions, each with its own authored map**, plus the Lantern Village hub: **13 maps in total**. The world contains **471 placed props**. Building parts, tree parts, terrain, paths, and water add further discoverable instances beyond that placement count. The wordbook contains **179 noun entries in each of German, Japanese, Spanish, and Mandarin Chinese**.
 

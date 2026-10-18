@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "engine": "4.6.3.stable.official.7d41c59c4",
+  "platform": "Windows x86-64",
+  "standalone": true,
+  "embeddedPck": true,
+  "executableBytes": 154871904,
+  "executableSha256": "d2ef659aeafdde9c62617c0ebfa697d8a1826489090f3065df9027d89cf4974d",
+  "archiveBytes": 58860653,
+  "archiveSha256": "69c585e1f47e485cfba30c5861147dac86ba5bf459b397ab72e3d447a4cb7d10"
+}

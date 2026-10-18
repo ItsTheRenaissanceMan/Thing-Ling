@@ -1,0 +1,327 @@
+{
+  "version": 1,
+  "original": true,
+  "sampleRate": 22050,
+  "durationSeconds": 24,
+  "profiles": {
+    "bakery": {
+      "path": "res://audio/environment-bakery.wav",
+      "kind": "bakery",
+      "durationSeconds": 24,
+      "rms": 0.02399
+    },
+    "bank": {
+      "path": "res://audio/environment-bank.wav",
+      "kind": "bank",
+      "durationSeconds": 24,
+      "rms": 0.01599
+    },
+    "cafe": {
+      "path": "res://audio/environment-cafe.wav",
+      "kind": "cafe",
+      "durationSeconds": 24,
+      "rms": 0.02599
+    },
+    "cinema": {
+      "path": "res://audio/environment-cinema.wav",
+      "kind": "cinema",
+      "durationSeconds": 24,
+      "rms": 0.01599
+    },
+    "clinic": {
+      "path": "res://audio/environment-clinic.wav",
+      "kind": "clinic",
+      "durationSeconds": 24,
+      "rms": 0.016
+    },
+    "conservatory": {
+      "path": "res://audio/environment-conservatory.wav",
+      "kind": "conservatory",
+      "durationSeconds": 24,
+      "rms": 0.01599
+    },
+    "cottage": {
+      "path": "res://audio/environment-cottage.wav",
+      "kind": "home",
+      "durationSeconds": 24,
+      "rms": 0.01599
+    },
+    "courtyard": {
+      "path": "res://audio/environment-courtyard.wav",
+      "kind": "garden",
+      "durationSeconds": 24,
+      "rms": 0.02399
+    },
+    "cove": {
+      "path": "res://audio/environment-cove.wav",
+      "kind": "coast",
+      "durationSeconds": 24,
+      "rms": 0.04499
+    },
+    "exchange": {
+      "path": "res://audio/environment-exchange.wav",
+      "kind": "post",
+      "durationSeconds": 24,
+      "rms": 0.01599
+    },
+    "garden": {
+      "path": "res://audio/environment-garden.wav",
+      "kind": "garden",
+      "durationSeconds": 24,
+      "rms": 0.02399
+    },
+    "hotel": {
+      "path": "res://audio/environment-hotel.wav",
+      "kind": "hotel",
+      "durationSeconds": 24,
+      "rms": 0.016
+    },
+    "library": {
+      "path": "res://audio/environment-library.wav",
+      "kind": "library",
+      "durationSeconds": 24,
+      "rms": 0.01599
+    },
+    "lighthouse": {
+      "path": "res://audio/environment-lighthouse.wav",
+      "kind": "lighthouse",
+      "durationSeconds": 24,
+      "rms": 0.03799
+    },
+    "museum": {
+      "path": "res://audio/environment-museum.wav",
+      "kind": "museum",
+      "durationSeconds": 24,
+      "rms": 0.01599
+    },
+    "music": {
+      "path": "res://audio/environment-music.wav",
+      "kind": "music",
+      "durationSeconds": 24,
+      "rms": 0.01599
+    },
+    "nightlife": {
+      "path": "res://audio/environment-nightlife.wav",
+      "kind": "club",
+      "durationSeconds": 24,
+      "rms": 0.06477
+    },
+    "orchard": {
+      "path": "res://audio/environment-orchard.wav",
+      "kind": "orchard",
+      "durationSeconds": 24,
+      "rms": 0.02399
+    },
+    "post": {
+      "path": "res://audio/environment-post.wav",
+      "kind": "post",
+      "durationSeconds": 24,
+      "rms": 0.01599
+    },
+    "restaurant": {
+      "path": "res://audio/environment-restaurant.wav",
+      "kind": "restaurant",
+      "durationSeconds": 24,
+      "rms": 0.02499
+    },
+    "sanctuary": {
+      "path": "res://audio/environment-sanctuary.wav",
+      "kind": "sanctuary",
+      "durationSeconds": 24,
+      "rms": 0.02399
+    },
+    "school": {
+      "path": "res://audio/environment-school.wav",
+      "kind": "school",
+      "durationSeconds": 24,
+      "rms": 0.01599
+    },
+    "sports": {
+      "path": "res://audio/environment-sports.wav",
+      "kind": "sports",
+      "durationSeconds": 24,
+      "rms": 0.01599
+    },
+    "station": {
+      "path": "res://audio/environment-station.wav",
+      "kind": "station",
+      "durationSeconds": 24,
+      "rms": 0.02999
+    },
+    "supermarket": {
+      "path": "res://audio/environment-supermarket.wav",
+      "kind": "market",
+      "durationSeconds": 24,
+      "rms": 0.02599
+    },
+    "tailor": {
+      "path": "res://audio/environment-tailor.wav",
+      "kind": "tailor",
+      "durationSeconds": 24,
+      "rms": 0.01599
+    },
+    "tea": {
+      "path": "res://audio/environment-tea.wav",
+      "kind": "cafe",
+      "durationSeconds": 24,
+      "rms": 0.02599
+    },
+    "town": {
+      "path": "res://audio/environment-town.wav",
+      "kind": "town",
+      "durationSeconds": 24,
+      "rms": 0.03199
+    },
+    "workshop": {
+      "path": "res://audio/environment-workshop.wav",
+      "kind": "workshop",
+      "durationSeconds": 24,
+      "rms": 0.01599
+    },
+    "music-studio": {
+      "path": "res://audio/environment-music.wav",
+      "kind": "music",
+      "durationSeconds": 24,
+      "rms": 0.01599
+    },
+    "sports-center": {
+      "path": "res://audio/environment-sports.wav",
+      "kind": "sports",
+      "durationSeconds": 24,
+      "rms": 0.01599
+    },
+    "little-hello": {
+      "path": "res://audio/environment-courtyard.wav",
+      "kind": "garden",
+      "durationSeconds": 24,
+      "rms": 0.02399
+    },
+    "post-office": {
+      "path": "res://audio/environment-post.wav",
+      "kind": "post",
+      "durationSeconds": 24,
+      "rms": 0.01599
+    },
+    "kettle-on": {
+      "path": "res://audio/environment-tea.wav",
+      "kind": "cafe",
+      "durationSeconds": 24,
+      "rms": 0.02599
+    },
+    "breakfast-club": {
+      "path": "res://audio/environment-bakery.wav",
+      "kind": "bakery",
+      "durationSeconds": 24,
+      "rms": 0.02399
+    },
+    "lantern-cafe": {
+      "path": "res://audio/environment-cafe.wav",
+      "kind": "cafe",
+      "durationSeconds": 24,
+      "rms": 0.02599
+    },
+    "first-seedlings": {
+      "path": "res://audio/environment-garden.wav",
+      "kind": "garden",
+      "durationSeconds": 24,
+      "rms": 0.02399
+    },
+    "orchard-colors": {
+      "path": "res://audio/environment-orchard.wav",
+      "kind": "orchard",
+      "durationSeconds": 24,
+      "rms": 0.02399
+    },
+    "small-neighbors": {
+      "path": "res://audio/environment-sanctuary.wav",
+      "kind": "sanctuary",
+      "durationSeconds": 24,
+      "rms": 0.02399
+    },
+    "garden-in-bloom": {
+      "path": "res://audio/environment-conservatory.wav",
+      "kind": "conservatory",
+      "durationSeconds": 24,
+      "rms": 0.01599
+    },
+    "homecoming-parcel": {
+      "path": "res://audio/environment-cottage.wav",
+      "kind": "home",
+      "durationSeconds": 24,
+      "rms": 0.01599
+    },
+    "water-edge": {
+      "path": "res://audio/environment-cove.wav",
+      "kind": "coast",
+      "durationSeconds": 24,
+      "rms": 0.04499
+    },
+    "lost-and-found": {
+      "path": "res://audio/environment-exchange.wav",
+      "kind": "post",
+      "durationSeconds": 24,
+      "rms": 0.01599
+    },
+    "harbor-lanterns": {
+      "path": "res://audio/environment-lighthouse.wav",
+      "kind": "lighthouse",
+      "durationSeconds": 24,
+      "rms": 0.03799
+    },
+    "village": {
+      "path": "res://audio/environment-town.wav",
+      "kind": "town",
+      "durationSeconds": 24,
+      "rms": 0.03199
+    },
+    "tea-house": {
+      "path": "res://audio/environment-cafe.wav",
+      "kind": "cafe",
+      "durationSeconds": 24,
+      "rms": 0.02599
+    },
+    "market": {
+      "path": "res://audio/environment-supermarket.wav",
+      "kind": "market",
+      "durationSeconds": 24,
+      "rms": 0.02599
+    },
+    "harbor": {
+      "path": "res://audio/environment-cove.wav",
+      "kind": "coast",
+      "durationSeconds": 24,
+      "rms": 0.04499
+    },
+    "home": {
+      "path": "res://audio/environment-cottage.wav",
+      "kind": "home",
+      "durationSeconds": 24,
+      "rms": 0.01599
+    },
+    "nightclub": {
+      "path": "res://audio/environment-nightlife.wav",
+      "kind": "club",
+      "durationSeconds": 24,
+      "rms": 0.06477
+    },
+    "club": {
+      "path": "res://audio/environment-nightlife.wav",
+      "kind": "club",
+      "durationSeconds": 24,
+      "rms": 0.06477
+    }
+  },
+  "effects": {
+    "footstep": "res://audio/effect-footstep.wav",
+    "interact": "res://audio/effect-interact.wav",
+    "collect": "res://audio/effect-collect.wav",
+    "use": "res://audio/effect-use.wav",
+    "door": "res://audio/effect-door.wav",
+    "success": "res://audio/effect-success.wav",
+    "failure": "res://audio/effect-failure.wav",
+    "transition": "res://audio/effect-transition.wav",
+    "coin": "res://audio/effect-coin.wav",
+    "talk": "res://audio/effect-talk.wav",
+    "click": "res://audio/effect-click.wav"
+  }
+}

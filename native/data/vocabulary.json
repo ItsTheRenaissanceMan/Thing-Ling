@@ -1,0 +1,6032 @@
+{
+  "languages": [
+    {
+      "id": "de",
+      "name": "German",
+      "native": "Deutsch",
+      "locale": "de-DE"
+    },
+    {
+      "id": "ja",
+      "name": "Japanese",
+      "native": "日本語",
+      "locale": "ja-JP"
+    },
+    {
+      "id": "es",
+      "name": "Spanish",
+      "native": "Español",
+      "locale": "es-ES"
+    },
+    {
+      "id": "zh",
+      "name": "Chinese",
+      "native": "中文",
+      "locale": "zh-CN"
+    }
+  ],
+  "words": [
+    {
+      "id": "apple",
+      "english": "apple",
+      "emoji": "🍎",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Apfel",
+          "reading": "Apfel"
+        },
+        "ja": {
+          "text": "りんご",
+          "reading": "ringo"
+        },
+        "es": {
+          "text": "manzana",
+          "reading": "manzana"
+        },
+        "zh": {
+          "text": "苹果",
+          "reading": "píngguǒ"
+        }
+      }
+    },
+    {
+      "id": "bread",
+      "english": "bread",
+      "emoji": "🍞",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Brot",
+          "reading": "Brot"
+        },
+        "ja": {
+          "text": "パン",
+          "reading": "pan"
+        },
+        "es": {
+          "text": "pan",
+          "reading": "pan"
+        },
+        "zh": {
+          "text": "面包",
+          "reading": "miànbāo"
+        }
+      }
+    },
+    {
+      "id": "coffee",
+      "english": "coffee",
+      "emoji": "☕",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Kaffee",
+          "reading": "Kaffee"
+        },
+        "ja": {
+          "text": "コーヒー",
+          "reading": "kōhī"
+        },
+        "es": {
+          "text": "café",
+          "reading": "café"
+        },
+        "zh": {
+          "text": "咖啡",
+          "reading": "kāfēi"
+        }
+      }
+    },
+    {
+      "id": "cup",
+      "english": "cup",
+      "emoji": "🍵",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Tasse",
+          "reading": "Tasse"
+        },
+        "ja": {
+          "text": "カップ",
+          "reading": "kappu"
+        },
+        "es": {
+          "text": "taza",
+          "reading": "taza"
+        },
+        "zh": {
+          "text": "杯子",
+          "reading": "bēizi"
+        }
+      }
+    },
+    {
+      "id": "water",
+      "english": "water",
+      "emoji": "💧",
+      "category": "food",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "das Wasser",
+          "reading": "Wasser"
+        },
+        "ja": {
+          "text": "水",
+          "reading": "mizu"
+        },
+        "es": {
+          "text": "agua",
+          "reading": "agua"
+        },
+        "zh": {
+          "text": "水",
+          "reading": "shuǐ"
+        }
+      }
+    },
+    {
+      "id": "book",
+      "english": "book",
+      "emoji": "📖",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Buch",
+          "reading": "Buch"
+        },
+        "ja": {
+          "text": "本",
+          "reading": "hon"
+        },
+        "es": {
+          "text": "libro",
+          "reading": "libro"
+        },
+        "zh": {
+          "text": "书",
+          "reading": "shū"
+        }
+      }
+    },
+    {
+      "id": "chair",
+      "english": "chair",
+      "emoji": "🪑",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Stuhl",
+          "reading": "Stuhl"
+        },
+        "ja": {
+          "text": "椅子",
+          "reading": "isu"
+        },
+        "es": {
+          "text": "silla",
+          "reading": "silla"
+        },
+        "zh": {
+          "text": "椅子",
+          "reading": "yǐzi"
+        }
+      }
+    },
+    {
+      "id": "table",
+      "english": "table",
+      "emoji": "🪵",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Tisch",
+          "reading": "Tisch"
+        },
+        "ja": {
+          "text": "テーブル",
+          "reading": "tēburu"
+        },
+        "es": {
+          "text": "mesa",
+          "reading": "mesa"
+        },
+        "zh": {
+          "text": "桌子",
+          "reading": "zhuōzi"
+        }
+      }
+    },
+    {
+      "id": "house",
+      "english": "house",
+      "emoji": "🏡",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Haus",
+          "reading": "Haus"
+        },
+        "ja": {
+          "text": "家",
+          "reading": "ie"
+        },
+        "es": {
+          "text": "casa",
+          "reading": "casa"
+        },
+        "zh": {
+          "text": "房子",
+          "reading": "fángzi"
+        }
+      }
+    },
+    {
+      "id": "door",
+      "english": "door",
+      "emoji": "🚪",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Tür",
+          "reading": "Tür"
+        },
+        "ja": {
+          "text": "ドア",
+          "reading": "doa"
+        },
+        "es": {
+          "text": "puerta",
+          "reading": "puerta"
+        },
+        "zh": {
+          "text": "门",
+          "reading": "mén"
+        }
+      }
+    },
+    {
+      "id": "window",
+      "english": "window",
+      "emoji": "🪟",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Fenster",
+          "reading": "Fenster"
+        },
+        "ja": {
+          "text": "窓",
+          "reading": "mado"
+        },
+        "es": {
+          "text": "ventana",
+          "reading": "ventana"
+        },
+        "zh": {
+          "text": "窗户",
+          "reading": "chuānghu"
+        }
+      }
+    },
+    {
+      "id": "tree",
+      "english": "tree",
+      "emoji": "🌳",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Baum",
+          "reading": "Baum"
+        },
+        "ja": {
+          "text": "木",
+          "reading": "ki"
+        },
+        "es": {
+          "text": "árbol",
+          "reading": "árbol"
+        },
+        "zh": {
+          "text": "树",
+          "reading": "shù"
+        }
+      }
+    },
+    {
+      "id": "flower",
+      "english": "flower",
+      "emoji": "🌷",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Blume",
+          "reading": "Blume"
+        },
+        "ja": {
+          "text": "花",
+          "reading": "hana"
+        },
+        "es": {
+          "text": "flor",
+          "reading": "flor"
+        },
+        "zh": {
+          "text": "花",
+          "reading": "huā"
+        }
+      }
+    },
+    {
+      "id": "carrot",
+      "english": "carrot",
+      "emoji": "🥕",
+      "category": "food",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Karotte",
+          "reading": "Karotte"
+        },
+        "ja": {
+          "text": "にんじん",
+          "reading": "ninjin"
+        },
+        "es": {
+          "text": "zanahoria",
+          "reading": "zanahoria"
+        },
+        "zh": {
+          "text": "胡萝卜",
+          "reading": "húluóbo"
+        }
+      }
+    },
+    {
+      "id": "cat",
+      "english": "cat",
+      "emoji": "🐈",
+      "category": "animals",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Katze",
+          "reading": "Katze"
+        },
+        "ja": {
+          "text": "猫",
+          "reading": "neko"
+        },
+        "es": {
+          "text": "gato",
+          "reading": "gato"
+        },
+        "zh": {
+          "text": "猫",
+          "reading": "māo"
+        }
+      }
+    },
+    {
+      "id": "dog",
+      "english": "dog",
+      "emoji": "🐕",
+      "category": "animals",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Hund",
+          "reading": "Hund"
+        },
+        "ja": {
+          "text": "犬",
+          "reading": "inu"
+        },
+        "es": {
+          "text": "perro",
+          "reading": "perro"
+        },
+        "zh": {
+          "text": "狗",
+          "reading": "gǒu"
+        }
+      }
+    },
+    {
+      "id": "fish",
+      "english": "fish",
+      "emoji": "🐟",
+      "category": "animals",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "der Fisch",
+          "reading": "Fisch"
+        },
+        "ja": {
+          "text": "魚",
+          "reading": "sakana"
+        },
+        "es": {
+          "text": "pez",
+          "reading": "pez"
+        },
+        "zh": {
+          "text": "鱼",
+          "reading": "yú"
+        }
+      }
+    },
+    {
+      "id": "boat",
+      "english": "boat",
+      "emoji": "⛵",
+      "category": "travel",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "das Boot",
+          "reading": "Boot"
+        },
+        "ja": {
+          "text": "船",
+          "reading": "fune"
+        },
+        "es": {
+          "text": "barco",
+          "reading": "barco"
+        },
+        "zh": {
+          "text": "船",
+          "reading": "chuán"
+        }
+      }
+    },
+    {
+      "id": "bicycle",
+      "english": "bicycle",
+      "emoji": "🚲",
+      "category": "travel",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Fahrrad",
+          "reading": "Fahrrad"
+        },
+        "ja": {
+          "text": "自転車",
+          "reading": "jitensha"
+        },
+        "es": {
+          "text": "bicicleta",
+          "reading": "bicicleta"
+        },
+        "zh": {
+          "text": "自行车",
+          "reading": "zìxíngchē"
+        }
+      }
+    },
+    {
+      "id": "hat",
+      "english": "hat",
+      "emoji": "👒",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Hut",
+          "reading": "Hut"
+        },
+        "ja": {
+          "text": "帽子",
+          "reading": "bōshi"
+        },
+        "es": {
+          "text": "sombrero",
+          "reading": "sombrero"
+        },
+        "zh": {
+          "text": "帽子",
+          "reading": "màozi"
+        }
+      }
+    },
+    {
+      "id": "lamp",
+      "english": "lamp",
+      "emoji": "💡",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Lampe",
+          "reading": "Lampe"
+        },
+        "ja": {
+          "text": "ランプ",
+          "reading": "ranpu"
+        },
+        "es": {
+          "text": "lámpara",
+          "reading": "lámpara"
+        },
+        "zh": {
+          "text": "灯",
+          "reading": "dēng"
+        }
+      }
+    },
+    {
+      "id": "key",
+      "english": "key",
+      "emoji": "🔑",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Schlüssel",
+          "reading": "Schlüssel"
+        },
+        "ja": {
+          "text": "鍵",
+          "reading": "kagi"
+        },
+        "es": {
+          "text": "llave",
+          "reading": "llave"
+        },
+        "zh": {
+          "text": "钥匙",
+          "reading": "yàoshi"
+        }
+      }
+    },
+    {
+      "id": "banana",
+      "english": "banana",
+      "emoji": "🍌",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Banane",
+          "reading": "Banane"
+        },
+        "ja": {
+          "text": "バナナ",
+          "reading": "banana"
+        },
+        "es": {
+          "text": "plátano",
+          "reading": "plátano"
+        },
+        "zh": {
+          "text": "香蕉",
+          "reading": "xiāngjiāo"
+        }
+      }
+    },
+    {
+      "id": "orange",
+      "english": "orange",
+      "emoji": "🍊",
+      "category": "food",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Orange",
+          "reading": "Orange"
+        },
+        "ja": {
+          "text": "オレンジ",
+          "reading": "orenji"
+        },
+        "es": {
+          "text": "naranja",
+          "reading": "naranja"
+        },
+        "zh": {
+          "text": "橙子",
+          "reading": "chéngzi"
+        }
+      }
+    },
+    {
+      "id": "lemon",
+      "english": "lemon",
+      "emoji": "🍋",
+      "category": "food",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Zitrone",
+          "reading": "Zitrone"
+        },
+        "ja": {
+          "text": "レモン",
+          "reading": "remon"
+        },
+        "es": {
+          "text": "limón",
+          "reading": "limón"
+        },
+        "zh": {
+          "text": "柠檬",
+          "reading": "níngméng"
+        }
+      }
+    },
+    {
+      "id": "strawberry",
+      "english": "strawberry",
+      "emoji": "🍓",
+      "category": "food",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Erdbeere",
+          "reading": "Erdbeere"
+        },
+        "ja": {
+          "text": "いちご",
+          "reading": "ichigo"
+        },
+        "es": {
+          "text": "fresa",
+          "reading": "fresa"
+        },
+        "zh": {
+          "text": "草莓",
+          "reading": "cǎoméi"
+        }
+      }
+    },
+    {
+      "id": "tomato",
+      "english": "tomato",
+      "emoji": "🍅",
+      "category": "food",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Tomate",
+          "reading": "Tomate"
+        },
+        "ja": {
+          "text": "トマト",
+          "reading": "tomato"
+        },
+        "es": {
+          "text": "tomate",
+          "reading": "tomate"
+        },
+        "zh": {
+          "text": "西红柿",
+          "reading": "xīhóngshì"
+        }
+      }
+    },
+    {
+      "id": "egg",
+      "english": "egg",
+      "emoji": "🥚",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Ei",
+          "reading": "Ei"
+        },
+        "ja": {
+          "text": "卵",
+          "reading": "tamago"
+        },
+        "es": {
+          "text": "huevo",
+          "reading": "huevo"
+        },
+        "zh": {
+          "text": "鸡蛋",
+          "reading": "jīdàn"
+        }
+      }
+    },
+    {
+      "id": "milk",
+      "english": "milk",
+      "emoji": "🥛",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Milch",
+          "reading": "Milch"
+        },
+        "ja": {
+          "text": "牛乳",
+          "reading": "gyūnyū"
+        },
+        "es": {
+          "text": "leche",
+          "reading": "leche"
+        },
+        "zh": {
+          "text": "牛奶",
+          "reading": "niúnǎi"
+        }
+      }
+    },
+    {
+      "id": "cheese",
+      "english": "cheese",
+      "emoji": "🧀",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Käse",
+          "reading": "Käse"
+        },
+        "ja": {
+          "text": "チーズ",
+          "reading": "chīzu"
+        },
+        "es": {
+          "text": "queso",
+          "reading": "queso"
+        },
+        "zh": {
+          "text": "奶酪",
+          "reading": "nǎilào"
+        }
+      }
+    },
+    {
+      "id": "tea",
+      "english": "tea",
+      "emoji": "🫖",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Tee",
+          "reading": "Tee"
+        },
+        "ja": {
+          "text": "お茶",
+          "reading": "ocha"
+        },
+        "es": {
+          "text": "té",
+          "reading": "té"
+        },
+        "zh": {
+          "text": "茶",
+          "reading": "chá"
+        }
+      }
+    },
+    {
+      "id": "bag",
+      "english": "bag",
+      "emoji": "👜",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Tasche",
+          "reading": "Tasche"
+        },
+        "ja": {
+          "text": "かばん",
+          "reading": "kaban"
+        },
+        "es": {
+          "text": "bolso",
+          "reading": "bolso"
+        },
+        "zh": {
+          "text": "包",
+          "reading": "bāo"
+        }
+      }
+    },
+    {
+      "id": "clock",
+      "english": "clock",
+      "emoji": "🕰️",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Uhr",
+          "reading": "Uhr"
+        },
+        "ja": {
+          "text": "時計",
+          "reading": "tokei"
+        },
+        "es": {
+          "text": "reloj",
+          "reading": "reloj"
+        },
+        "zh": {
+          "text": "时钟",
+          "reading": "shízhōng"
+        }
+      }
+    },
+    {
+      "id": "bed",
+      "english": "bed",
+      "emoji": "🛏️",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Bett",
+          "reading": "Bett"
+        },
+        "ja": {
+          "text": "ベッド",
+          "reading": "beddo"
+        },
+        "es": {
+          "text": "cama",
+          "reading": "cama"
+        },
+        "zh": {
+          "text": "床",
+          "reading": "chuáng"
+        }
+      }
+    },
+    {
+      "id": "shoe",
+      "english": "shoe",
+      "emoji": "👟",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Schuh",
+          "reading": "Schuh"
+        },
+        "ja": {
+          "text": "靴",
+          "reading": "kutsu"
+        },
+        "es": {
+          "text": "zapato",
+          "reading": "zapato"
+        },
+        "zh": {
+          "text": "鞋",
+          "reading": "xié"
+        }
+      }
+    },
+    {
+      "id": "umbrella",
+      "english": "umbrella",
+      "emoji": "☂️",
+      "category": "home",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "der Regenschirm",
+          "reading": "Regenschirm"
+        },
+        "ja": {
+          "text": "傘",
+          "reading": "kasa"
+        },
+        "es": {
+          "text": "paraguas",
+          "reading": "paraguas"
+        },
+        "zh": {
+          "text": "雨伞",
+          "reading": "yǔsǎn"
+        }
+      }
+    },
+    {
+      "id": "mountain",
+      "english": "mountain",
+      "emoji": "⛰️",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Berg",
+          "reading": "Berg"
+        },
+        "ja": {
+          "text": "山",
+          "reading": "yama"
+        },
+        "es": {
+          "text": "montaña",
+          "reading": "montaña"
+        },
+        "zh": {
+          "text": "山",
+          "reading": "shān"
+        }
+      }
+    },
+    {
+      "id": "sun",
+      "english": "sun",
+      "emoji": "☀️",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Sonne",
+          "reading": "Sonne"
+        },
+        "ja": {
+          "text": "太陽",
+          "reading": "taiyō"
+        },
+        "es": {
+          "text": "sol",
+          "reading": "sol"
+        },
+        "zh": {
+          "text": "太阳",
+          "reading": "tàiyáng"
+        }
+      }
+    },
+    {
+      "id": "moon",
+      "english": "moon",
+      "emoji": "🌙",
+      "category": "nature",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "der Mond",
+          "reading": "Mond"
+        },
+        "ja": {
+          "text": "月",
+          "reading": "tsuki"
+        },
+        "es": {
+          "text": "luna",
+          "reading": "luna"
+        },
+        "zh": {
+          "text": "月亮",
+          "reading": "yuèliang"
+        }
+      }
+    },
+    {
+      "id": "star",
+      "english": "star",
+      "emoji": "⭐",
+      "category": "nature",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "der Stern",
+          "reading": "Stern"
+        },
+        "ja": {
+          "text": "星",
+          "reading": "hoshi"
+        },
+        "es": {
+          "text": "estrella",
+          "reading": "estrella"
+        },
+        "zh": {
+          "text": "星星",
+          "reading": "xīngxing"
+        }
+      }
+    },
+    {
+      "id": "cloud",
+      "english": "cloud",
+      "emoji": "☁️",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Wolke",
+          "reading": "Wolke"
+        },
+        "ja": {
+          "text": "雲",
+          "reading": "kumo"
+        },
+        "es": {
+          "text": "nube",
+          "reading": "nube"
+        },
+        "zh": {
+          "text": "云",
+          "reading": "yún"
+        }
+      }
+    },
+    {
+      "id": "rain",
+      "english": "rain",
+      "emoji": "🌧️",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Regen",
+          "reading": "Regen"
+        },
+        "ja": {
+          "text": "雨",
+          "reading": "ame"
+        },
+        "es": {
+          "text": "lluvia",
+          "reading": "lluvia"
+        },
+        "zh": {
+          "text": "雨",
+          "reading": "yǔ"
+        }
+      }
+    },
+    {
+      "id": "bridge",
+      "english": "bridge",
+      "emoji": "🌉",
+      "category": "travel",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "die Brücke",
+          "reading": "Brücke"
+        },
+        "ja": {
+          "text": "橋",
+          "reading": "hashi"
+        },
+        "es": {
+          "text": "puente",
+          "reading": "puente"
+        },
+        "zh": {
+          "text": "桥",
+          "reading": "qiáo"
+        }
+      }
+    },
+    {
+      "id": "bench",
+      "english": "bench",
+      "emoji": "🪑",
+      "category": "home",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Bank",
+          "reading": "Bank"
+        },
+        "ja": {
+          "text": "ベンチ",
+          "reading": "benchi"
+        },
+        "es": {
+          "text": "banco",
+          "reading": "banco"
+        },
+        "zh": {
+          "text": "长椅",
+          "reading": "chángyǐ"
+        }
+      }
+    },
+    {
+      "id": "bird",
+      "english": "bird",
+      "emoji": "🐦",
+      "category": "animals",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Vogel",
+          "reading": "Vogel"
+        },
+        "ja": {
+          "text": "鳥",
+          "reading": "tori"
+        },
+        "es": {
+          "text": "pájaro",
+          "reading": "pájaro"
+        },
+        "zh": {
+          "text": "鸟",
+          "reading": "niǎo"
+        }
+      }
+    },
+    {
+      "id": "butterfly",
+      "english": "butterfly",
+      "emoji": "🦋",
+      "category": "animals",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Schmetterling",
+          "reading": "Schmetterling"
+        },
+        "ja": {
+          "text": "蝶",
+          "reading": "chō"
+        },
+        "es": {
+          "text": "mariposa",
+          "reading": "mariposa"
+        },
+        "zh": {
+          "text": "蝴蝶",
+          "reading": "húdié"
+        }
+      }
+    },
+    {
+      "id": "stone",
+      "english": "stone",
+      "emoji": "🪨",
+      "category": "nature",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "der Stein",
+          "reading": "Stein"
+        },
+        "ja": {
+          "text": "石",
+          "reading": "ishi"
+        },
+        "es": {
+          "text": "piedra",
+          "reading": "piedra"
+        },
+        "zh": {
+          "text": "石头",
+          "reading": "shítou"
+        }
+      }
+    },
+    {
+      "id": "shell",
+      "english": "shell",
+      "emoji": "🐚",
+      "category": "nature",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "die Muschel",
+          "reading": "Muschel"
+        },
+        "ja": {
+          "text": "貝殻",
+          "reading": "kaigara"
+        },
+        "es": {
+          "text": "concha",
+          "reading": "concha"
+        },
+        "zh": {
+          "text": "贝壳",
+          "reading": "bèiké"
+        }
+      }
+    },
+    {
+      "id": "grass",
+      "english": "grass",
+      "emoji": "🌱",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "das Gras",
+          "reading": "Gras"
+        },
+        "ja": {
+          "text": "草",
+          "reading": "kusa"
+        },
+        "es": {
+          "text": "hierba",
+          "reading": "hierba"
+        },
+        "zh": {
+          "text": "草",
+          "reading": "cǎo"
+        }
+      }
+    },
+    {
+      "id": "sand",
+      "english": "sand",
+      "emoji": "🏖️",
+      "category": "nature",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "der Sand",
+          "reading": "Sand"
+        },
+        "ja": {
+          "text": "砂",
+          "reading": "suna"
+        },
+        "es": {
+          "text": "arena",
+          "reading": "arena"
+        },
+        "zh": {
+          "text": "沙子",
+          "reading": "shāzi"
+        }
+      }
+    },
+    {
+      "id": "path",
+      "english": "path",
+      "emoji": "🛤️",
+      "category": "travel",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Weg",
+          "reading": "Weg"
+        },
+        "ja": {
+          "text": "小道",
+          "reading": "komichi"
+        },
+        "es": {
+          "text": "sendero",
+          "reading": "sendero"
+        },
+        "zh": {
+          "text": "小路",
+          "reading": "xiǎolù"
+        }
+      }
+    },
+    {
+      "id": "soil",
+      "english": "soil",
+      "emoji": "🟫",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Erde",
+          "reading": "Erde"
+        },
+        "ja": {
+          "text": "土",
+          "reading": "tsuchi"
+        },
+        "es": {
+          "text": "tierra",
+          "reading": "tierra"
+        },
+        "zh": {
+          "text": "土壤",
+          "reading": "tǔrǎng"
+        }
+      }
+    },
+    {
+      "id": "roof",
+      "english": "roof",
+      "emoji": "🏠",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Dach",
+          "reading": "Dach"
+        },
+        "ja": {
+          "text": "屋根",
+          "reading": "yane"
+        },
+        "es": {
+          "text": "tejado",
+          "reading": "tejado"
+        },
+        "zh": {
+          "text": "屋顶",
+          "reading": "wūdǐng"
+        }
+      }
+    },
+    {
+      "id": "wall",
+      "english": "wall",
+      "emoji": "🧱",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Wand",
+          "reading": "Wand"
+        },
+        "ja": {
+          "text": "壁",
+          "reading": "kabe"
+        },
+        "es": {
+          "text": "pared",
+          "reading": "pared"
+        },
+        "zh": {
+          "text": "墙",
+          "reading": "qiáng"
+        }
+      }
+    },
+    {
+      "id": "floor",
+      "english": "floor",
+      "emoji": "🟫",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Boden",
+          "reading": "Boden"
+        },
+        "ja": {
+          "text": "床",
+          "reading": "yuka"
+        },
+        "es": {
+          "text": "suelo",
+          "reading": "suelo"
+        },
+        "zh": {
+          "text": "地板",
+          "reading": "dìbǎn"
+        }
+      }
+    },
+    {
+      "id": "tile",
+      "english": "tile",
+      "emoji": "🟦",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Fliese",
+          "reading": "Fliese"
+        },
+        "ja": {
+          "text": "タイル",
+          "reading": "tairu"
+        },
+        "es": {
+          "text": "baldosa",
+          "reading": "baldosa"
+        },
+        "zh": {
+          "text": "瓷砖",
+          "reading": "cízhuān"
+        }
+      }
+    },
+    {
+      "id": "chimney",
+      "english": "chimney",
+      "emoji": "🏠",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Schornstein",
+          "reading": "Schornstein"
+        },
+        "ja": {
+          "text": "煙突",
+          "reading": "entotsu"
+        },
+        "es": {
+          "text": "chimenea",
+          "reading": "chimenea"
+        },
+        "zh": {
+          "text": "烟囱",
+          "reading": "yāncōng"
+        }
+      }
+    },
+    {
+      "id": "sign",
+      "english": "sign",
+      "emoji": "🪧",
+      "category": "travel",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Schild",
+          "reading": "Schild"
+        },
+        "ja": {
+          "text": "看板",
+          "reading": "kanban"
+        },
+        "es": {
+          "text": "letrero",
+          "reading": "letrero"
+        },
+        "zh": {
+          "text": "标牌",
+          "reading": "biāopái"
+        }
+      }
+    },
+    {
+      "id": "fence",
+      "english": "fence",
+      "emoji": "🪵",
+      "category": "home",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Zaun",
+          "reading": "Zaun"
+        },
+        "ja": {
+          "text": "柵",
+          "reading": "saku"
+        },
+        "es": {
+          "text": "valla",
+          "reading": "valla"
+        },
+        "zh": {
+          "text": "栅栏",
+          "reading": "zhàlan"
+        }
+      }
+    },
+    {
+      "id": "gate",
+      "english": "gate",
+      "emoji": "🚪",
+      "category": "home",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "das Tor",
+          "reading": "Tor"
+        },
+        "ja": {
+          "text": "門",
+          "reading": "mon"
+        },
+        "es": {
+          "text": "portón",
+          "reading": "portón"
+        },
+        "zh": {
+          "text": "大门",
+          "reading": "dàmén"
+        }
+      }
+    },
+    {
+      "id": "fountain",
+      "english": "fountain",
+      "emoji": "⛲",
+      "category": "travel",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Springbrunnen",
+          "reading": "Springbrunnen"
+        },
+        "ja": {
+          "text": "噴水",
+          "reading": "funsui"
+        },
+        "es": {
+          "text": "fuente",
+          "reading": "fuente"
+        },
+        "zh": {
+          "text": "喷泉",
+          "reading": "pēnquán"
+        }
+      }
+    },
+    {
+      "id": "well",
+      "english": "well",
+      "emoji": "🪣",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Brunnen",
+          "reading": "Brunnen"
+        },
+        "ja": {
+          "text": "井戸",
+          "reading": "ido"
+        },
+        "es": {
+          "text": "pozo",
+          "reading": "pozo"
+        },
+        "zh": {
+          "text": "水井",
+          "reading": "shuǐjǐng"
+        }
+      }
+    },
+    {
+      "id": "lighthouse",
+      "english": "lighthouse",
+      "emoji": "🗼",
+      "category": "travel",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "der Leuchtturm",
+          "reading": "Leuchtturm"
+        },
+        "ja": {
+          "text": "灯台",
+          "reading": "tōdai"
+        },
+        "es": {
+          "text": "faro",
+          "reading": "faro"
+        },
+        "zh": {
+          "text": "灯塔",
+          "reading": "dēngtǎ"
+        }
+      }
+    },
+    {
+      "id": "dock",
+      "english": "dock",
+      "emoji": "⚓",
+      "category": "travel",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "der Bootssteg",
+          "reading": "Bootssteg"
+        },
+        "ja": {
+          "text": "桟橋",
+          "reading": "sanbashi"
+        },
+        "es": {
+          "text": "muelle",
+          "reading": "muelle"
+        },
+        "zh": {
+          "text": "码头",
+          "reading": "mǎtóu"
+        }
+      }
+    },
+    {
+      "id": "rope",
+      "english": "rope",
+      "emoji": "🪢",
+      "category": "home",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "das Seil",
+          "reading": "Seil"
+        },
+        "ja": {
+          "text": "ロープ",
+          "reading": "rōpu"
+        },
+        "es": {
+          "text": "cuerda",
+          "reading": "cuerda"
+        },
+        "zh": {
+          "text": "绳子",
+          "reading": "shéngzi"
+        }
+      }
+    },
+    {
+      "id": "flag",
+      "english": "flag",
+      "emoji": "🚩",
+      "category": "travel",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "die Flagge",
+          "reading": "Flagge"
+        },
+        "ja": {
+          "text": "旗",
+          "reading": "hata"
+        },
+        "es": {
+          "text": "bandera",
+          "reading": "bandera"
+        },
+        "zh": {
+          "text": "旗帜",
+          "reading": "qízhì"
+        }
+      }
+    },
+    {
+      "id": "crate",
+      "english": "crate",
+      "emoji": "📦",
+      "category": "home",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "die Kiste",
+          "reading": "Kiste"
+        },
+        "ja": {
+          "text": "木箱",
+          "reading": "kibako"
+        },
+        "es": {
+          "text": "cajón",
+          "reading": "cajón"
+        },
+        "zh": {
+          "text": "木箱",
+          "reading": "mùxiāng"
+        }
+      }
+    },
+    {
+      "id": "barrel",
+      "english": "barrel",
+      "emoji": "🛢️",
+      "category": "home",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "das Fass",
+          "reading": "Fass"
+        },
+        "ja": {
+          "text": "樽",
+          "reading": "taru"
+        },
+        "es": {
+          "text": "barril",
+          "reading": "barril"
+        },
+        "zh": {
+          "text": "木桶",
+          "reading": "mùtǒng"
+        }
+      }
+    },
+    {
+      "id": "basket",
+      "english": "basket",
+      "emoji": "🧺",
+      "category": "home",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Korb",
+          "reading": "Korb"
+        },
+        "ja": {
+          "text": "かご",
+          "reading": "kago"
+        },
+        "es": {
+          "text": "cesta",
+          "reading": "cesta"
+        },
+        "zh": {
+          "text": "篮子",
+          "reading": "lánzi"
+        }
+      }
+    },
+    {
+      "id": "wateringCan",
+      "english": "watering can",
+      "emoji": "🚿",
+      "category": "home",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Gießkanne",
+          "reading": "Gießkanne"
+        },
+        "ja": {
+          "text": "じょうろ",
+          "reading": "jōro"
+        },
+        "es": {
+          "text": "regadera",
+          "reading": "regadera"
+        },
+        "zh": {
+          "text": "洒水壶",
+          "reading": "sǎshuǐhú"
+        }
+      }
+    },
+    {
+      "id": "flowerpot",
+      "english": "flowerpot",
+      "emoji": "🪴",
+      "category": "home",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Blumentopf",
+          "reading": "Blumentopf"
+        },
+        "ja": {
+          "text": "植木鉢",
+          "reading": "uekibachi"
+        },
+        "es": {
+          "text": "maceta",
+          "reading": "maceta"
+        },
+        "zh": {
+          "text": "花盆",
+          "reading": "huāpén"
+        }
+      }
+    },
+    {
+      "id": "shovel",
+      "english": "shovel",
+      "emoji": "🛠️",
+      "category": "home",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Schaufel",
+          "reading": "Schaufel"
+        },
+        "ja": {
+          "text": "シャベル",
+          "reading": "shaberu"
+        },
+        "es": {
+          "text": "pala",
+          "reading": "pala"
+        },
+        "zh": {
+          "text": "铲子",
+          "reading": "chǎnzi"
+        }
+      }
+    },
+    {
+      "id": "rake",
+      "english": "rake",
+      "emoji": "🛠️",
+      "category": "home",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Rechen",
+          "reading": "Rechen"
+        },
+        "ja": {
+          "text": "熊手",
+          "reading": "kumade"
+        },
+        "es": {
+          "text": "rastrillo",
+          "reading": "rastrillo"
+        },
+        "zh": {
+          "text": "耙子",
+          "reading": "pázi"
+        }
+      }
+    },
+    {
+      "id": "seed",
+      "english": "seed",
+      "emoji": "🌱",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Samen",
+          "reading": "Samen"
+        },
+        "ja": {
+          "text": "種",
+          "reading": "tane"
+        },
+        "es": {
+          "text": "semilla",
+          "reading": "semilla"
+        },
+        "zh": {
+          "text": "种子",
+          "reading": "zhǒngzi"
+        }
+      }
+    },
+    {
+      "id": "ladder",
+      "english": "ladder",
+      "emoji": "🪜",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Leiter",
+          "reading": "Leiter"
+        },
+        "ja": {
+          "text": "はしご",
+          "reading": "hashigo"
+        },
+        "es": {
+          "text": "escalera",
+          "reading": "escalera"
+        },
+        "zh": {
+          "text": "梯子",
+          "reading": "tīzi"
+        }
+      }
+    },
+    {
+      "id": "bottle",
+      "english": "bottle",
+      "emoji": "🍶",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Flasche",
+          "reading": "Flasche"
+        },
+        "ja": {
+          "text": "瓶",
+          "reading": "bin"
+        },
+        "es": {
+          "text": "botella",
+          "reading": "botella"
+        },
+        "zh": {
+          "text": "瓶子",
+          "reading": "píngzi"
+        }
+      }
+    },
+    {
+      "id": "plate",
+      "english": "plate",
+      "emoji": "🍽️",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Teller",
+          "reading": "Teller"
+        },
+        "ja": {
+          "text": "皿",
+          "reading": "sara"
+        },
+        "es": {
+          "text": "plato",
+          "reading": "plato"
+        },
+        "zh": {
+          "text": "盘子",
+          "reading": "pánzi"
+        }
+      }
+    },
+    {
+      "id": "spoon",
+      "english": "spoon",
+      "emoji": "🥄",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Löffel",
+          "reading": "Löffel"
+        },
+        "ja": {
+          "text": "スプーン",
+          "reading": "supūn"
+        },
+        "es": {
+          "text": "cuchara",
+          "reading": "cuchara"
+        },
+        "zh": {
+          "text": "勺子",
+          "reading": "sháozi"
+        }
+      }
+    },
+    {
+      "id": "fork",
+      "english": "fork",
+      "emoji": "🍴",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Gabel",
+          "reading": "Gabel"
+        },
+        "ja": {
+          "text": "フォーク",
+          "reading": "fōku"
+        },
+        "es": {
+          "text": "tenedor",
+          "reading": "tenedor"
+        },
+        "zh": {
+          "text": "叉子",
+          "reading": "chāzi"
+        }
+      }
+    },
+    {
+      "id": "knife",
+      "english": "knife",
+      "emoji": "🔪",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Messer",
+          "reading": "Messer"
+        },
+        "ja": {
+          "text": "ナイフ",
+          "reading": "naifu"
+        },
+        "es": {
+          "text": "cuchillo",
+          "reading": "cuchillo"
+        },
+        "zh": {
+          "text": "刀",
+          "reading": "dāo"
+        }
+      }
+    },
+    {
+      "id": "napkin",
+      "english": "napkin",
+      "emoji": "⬜",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Serviette",
+          "reading": "Serviette"
+        },
+        "ja": {
+          "text": "ナプキン",
+          "reading": "napukin"
+        },
+        "es": {
+          "text": "servilleta",
+          "reading": "servilleta"
+        },
+        "zh": {
+          "text": "餐巾",
+          "reading": "cānjīn"
+        }
+      }
+    },
+    {
+      "id": "bowl",
+      "english": "bowl",
+      "emoji": "🥣",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Schüssel",
+          "reading": "Schüssel"
+        },
+        "ja": {
+          "text": "ボウル",
+          "reading": "bōru"
+        },
+        "es": {
+          "text": "cuenco",
+          "reading": "cuenco"
+        },
+        "zh": {
+          "text": "碗",
+          "reading": "wǎn"
+        }
+      }
+    },
+    {
+      "id": "teapot",
+      "english": "teapot",
+      "emoji": "🫖",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Teekanne",
+          "reading": "Teekanne"
+        },
+        "ja": {
+          "text": "急須",
+          "reading": "kyūsu"
+        },
+        "es": {
+          "text": "tetera",
+          "reading": "tetera"
+        },
+        "zh": {
+          "text": "茶壶",
+          "reading": "cháhú"
+        }
+      }
+    },
+    {
+      "id": "kettle",
+      "english": "kettle",
+      "emoji": "🫖",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Wasserkocher",
+          "reading": "Wasserkocher"
+        },
+        "ja": {
+          "text": "電気ケトル",
+          "reading": "denki ketoru"
+        },
+        "es": {
+          "text": "hervidor",
+          "reading": "hervidor"
+        },
+        "zh": {
+          "text": "电水壶",
+          "reading": "diànshuǐhú"
+        }
+      }
+    },
+    {
+      "id": "stove",
+      "english": "stove",
+      "emoji": "🔥",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Herd",
+          "reading": "Herd"
+        },
+        "ja": {
+          "text": "コンロ",
+          "reading": "konro"
+        },
+        "es": {
+          "text": "cocina",
+          "reading": "cocina"
+        },
+        "zh": {
+          "text": "炉灶",
+          "reading": "lúzào"
+        }
+      }
+    },
+    {
+      "id": "oven",
+      "english": "oven",
+      "emoji": "🔥",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Backofen",
+          "reading": "Backofen"
+        },
+        "ja": {
+          "text": "オーブン",
+          "reading": "ōbun"
+        },
+        "es": {
+          "text": "horno",
+          "reading": "horno"
+        },
+        "zh": {
+          "text": "烤箱",
+          "reading": "kǎoxiāng"
+        }
+      }
+    },
+    {
+      "id": "pan",
+      "english": "pan",
+      "emoji": "🍳",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Pfanne",
+          "reading": "Pfanne"
+        },
+        "ja": {
+          "text": "フライパン",
+          "reading": "furaipan"
+        },
+        "es": {
+          "text": "sartén",
+          "reading": "sartén"
+        },
+        "zh": {
+          "text": "平底锅",
+          "reading": "píngdǐguō"
+        }
+      }
+    },
+    {
+      "id": "flour",
+      "english": "flour",
+      "emoji": "🌾",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Mehl",
+          "reading": "Mehl"
+        },
+        "ja": {
+          "text": "小麦粉",
+          "reading": "komugiko"
+        },
+        "es": {
+          "text": "harina",
+          "reading": "harina"
+        },
+        "zh": {
+          "text": "面粉",
+          "reading": "miànfěn"
+        }
+      }
+    },
+    {
+      "id": "sugar",
+      "english": "sugar",
+      "emoji": "🧂",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Zucker",
+          "reading": "Zucker"
+        },
+        "ja": {
+          "text": "砂糖",
+          "reading": "satō"
+        },
+        "es": {
+          "text": "azúcar",
+          "reading": "azúcar"
+        },
+        "zh": {
+          "text": "糖",
+          "reading": "táng"
+        }
+      }
+    },
+    {
+      "id": "honey",
+      "english": "honey",
+      "emoji": "🍯",
+      "category": "food",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Honig",
+          "reading": "Honig"
+        },
+        "ja": {
+          "text": "はちみつ",
+          "reading": "hachimitsu"
+        },
+        "es": {
+          "text": "miel",
+          "reading": "miel"
+        },
+        "zh": {
+          "text": "蜂蜜",
+          "reading": "fēngmì"
+        }
+      }
+    },
+    {
+      "id": "butter",
+      "english": "butter",
+      "emoji": "🧈",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Butter",
+          "reading": "Butter"
+        },
+        "ja": {
+          "text": "バター",
+          "reading": "batā"
+        },
+        "es": {
+          "text": "mantequilla",
+          "reading": "mantequilla"
+        },
+        "zh": {
+          "text": "黄油",
+          "reading": "huángyóu"
+        }
+      }
+    },
+    {
+      "id": "cookie",
+      "english": "cookie",
+      "emoji": "🍪",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Keks",
+          "reading": "Keks"
+        },
+        "ja": {
+          "text": "クッキー",
+          "reading": "kukkī"
+        },
+        "es": {
+          "text": "galleta",
+          "reading": "galleta"
+        },
+        "zh": {
+          "text": "饼干",
+          "reading": "bǐnggān"
+        }
+      }
+    },
+    {
+      "id": "cake",
+      "english": "cake",
+      "emoji": "🍰",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Kuchen",
+          "reading": "Kuchen"
+        },
+        "ja": {
+          "text": "ケーキ",
+          "reading": "kēki"
+        },
+        "es": {
+          "text": "pastel",
+          "reading": "pastel"
+        },
+        "zh": {
+          "text": "蛋糕",
+          "reading": "dàngāo"
+        }
+      }
+    },
+    {
+      "id": "wheat",
+      "english": "wheat",
+      "emoji": "🌾",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Weizen",
+          "reading": "Weizen"
+        },
+        "ja": {
+          "text": "小麦",
+          "reading": "komugi"
+        },
+        "es": {
+          "text": "trigo",
+          "reading": "trigo"
+        },
+        "zh": {
+          "text": "小麦",
+          "reading": "xiǎomài"
+        }
+      }
+    },
+    {
+      "id": "pumpkin",
+      "english": "pumpkin",
+      "emoji": "🎃",
+      "category": "food",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Kürbis",
+          "reading": "Kürbis"
+        },
+        "ja": {
+          "text": "かぼちゃ",
+          "reading": "kabocha"
+        },
+        "es": {
+          "text": "calabaza",
+          "reading": "calabaza"
+        },
+        "zh": {
+          "text": "南瓜",
+          "reading": "nánguā"
+        }
+      }
+    },
+    {
+      "id": "cucumber",
+      "english": "cucumber",
+      "emoji": "🥒",
+      "category": "food",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Gurke",
+          "reading": "Gurke"
+        },
+        "ja": {
+          "text": "きゅうり",
+          "reading": "kyūri"
+        },
+        "es": {
+          "text": "pepino",
+          "reading": "pepino"
+        },
+        "zh": {
+          "text": "黄瓜",
+          "reading": "huángguā"
+        }
+      }
+    },
+    {
+      "id": "pepper",
+      "english": "bell pepper",
+      "emoji": "🫑",
+      "category": "food",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Paprika",
+          "reading": "Paprika"
+        },
+        "ja": {
+          "text": "ピーマン",
+          "reading": "pīman"
+        },
+        "es": {
+          "text": "pimiento",
+          "reading": "pimiento"
+        },
+        "zh": {
+          "text": "甜椒",
+          "reading": "tiánjiāo"
+        }
+      }
+    },
+    {
+      "id": "cabbage",
+      "english": "cabbage",
+      "emoji": "🥬",
+      "category": "food",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Kohl",
+          "reading": "Kohl"
+        },
+        "ja": {
+          "text": "キャベツ",
+          "reading": "kyabetsu"
+        },
+        "es": {
+          "text": "repollo",
+          "reading": "repollo"
+        },
+        "zh": {
+          "text": "卷心菜",
+          "reading": "juǎnxīncài"
+        }
+      }
+    },
+    {
+      "id": "lettuce",
+      "english": "lettuce",
+      "emoji": "🥬",
+      "category": "food",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Kopfsalat",
+          "reading": "Kopfsalat"
+        },
+        "ja": {
+          "text": "レタス",
+          "reading": "retasu"
+        },
+        "es": {
+          "text": "lechuga",
+          "reading": "lechuga"
+        },
+        "zh": {
+          "text": "生菜",
+          "reading": "shēngcài"
+        }
+      }
+    },
+    {
+      "id": "potato",
+      "english": "potato",
+      "emoji": "🥔",
+      "category": "food",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Kartoffel",
+          "reading": "Kartoffel"
+        },
+        "ja": {
+          "text": "じゃがいも",
+          "reading": "jagaimo"
+        },
+        "es": {
+          "text": "patata",
+          "reading": "patata"
+        },
+        "zh": {
+          "text": "土豆",
+          "reading": "tǔdòu"
+        }
+      }
+    },
+    {
+      "id": "onion",
+      "english": "onion",
+      "emoji": "🧅",
+      "category": "food",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Zwiebel",
+          "reading": "Zwiebel"
+        },
+        "ja": {
+          "text": "玉ねぎ",
+          "reading": "tamanegi"
+        },
+        "es": {
+          "text": "cebolla",
+          "reading": "cebolla"
+        },
+        "zh": {
+          "text": "洋葱",
+          "reading": "yángcōng"
+        }
+      }
+    },
+    {
+      "id": "pear",
+      "english": "pear",
+      "emoji": "🍐",
+      "category": "food",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Birne",
+          "reading": "Birne"
+        },
+        "ja": {
+          "text": "梨",
+          "reading": "nashi"
+        },
+        "es": {
+          "text": "pera",
+          "reading": "pera"
+        },
+        "zh": {
+          "text": "梨",
+          "reading": "lí"
+        }
+      }
+    },
+    {
+      "id": "grape",
+      "english": "grape",
+      "emoji": "🍇",
+      "category": "food",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Weintraube",
+          "reading": "Weintraube"
+        },
+        "ja": {
+          "text": "ぶどう",
+          "reading": "budō"
+        },
+        "es": {
+          "text": "uva",
+          "reading": "uva"
+        },
+        "zh": {
+          "text": "葡萄",
+          "reading": "pútao"
+        }
+      }
+    },
+    {
+      "id": "peach",
+      "english": "peach",
+      "emoji": "🍑",
+      "category": "food",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Pfirsich",
+          "reading": "Pfirsich"
+        },
+        "ja": {
+          "text": "桃",
+          "reading": "momo"
+        },
+        "es": {
+          "text": "melocotón",
+          "reading": "melocotón"
+        },
+        "zh": {
+          "text": "桃子",
+          "reading": "táozi"
+        }
+      }
+    },
+    {
+      "id": "cherry",
+      "english": "cherry",
+      "emoji": "🍒",
+      "category": "food",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Kirsche",
+          "reading": "Kirsche"
+        },
+        "ja": {
+          "text": "さくらんぼ",
+          "reading": "sakuranbo"
+        },
+        "es": {
+          "text": "cereza",
+          "reading": "cereza"
+        },
+        "zh": {
+          "text": "樱桃",
+          "reading": "yīngtáo"
+        }
+      }
+    },
+    {
+      "id": "beehive",
+      "english": "beehive",
+      "emoji": "🍯",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Bienenstock",
+          "reading": "Bienenstock"
+        },
+        "ja": {
+          "text": "蜂の巣",
+          "reading": "hachi no su"
+        },
+        "es": {
+          "text": "colmena",
+          "reading": "colmena"
+        },
+        "zh": {
+          "text": "蜂巢",
+          "reading": "fēngcháo"
+        }
+      }
+    },
+    {
+      "id": "bee",
+      "english": "bee",
+      "emoji": "🐝",
+      "category": "animals",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Biene",
+          "reading": "Biene"
+        },
+        "ja": {
+          "text": "蜂",
+          "reading": "hachi"
+        },
+        "es": {
+          "text": "abeja",
+          "reading": "abeja"
+        },
+        "zh": {
+          "text": "蜜蜂",
+          "reading": "mìfēng"
+        }
+      }
+    },
+    {
+      "id": "nest",
+      "english": "nest",
+      "emoji": "🪺",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "das Nest",
+          "reading": "Nest"
+        },
+        "ja": {
+          "text": "巣",
+          "reading": "su"
+        },
+        "es": {
+          "text": "nido",
+          "reading": "nido"
+        },
+        "zh": {
+          "text": "鸟巢",
+          "reading": "niǎocháo"
+        }
+      }
+    },
+    {
+      "id": "feather",
+      "english": "feather",
+      "emoji": "🪶",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Feder",
+          "reading": "Feder"
+        },
+        "ja": {
+          "text": "羽",
+          "reading": "hane"
+        },
+        "es": {
+          "text": "pluma",
+          "reading": "pluma"
+        },
+        "zh": {
+          "text": "羽毛",
+          "reading": "yǔmáo"
+        }
+      }
+    },
+    {
+      "id": "mushroom",
+      "english": "mushroom",
+      "emoji": "🍄",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Pilz",
+          "reading": "Pilz"
+        },
+        "ja": {
+          "text": "きのこ",
+          "reading": "kinoko"
+        },
+        "es": {
+          "text": "seta",
+          "reading": "seta"
+        },
+        "zh": {
+          "text": "蘑菇",
+          "reading": "mógu"
+        }
+      }
+    },
+    {
+      "id": "log",
+      "english": "log",
+      "emoji": "🪵",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Holzklotz",
+          "reading": "Holzklotz"
+        },
+        "ja": {
+          "text": "丸太",
+          "reading": "maruta"
+        },
+        "es": {
+          "text": "tronco cortado",
+          "reading": "tronco cortado"
+        },
+        "zh": {
+          "text": "原木",
+          "reading": "yuánmù"
+        }
+      }
+    },
+    {
+      "id": "branch",
+      "english": "branch",
+      "emoji": "🌿",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Ast",
+          "reading": "Ast"
+        },
+        "ja": {
+          "text": "枝",
+          "reading": "eda"
+        },
+        "es": {
+          "text": "rama",
+          "reading": "rama"
+        },
+        "zh": {
+          "text": "树枝",
+          "reading": "shùzhī"
+        }
+      }
+    },
+    {
+      "id": "leaf",
+      "english": "leaf",
+      "emoji": "🍃",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "das Blatt",
+          "reading": "Blatt"
+        },
+        "ja": {
+          "text": "葉",
+          "reading": "ha"
+        },
+        "es": {
+          "text": "hoja",
+          "reading": "hoja"
+        },
+        "zh": {
+          "text": "叶子",
+          "reading": "yèzi"
+        }
+      }
+    },
+    {
+      "id": "trunk",
+      "english": "tree trunk",
+      "emoji": "🌳",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Baumstamm",
+          "reading": "Baumstamm"
+        },
+        "ja": {
+          "text": "幹",
+          "reading": "miki"
+        },
+        "es": {
+          "text": "tronco",
+          "reading": "tronco"
+        },
+        "zh": {
+          "text": "树干",
+          "reading": "shùgàn"
+        }
+      }
+    },
+    {
+      "id": "bush",
+      "english": "bush",
+      "emoji": "🌳",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Busch",
+          "reading": "Busch"
+        },
+        "ja": {
+          "text": "茂み",
+          "reading": "shigemi"
+        },
+        "es": {
+          "text": "arbusto",
+          "reading": "arbusto"
+        },
+        "zh": {
+          "text": "灌木",
+          "reading": "guànmù"
+        }
+      }
+    },
+    {
+      "id": "hedge",
+      "english": "hedge",
+      "emoji": "🌿",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Hecke",
+          "reading": "Hecke"
+        },
+        "ja": {
+          "text": "生け垣",
+          "reading": "ikegaki"
+        },
+        "es": {
+          "text": "seto",
+          "reading": "seto"
+        },
+        "zh": {
+          "text": "树篱",
+          "reading": "shùlí"
+        }
+      }
+    },
+    {
+      "id": "pond",
+      "english": "pond",
+      "emoji": "💧",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Teich",
+          "reading": "Teich"
+        },
+        "ja": {
+          "text": "池",
+          "reading": "ike"
+        },
+        "es": {
+          "text": "estanque",
+          "reading": "estanque"
+        },
+        "zh": {
+          "text": "池塘",
+          "reading": "chítáng"
+        }
+      }
+    },
+    {
+      "id": "stream",
+      "english": "stream",
+      "emoji": "💦",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Bach",
+          "reading": "Bach"
+        },
+        "ja": {
+          "text": "小川",
+          "reading": "ogawa"
+        },
+        "es": {
+          "text": "arroyo",
+          "reading": "arroyo"
+        },
+        "zh": {
+          "text": "小溪",
+          "reading": "xiǎoxī"
+        }
+      }
+    },
+    {
+      "id": "mailbox",
+      "english": "mailbox",
+      "emoji": "📫",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Briefkasten",
+          "reading": "Briefkasten"
+        },
+        "ja": {
+          "text": "郵便受け",
+          "reading": "yūbinuke"
+        },
+        "es": {
+          "text": "buzón",
+          "reading": "buzón"
+        },
+        "zh": {
+          "text": "信箱",
+          "reading": "xìnxiāng"
+        }
+      }
+    },
+    {
+      "id": "parcel",
+      "english": "parcel",
+      "emoji": "📦",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Paket",
+          "reading": "Paket"
+        },
+        "ja": {
+          "text": "小包",
+          "reading": "kozutsumi"
+        },
+        "es": {
+          "text": "paquete",
+          "reading": "paquete"
+        },
+        "zh": {
+          "text": "包裹",
+          "reading": "bāoguǒ"
+        }
+      }
+    },
+    {
+      "id": "postcard",
+      "english": "postcard",
+      "emoji": "🏞️",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Postkarte",
+          "reading": "Postkarte"
+        },
+        "ja": {
+          "text": "はがき",
+          "reading": "hagaki"
+        },
+        "es": {
+          "text": "postal",
+          "reading": "postal"
+        },
+        "zh": {
+          "text": "明信片",
+          "reading": "míngxìnpiàn"
+        }
+      }
+    },
+    {
+      "id": "map",
+      "english": "map",
+      "emoji": "🗺️",
+      "category": "travel",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "die Karte",
+          "reading": "Karte"
+        },
+        "ja": {
+          "text": "地図",
+          "reading": "chizu"
+        },
+        "es": {
+          "text": "mapa",
+          "reading": "mapa"
+        },
+        "zh": {
+          "text": "地图",
+          "reading": "dìtú"
+        }
+      }
+    },
+    {
+      "id": "compass",
+      "english": "compass",
+      "emoji": "🧭",
+      "category": "travel",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "der Kompass",
+          "reading": "Kompass"
+        },
+        "ja": {
+          "text": "コンパス",
+          "reading": "konpasu"
+        },
+        "es": {
+          "text": "brújula",
+          "reading": "brújula"
+        },
+        "zh": {
+          "text": "指南针",
+          "reading": "zhǐnánzhēn"
+        }
+      }
+    },
+    {
+      "id": "ticket",
+      "english": "ticket",
+      "emoji": "🎟️",
+      "category": "travel",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "die Fahrkarte",
+          "reading": "Fahrkarte"
+        },
+        "ja": {
+          "text": "切符",
+          "reading": "kippu"
+        },
+        "es": {
+          "text": "billete",
+          "reading": "billete"
+        },
+        "zh": {
+          "text": "车票",
+          "reading": "chēpiào"
+        }
+      }
+    },
+    {
+      "id": "coat",
+      "english": "coat",
+      "emoji": "🧥",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Mantel",
+          "reading": "Mantel"
+        },
+        "ja": {
+          "text": "コート",
+          "reading": "kōto"
+        },
+        "es": {
+          "text": "abrigo",
+          "reading": "abrigo"
+        },
+        "zh": {
+          "text": "大衣",
+          "reading": "dàyī"
+        }
+      }
+    },
+    {
+      "id": "scarf",
+      "english": "scarf",
+      "emoji": "🧣",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Schal",
+          "reading": "Schal"
+        },
+        "ja": {
+          "text": "マフラー",
+          "reading": "mafurā"
+        },
+        "es": {
+          "text": "bufanda",
+          "reading": "bufanda"
+        },
+        "zh": {
+          "text": "围巾",
+          "reading": "wéijīn"
+        }
+      }
+    },
+    {
+      "id": "sock",
+      "english": "sock",
+      "emoji": "🧦",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Socke",
+          "reading": "Socke"
+        },
+        "ja": {
+          "text": "靴下",
+          "reading": "kutsushita"
+        },
+        "es": {
+          "text": "calcetín",
+          "reading": "calcetín"
+        },
+        "zh": {
+          "text": "袜子",
+          "reading": "wàzi"
+        }
+      }
+    },
+    {
+      "id": "trousers",
+      "english": "trousers",
+      "emoji": "👖",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Hose",
+          "reading": "Hose"
+        },
+        "ja": {
+          "text": "ズボン",
+          "reading": "zubon"
+        },
+        "es": {
+          "text": "pantalones",
+          "reading": "pantalones"
+        },
+        "zh": {
+          "text": "裤子",
+          "reading": "kùzi"
+        }
+      }
+    },
+    {
+      "id": "dress",
+      "english": "dress",
+      "emoji": "👗",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Kleid",
+          "reading": "Kleid"
+        },
+        "ja": {
+          "text": "ワンピース",
+          "reading": "wanpīsu"
+        },
+        "es": {
+          "text": "vestido",
+          "reading": "vestido"
+        },
+        "zh": {
+          "text": "连衣裙",
+          "reading": "liányīqún"
+        }
+      }
+    },
+    {
+      "id": "jacket",
+      "english": "jacket",
+      "emoji": "🧥",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Jacke",
+          "reading": "Jacke"
+        },
+        "ja": {
+          "text": "ジャケット",
+          "reading": "jaketto"
+        },
+        "es": {
+          "text": "chaqueta",
+          "reading": "chaqueta"
+        },
+        "zh": {
+          "text": "夹克",
+          "reading": "jiákè"
+        }
+      }
+    },
+    {
+      "id": "mirror",
+      "english": "mirror",
+      "emoji": "🪞",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Spiegel",
+          "reading": "Spiegel"
+        },
+        "ja": {
+          "text": "鏡",
+          "reading": "kagami"
+        },
+        "es": {
+          "text": "espejo",
+          "reading": "espejo"
+        },
+        "zh": {
+          "text": "镜子",
+          "reading": "jìngzi"
+        }
+      }
+    },
+    {
+      "id": "pillow",
+      "english": "pillow",
+      "emoji": "🛏️",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Kissen",
+          "reading": "Kissen"
+        },
+        "ja": {
+          "text": "枕",
+          "reading": "makura"
+        },
+        "es": {
+          "text": "almohada",
+          "reading": "almohada"
+        },
+        "zh": {
+          "text": "枕头",
+          "reading": "zhěntou"
+        }
+      }
+    },
+    {
+      "id": "blanket",
+      "english": "blanket",
+      "emoji": "🛏️",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Decke",
+          "reading": "Decke"
+        },
+        "ja": {
+          "text": "毛布",
+          "reading": "mōfu"
+        },
+        "es": {
+          "text": "manta",
+          "reading": "manta"
+        },
+        "zh": {
+          "text": "毯子",
+          "reading": "tǎnzi"
+        }
+      }
+    },
+    {
+      "id": "rug",
+      "english": "rug",
+      "emoji": "🟧",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Teppich",
+          "reading": "Teppich"
+        },
+        "ja": {
+          "text": "じゅうたん",
+          "reading": "jūtan"
+        },
+        "es": {
+          "text": "alfombra",
+          "reading": "alfombra"
+        },
+        "zh": {
+          "text": "地毯",
+          "reading": "dìtǎn"
+        }
+      }
+    },
+    {
+      "id": "sofa",
+      "english": "sofa",
+      "emoji": "🛋️",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Sofa",
+          "reading": "Sofa"
+        },
+        "ja": {
+          "text": "ソファ",
+          "reading": "sofa"
+        },
+        "es": {
+          "text": "sofá",
+          "reading": "sofá"
+        },
+        "zh": {
+          "text": "沙发",
+          "reading": "shāfā"
+        }
+      }
+    },
+    {
+      "id": "cabinet",
+      "english": "cabinet",
+      "emoji": "🗄️",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Schrank",
+          "reading": "Schrank"
+        },
+        "ja": {
+          "text": "戸棚",
+          "reading": "todana"
+        },
+        "es": {
+          "text": "armario",
+          "reading": "armario"
+        },
+        "zh": {
+          "text": "柜子",
+          "reading": "guìzi"
+        }
+      }
+    },
+    {
+      "id": "shelf",
+      "english": "shelf",
+      "emoji": "📚",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Regal",
+          "reading": "Regal"
+        },
+        "ja": {
+          "text": "棚",
+          "reading": "tana"
+        },
+        "es": {
+          "text": "estantería",
+          "reading": "estantería"
+        },
+        "zh": {
+          "text": "架子",
+          "reading": "jiàzi"
+        }
+      }
+    },
+    {
+      "id": "drawer",
+      "english": "drawer",
+      "emoji": "🗄️",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Schublade",
+          "reading": "Schublade"
+        },
+        "ja": {
+          "text": "引き出し",
+          "reading": "hikidashi"
+        },
+        "es": {
+          "text": "cajón de mueble",
+          "reading": "cajón de mueble"
+        },
+        "zh": {
+          "text": "抽屉",
+          "reading": "chōuti"
+        }
+      }
+    },
+    {
+      "id": "painting",
+      "english": "painting",
+      "emoji": "🖼️",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Gemälde",
+          "reading": "Gemälde"
+        },
+        "ja": {
+          "text": "絵",
+          "reading": "e"
+        },
+        "es": {
+          "text": "cuadro",
+          "reading": "cuadro"
+        },
+        "zh": {
+          "text": "画",
+          "reading": "huà"
+        }
+      }
+    },
+    {
+      "id": "curtain",
+      "english": "curtain",
+      "emoji": "🪟",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Vorhang",
+          "reading": "Vorhang"
+        },
+        "ja": {
+          "text": "カーテン",
+          "reading": "kāten"
+        },
+        "es": {
+          "text": "cortina",
+          "reading": "cortina"
+        },
+        "zh": {
+          "text": "窗帘",
+          "reading": "chuānglián"
+        }
+      }
+    },
+    {
+      "id": "towel",
+      "english": "towel",
+      "emoji": "🧺",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Handtuch",
+          "reading": "Handtuch"
+        },
+        "ja": {
+          "text": "タオル",
+          "reading": "taoru"
+        },
+        "es": {
+          "text": "toalla",
+          "reading": "toalla"
+        },
+        "zh": {
+          "text": "毛巾",
+          "reading": "máojīn"
+        }
+      }
+    },
+    {
+      "id": "sink",
+      "english": "sink",
+      "emoji": "🚰",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Spülbecken",
+          "reading": "Spülbecken"
+        },
+        "ja": {
+          "text": "流し台",
+          "reading": "nagashidai"
+        },
+        "es": {
+          "text": "fregadero",
+          "reading": "fregadero"
+        },
+        "zh": {
+          "text": "水槽",
+          "reading": "shuǐcáo"
+        }
+      }
+    },
+    {
+      "id": "broom",
+      "english": "broom",
+      "emoji": "🧹",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Besen",
+          "reading": "Besen"
+        },
+        "ja": {
+          "text": "ほうき",
+          "reading": "hōki"
+        },
+        "es": {
+          "text": "escoba",
+          "reading": "escoba"
+        },
+        "zh": {
+          "text": "扫帚",
+          "reading": "sàozhou"
+        }
+      }
+    },
+    {
+      "id": "bucket",
+      "english": "bucket",
+      "emoji": "🪣",
+      "category": "home",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "der Eimer",
+          "reading": "Eimer"
+        },
+        "ja": {
+          "text": "バケツ",
+          "reading": "baketsu"
+        },
+        "es": {
+          "text": "cubo",
+          "reading": "cubo"
+        },
+        "zh": {
+          "text": "水桶",
+          "reading": "shuǐtǒng"
+        }
+      }
+    },
+    {
+      "id": "toolbox",
+      "english": "toolbox",
+      "emoji": "🧰",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Werkzeugkasten",
+          "reading": "Werkzeugkasten"
+        },
+        "ja": {
+          "text": "工具箱",
+          "reading": "kōgubako"
+        },
+        "es": {
+          "text": "caja de herramientas",
+          "reading": "caja de herramientas"
+        },
+        "zh": {
+          "text": "工具箱",
+          "reading": "gōngjùxiāng"
+        }
+      }
+    },
+    {
+      "id": "hammer",
+      "english": "hammer",
+      "emoji": "🔨",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Hammer",
+          "reading": "Hammer"
+        },
+        "ja": {
+          "text": "金づち",
+          "reading": "kanazuchi"
+        },
+        "es": {
+          "text": "martillo",
+          "reading": "martillo"
+        },
+        "zh": {
+          "text": "锤子",
+          "reading": "chuízi"
+        }
+      }
+    },
+    {
+      "id": "nail",
+      "english": "nail",
+      "emoji": "🔩",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Nagel",
+          "reading": "Nagel"
+        },
+        "ja": {
+          "text": "釘",
+          "reading": "kugi"
+        },
+        "es": {
+          "text": "clavo",
+          "reading": "clavo"
+        },
+        "zh": {
+          "text": "钉子",
+          "reading": "dīngzi"
+        }
+      }
+    },
+    {
+      "id": "screw",
+      "english": "screw",
+      "emoji": "🔩",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Schraube",
+          "reading": "Schraube"
+        },
+        "ja": {
+          "text": "ねじ",
+          "reading": "neji"
+        },
+        "es": {
+          "text": "tornillo",
+          "reading": "tornillo"
+        },
+        "zh": {
+          "text": "螺丝",
+          "reading": "luósī"
+        }
+      }
+    },
+    {
+      "id": "wheel",
+      "english": "wheel",
+      "emoji": "🛞",
+      "category": "travel",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Rad",
+          "reading": "Rad"
+        },
+        "ja": {
+          "text": "車輪",
+          "reading": "sharin"
+        },
+        "es": {
+          "text": "rueda",
+          "reading": "rueda"
+        },
+        "zh": {
+          "text": "车轮",
+          "reading": "chēlún"
+        }
+      }
+    },
+    {
+      "id": "anchor",
+      "english": "anchor",
+      "emoji": "⚓",
+      "category": "travel",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "der Anker",
+          "reading": "Anker"
+        },
+        "ja": {
+          "text": "錨",
+          "reading": "ikari"
+        },
+        "es": {
+          "text": "ancla",
+          "reading": "ancla"
+        },
+        "zh": {
+          "text": "船锚",
+          "reading": "chuánmáo"
+        }
+      }
+    },
+    {
+      "id": "sail",
+      "english": "sail",
+      "emoji": "⛵",
+      "category": "travel",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "das Segel",
+          "reading": "Segel"
+        },
+        "ja": {
+          "text": "帆",
+          "reading": "ho"
+        },
+        "es": {
+          "text": "vela de barco",
+          "reading": "vela de barco"
+        },
+        "zh": {
+          "text": "船帆",
+          "reading": "chuánfān"
+        }
+      }
+    },
+    {
+      "id": "paddle",
+      "english": "paddle",
+      "emoji": "🛶",
+      "category": "travel",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "das Paddel",
+          "reading": "Paddel"
+        },
+        "ja": {
+          "text": "パドル",
+          "reading": "padoru"
+        },
+        "es": {
+          "text": "remo",
+          "reading": "remo"
+        },
+        "zh": {
+          "text": "船桨",
+          "reading": "chuánjiǎng"
+        }
+      }
+    },
+    {
+      "id": "net",
+      "english": "fishing net",
+      "emoji": "🕸️",
+      "category": "home",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "das Fischernetz",
+          "reading": "Fischernetz"
+        },
+        "ja": {
+          "text": "漁網",
+          "reading": "gyomō"
+        },
+        "es": {
+          "text": "red de pesca",
+          "reading": "red de pesca"
+        },
+        "zh": {
+          "text": "渔网",
+          "reading": "yúwǎng"
+        }
+      }
+    },
+    {
+      "id": "fishingRod",
+      "english": "fishing rod",
+      "emoji": "🎣",
+      "category": "home",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "die Angelrute",
+          "reading": "Angelrute"
+        },
+        "ja": {
+          "text": "釣り竿",
+          "reading": "tsurizao"
+        },
+        "es": {
+          "text": "caña de pescar",
+          "reading": "caña de pescar"
+        },
+        "zh": {
+          "text": "鱼竿",
+          "reading": "yúgān"
+        }
+      }
+    },
+    {
+      "id": "bell",
+      "english": "bell",
+      "emoji": "🔔",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Glocke",
+          "reading": "Glocke"
+        },
+        "ja": {
+          "text": "鐘",
+          "reading": "kane"
+        },
+        "es": {
+          "text": "campana",
+          "reading": "campana"
+        },
+        "zh": {
+          "text": "钟",
+          "reading": "zhōng"
+        }
+      }
+    },
+    {
+      "id": "candle",
+      "english": "candle",
+      "emoji": "🕯️",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Kerze",
+          "reading": "Kerze"
+        },
+        "ja": {
+          "text": "ろうそく",
+          "reading": "rōsoku"
+        },
+        "es": {
+          "text": "vela",
+          "reading": "vela"
+        },
+        "zh": {
+          "text": "蜡烛",
+          "reading": "làzhú"
+        }
+      }
+    },
+    {
+      "id": "lantern",
+      "english": "lantern",
+      "emoji": "🏮",
+      "category": "home",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "die Laterne",
+          "reading": "Laterne"
+        },
+        "ja": {
+          "text": "ランタン",
+          "reading": "rantan"
+        },
+        "es": {
+          "text": "farol",
+          "reading": "farol"
+        },
+        "zh": {
+          "text": "灯笼",
+          "reading": "dēnglong"
+        }
+      }
+    },
+    {
+      "id": "beacon",
+      "english": "beacon",
+      "emoji": "💡",
+      "category": "travel",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "das Leuchtfeuer",
+          "reading": "Leuchtfeuer"
+        },
+        "ja": {
+          "text": "標識灯",
+          "reading": "hyōshikitō"
+        },
+        "es": {
+          "text": "baliza luminosa",
+          "reading": "baliza luminosa"
+        },
+        "zh": {
+          "text": "航标灯",
+          "reading": "hángbiāodēng"
+        }
+      }
+    },
+    {
+      "id": "seagull",
+      "english": "seagull",
+      "emoji": "🐦",
+      "category": "animals",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "die Möwe",
+          "reading": "Möwe"
+        },
+        "ja": {
+          "text": "かもめ",
+          "reading": "kamome"
+        },
+        "es": {
+          "text": "gaviota",
+          "reading": "gaviota"
+        },
+        "zh": {
+          "text": "海鸥",
+          "reading": "hǎi'ōu"
+        }
+      }
+    },
+    {
+      "id": "turtle",
+      "english": "turtle",
+      "emoji": "🐢",
+      "category": "animals",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "die Schildkröte",
+          "reading": "Schildkröte"
+        },
+        "ja": {
+          "text": "亀",
+          "reading": "kame"
+        },
+        "es": {
+          "text": "tortuga",
+          "reading": "tortuga"
+        },
+        "zh": {
+          "text": "乌龟",
+          "reading": "wūguī"
+        }
+      }
+    },
+    {
+      "id": "rabbit",
+      "english": "rabbit",
+      "emoji": "🐇",
+      "category": "animals",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "das Kaninchen",
+          "reading": "Kaninchen"
+        },
+        "ja": {
+          "text": "うさぎ",
+          "reading": "usagi"
+        },
+        "es": {
+          "text": "conejo",
+          "reading": "conejo"
+        },
+        "zh": {
+          "text": "兔子",
+          "reading": "tùzi"
+        }
+      }
+    },
+    {
+      "id": "duck",
+      "english": "duck",
+      "emoji": "🦆",
+      "category": "animals",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Ente",
+          "reading": "Ente"
+        },
+        "ja": {
+          "text": "アヒル",
+          "reading": "ahiru"
+        },
+        "es": {
+          "text": "pato",
+          "reading": "pato"
+        },
+        "zh": {
+          "text": "鸭子",
+          "reading": "yāzi"
+        }
+      }
+    },
+    {
+      "id": "sheep",
+      "english": "sheep",
+      "emoji": "🐑",
+      "category": "animals",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "das Schaf",
+          "reading": "Schaf"
+        },
+        "ja": {
+          "text": "羊",
+          "reading": "hitsuji"
+        },
+        "es": {
+          "text": "oveja",
+          "reading": "oveja"
+        },
+        "zh": {
+          "text": "绵羊",
+          "reading": "miányáng"
+        }
+      }
+    },
+    {
+      "id": "cow",
+      "english": "cow",
+      "emoji": "🐄",
+      "category": "animals",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Kuh",
+          "reading": "Kuh"
+        },
+        "ja": {
+          "text": "牛",
+          "reading": "ushi"
+        },
+        "es": {
+          "text": "vaca",
+          "reading": "vaca"
+        },
+        "zh": {
+          "text": "奶牛",
+          "reading": "nǎiniú"
+        }
+      }
+    },
+    {
+      "id": "goat",
+      "english": "goat",
+      "emoji": "🐐",
+      "category": "animals",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Ziege",
+          "reading": "Ziege"
+        },
+        "ja": {
+          "text": "山羊",
+          "reading": "yagi"
+        },
+        "es": {
+          "text": "cabra",
+          "reading": "cabra"
+        },
+        "zh": {
+          "text": "山羊",
+          "reading": "shānyáng"
+        }
+      }
+    },
+    {
+      "id": "hen",
+      "english": "hen",
+      "emoji": "🐔",
+      "category": "animals",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "die Henne",
+          "reading": "Henne"
+        },
+        "ja": {
+          "text": "雌鶏",
+          "reading": "mendori"
+        },
+        "es": {
+          "text": "gallina",
+          "reading": "gallina"
+        },
+        "zh": {
+          "text": "母鸡",
+          "reading": "mǔjī"
+        }
+      }
+    },
+    {
+      "id": "horse",
+      "english": "horse",
+      "emoji": "🐎",
+      "category": "animals",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "das Pferd",
+          "reading": "Pferd"
+        },
+        "ja": {
+          "text": "馬",
+          "reading": "uma"
+        },
+        "es": {
+          "text": "caballo",
+          "reading": "caballo"
+        },
+        "zh": {
+          "text": "马",
+          "reading": "mǎ"
+        }
+      }
+    },
+    {
+      "id": "hay",
+      "english": "hay",
+      "emoji": "🌾",
+      "category": "nature",
+      "region": "garden",
+      "translations": {
+        "de": {
+          "text": "das Heu",
+          "reading": "Heu"
+        },
+        "ja": {
+          "text": "干し草",
+          "reading": "hoshikusa"
+        },
+        "es": {
+          "text": "heno",
+          "reading": "heno"
+        },
+        "zh": {
+          "text": "干草",
+          "reading": "gāncǎo"
+        }
+      }
+    },
+    {
+      "id": "paper",
+      "english": "paper",
+      "emoji": "📄",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Papier",
+          "reading": "Papier"
+        },
+        "ja": {
+          "text": "紙",
+          "reading": "kami"
+        },
+        "es": {
+          "text": "papel",
+          "reading": "papel"
+        },
+        "zh": {
+          "text": "纸",
+          "reading": "zhǐ"
+        }
+      }
+    },
+    {
+      "id": "ink",
+      "english": "ink",
+      "emoji": "🖋️",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Tinte",
+          "reading": "Tinte"
+        },
+        "ja": {
+          "text": "インク",
+          "reading": "inku"
+        },
+        "es": {
+          "text": "tinta",
+          "reading": "tinta"
+        },
+        "zh": {
+          "text": "墨水",
+          "reading": "mòshuǐ"
+        }
+      }
+    },
+    {
+      "id": "pencil",
+      "english": "pencil",
+      "emoji": "✏️",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Bleistift",
+          "reading": "Bleistift"
+        },
+        "ja": {
+          "text": "鉛筆",
+          "reading": "enpitsu"
+        },
+        "es": {
+          "text": "lápiz",
+          "reading": "lápiz"
+        },
+        "zh": {
+          "text": "铅笔",
+          "reading": "qiānbǐ"
+        }
+      }
+    },
+    {
+      "id": "pen",
+      "english": "pen",
+      "emoji": "🖊️",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Kugelschreiber",
+          "reading": "Kugelschreiber"
+        },
+        "ja": {
+          "text": "ボールペン",
+          "reading": "bōrupen"
+        },
+        "es": {
+          "text": "bolígrafo",
+          "reading": "bolígrafo"
+        },
+        "zh": {
+          "text": "圆珠笔",
+          "reading": "yuánzhūbǐ"
+        }
+      }
+    },
+    {
+      "id": "envelope",
+      "english": "envelope",
+      "emoji": "✉️",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Briefumschlag",
+          "reading": "Briefumschlag"
+        },
+        "ja": {
+          "text": "封筒",
+          "reading": "fūtō"
+        },
+        "es": {
+          "text": "sobre",
+          "reading": "sobre"
+        },
+        "zh": {
+          "text": "信封",
+          "reading": "xìnfēng"
+        }
+      }
+    },
+    {
+      "id": "chest",
+      "english": "chest",
+      "emoji": "🧰",
+      "category": "home",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "die Truhe",
+          "reading": "Truhe"
+        },
+        "ja": {
+          "text": "宝箱",
+          "reading": "takarabako"
+        },
+        "es": {
+          "text": "cofre",
+          "reading": "cofre"
+        },
+        "zh": {
+          "text": "宝箱",
+          "reading": "bǎoxiāng"
+        }
+      }
+    },
+    {
+      "id": "treasure",
+      "english": "treasure",
+      "emoji": "💎",
+      "category": "home",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "der Schatz",
+          "reading": "Schatz"
+        },
+        "ja": {
+          "text": "宝",
+          "reading": "takara"
+        },
+        "es": {
+          "text": "tesoro",
+          "reading": "tesoro"
+        },
+        "zh": {
+          "text": "宝藏",
+          "reading": "bǎozàng"
+        }
+      }
+    },
+    {
+      "id": "musicBox",
+      "english": "music box",
+      "emoji": "🎵",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Spieluhr",
+          "reading": "Spieluhr"
+        },
+        "ja": {
+          "text": "オルゴール",
+          "reading": "orugōru"
+        },
+        "es": {
+          "text": "caja de música",
+          "reading": "caja de música"
+        },
+        "zh": {
+          "text": "八音盒",
+          "reading": "bāyīnhé"
+        }
+      }
+    },
+    {
+      "id": "radio",
+      "english": "radio",
+      "emoji": "📻",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Radio",
+          "reading": "Radio"
+        },
+        "ja": {
+          "text": "ラジオ",
+          "reading": "rajio"
+        },
+        "es": {
+          "text": "radio",
+          "reading": "radio"
+        },
+        "zh": {
+          "text": "收音机",
+          "reading": "shōuyīnjī"
+        }
+      }
+    },
+    {
+      "id": "globe",
+      "english": "globe",
+      "emoji": "🌐",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Globus",
+          "reading": "Globus"
+        },
+        "ja": {
+          "text": "地球儀",
+          "reading": "chikyūgi"
+        },
+        "es": {
+          "text": "globo terráqueo",
+          "reading": "globo terráqueo"
+        },
+        "zh": {
+          "text": "地球仪",
+          "reading": "dìqiúyí"
+        }
+      }
+    },
+    {
+      "id": "crystal",
+      "english": "crystal",
+      "emoji": "💎",
+      "category": "nature",
+      "region": "harbor",
+      "translations": {
+        "de": {
+          "text": "der Kristall",
+          "reading": "Kristall"
+        },
+        "ja": {
+          "text": "水晶",
+          "reading": "suishō"
+        },
+        "es": {
+          "text": "cristal",
+          "reading": "cristal"
+        },
+        "zh": {
+          "text": "水晶",
+          "reading": "shuǐjīng"
+        }
+      }
+    },
+    {
+      "id": "cashRegister",
+      "english": "cash register",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Kasse",
+          "reading": "Kasse"
+        },
+        "ja": {
+          "text": "レジ",
+          "reading": "reji"
+        },
+        "es": {
+          "text": "caja registradora",
+          "reading": "caja registradora"
+        },
+        "zh": {
+          "text": "收银机",
+          "reading": "shōuyínjī"
+        }
+      }
+    },
+    {
+      "id": "refrigerator",
+      "english": "refrigerator",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Kühlschrank",
+          "reading": "Kühlschrank"
+        },
+        "ja": {
+          "text": "冷蔵庫",
+          "reading": "reizōko"
+        },
+        "es": {
+          "text": "nevera",
+          "reading": "nevera"
+        },
+        "zh": {
+          "text": "冰箱",
+          "reading": "bīngxiāng"
+        }
+      }
+    },
+    {
+      "id": "computer",
+      "english": "computer",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Computer",
+          "reading": "Computer"
+        },
+        "ja": {
+          "text": "コンピューター",
+          "reading": "konpyūtā"
+        },
+        "es": {
+          "text": "ordenador",
+          "reading": "ordenador"
+        },
+        "zh": {
+          "text": "电脑",
+          "reading": "diànnǎo"
+        }
+      }
+    },
+    {
+      "id": "phone",
+      "english": "telephone",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Telefon",
+          "reading": "Telefon"
+        },
+        "ja": {
+          "text": "電話",
+          "reading": "denwa"
+        },
+        "es": {
+          "text": "teléfono",
+          "reading": "teléfono"
+        },
+        "zh": {
+          "text": "电话",
+          "reading": "diànhuà"
+        }
+      }
+    },
+    {
+      "id": "rice",
+      "english": "rice",
+      "emoji": "◇",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Reis",
+          "reading": "Reis"
+        },
+        "ja": {
+          "text": "米",
+          "reading": "kome"
+        },
+        "es": {
+          "text": "arroz",
+          "reading": "arroz"
+        },
+        "zh": {
+          "text": "大米",
+          "reading": "dàmǐ"
+        }
+      }
+    },
+    {
+      "id": "pasta",
+      "english": "pasta",
+      "emoji": "◇",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Nudeln",
+          "reading": "Nudeln"
+        },
+        "ja": {
+          "text": "パスタ",
+          "reading": "pasuta"
+        },
+        "es": {
+          "text": "pasta",
+          "reading": "pasta"
+        },
+        "zh": {
+          "text": "意大利面",
+          "reading": "yìdàlìmiàn"
+        }
+      }
+    },
+    {
+      "id": "chocolate",
+      "english": "chocolate",
+      "emoji": "◇",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Schokolade",
+          "reading": "Schokolade"
+        },
+        "ja": {
+          "text": "チョコレート",
+          "reading": "chokorēto"
+        },
+        "es": {
+          "text": "chocolate",
+          "reading": "chocolate"
+        },
+        "zh": {
+          "text": "巧克力",
+          "reading": "qiǎokèlì"
+        }
+      }
+    },
+    {
+      "id": "juice",
+      "english": "juice",
+      "emoji": "◇",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Saft",
+          "reading": "Saft"
+        },
+        "ja": {
+          "text": "ジュース",
+          "reading": "jūsu"
+        },
+        "es": {
+          "text": "zumo",
+          "reading": "zumo"
+        },
+        "zh": {
+          "text": "果汁",
+          "reading": "guǒzhī"
+        }
+      }
+    },
+    {
+      "id": "yogurt",
+      "english": "yogurt",
+      "emoji": "◇",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Joghurt",
+          "reading": "Joghurt"
+        },
+        "ja": {
+          "text": "ヨーグルト",
+          "reading": "yōguruto"
+        },
+        "es": {
+          "text": "yogur",
+          "reading": "yogur"
+        },
+        "zh": {
+          "text": "酸奶",
+          "reading": "suānnǎi"
+        }
+      }
+    },
+    {
+      "id": "salt",
+      "english": "salt",
+      "emoji": "◇",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Salz",
+          "reading": "Salz"
+        },
+        "ja": {
+          "text": "塩",
+          "reading": "shio"
+        },
+        "es": {
+          "text": "sal",
+          "reading": "sal"
+        },
+        "zh": {
+          "text": "盐",
+          "reading": "yán"
+        }
+      }
+    },
+    {
+      "id": "soap",
+      "english": "soap",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Seife",
+          "reading": "Seife"
+        },
+        "ja": {
+          "text": "石鹸",
+          "reading": "sekken"
+        },
+        "es": {
+          "text": "jabón",
+          "reading": "jabón"
+        },
+        "zh": {
+          "text": "肥皂",
+          "reading": "féizào"
+        }
+      }
+    },
+    {
+      "id": "cream",
+      "english": "cream",
+      "emoji": "◇",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Sahne",
+          "reading": "Sahne"
+        },
+        "ja": {
+          "text": "生クリーム",
+          "reading": "namakurīmu"
+        },
+        "es": {
+          "text": "nata",
+          "reading": "nata"
+        },
+        "zh": {
+          "text": "奶油",
+          "reading": "nǎiyóu"
+        }
+      }
+    },
+    {
+      "id": "cinnamon",
+      "english": "cinnamon",
+      "emoji": "◇",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Zimt",
+          "reading": "Zimt"
+        },
+        "ja": {
+          "text": "シナモン",
+          "reading": "shinamon"
+        },
+        "es": {
+          "text": "canela",
+          "reading": "canela"
+        },
+        "zh": {
+          "text": "肉桂",
+          "reading": "ròuguì"
+        }
+      }
+    },
+    {
+      "id": "mint",
+      "english": "mint",
+      "emoji": "◇",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Minze",
+          "reading": "Minze"
+        },
+        "ja": {
+          "text": "ミント",
+          "reading": "minto"
+        },
+        "es": {
+          "text": "menta",
+          "reading": "menta"
+        },
+        "zh": {
+          "text": "薄荷",
+          "reading": "bòhe"
+        }
+      }
+    },
+    {
+      "id": "ice",
+      "english": "ice",
+      "emoji": "◇",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Eis",
+          "reading": "Eis"
+        },
+        "ja": {
+          "text": "氷",
+          "reading": "kōri"
+        },
+        "es": {
+          "text": "hielo",
+          "reading": "hielo"
+        },
+        "zh": {
+          "text": "冰",
+          "reading": "bīng"
+        }
+      }
+    },
+    {
+      "id": "vanilla",
+      "english": "vanilla",
+      "emoji": "◇",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Vanille",
+          "reading": "Vanille"
+        },
+        "ja": {
+          "text": "バニラ",
+          "reading": "banira"
+        },
+        "es": {
+          "text": "vainilla",
+          "reading": "vainilla"
+        },
+        "zh": {
+          "text": "香草",
+          "reading": "xiāngcǎo"
+        }
+      }
+    },
+    {
+      "id": "stamp",
+      "english": "postage stamp",
+      "emoji": "◇",
+      "category": "travel",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Briefmarke",
+          "reading": "Briefmarke"
+        },
+        "ja": {
+          "text": "切手",
+          "reading": "kitte"
+        },
+        "es": {
+          "text": "sello",
+          "reading": "sello"
+        },
+        "zh": {
+          "text": "邮票",
+          "reading": "yóupiào"
+        }
+      }
+    },
+    {
+      "id": "car",
+      "english": "car",
+      "emoji": "◇",
+      "category": "travel",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Auto",
+          "reading": "Auto"
+        },
+        "ja": {
+          "text": "車",
+          "reading": "kuruma"
+        },
+        "es": {
+          "text": "coche",
+          "reading": "coche"
+        },
+        "zh": {
+          "text": "汽车",
+          "reading": "qìchē"
+        }
+      }
+    },
+    {
+      "id": "bus",
+      "english": "bus",
+      "emoji": "◇",
+      "category": "travel",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Bus",
+          "reading": "Bus"
+        },
+        "ja": {
+          "text": "バス",
+          "reading": "basu"
+        },
+        "es": {
+          "text": "autobús",
+          "reading": "autobús"
+        },
+        "zh": {
+          "text": "公共汽车",
+          "reading": "gōnggòngqìchē"
+        }
+      }
+    },
+    {
+      "id": "trafficLight",
+      "english": "traffic light",
+      "emoji": "◇",
+      "category": "travel",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Ampel",
+          "reading": "Ampel"
+        },
+        "ja": {
+          "text": "信号機",
+          "reading": "shingōki"
+        },
+        "es": {
+          "text": "semáforo",
+          "reading": "semáforo"
+        },
+        "zh": {
+          "text": "红绿灯",
+          "reading": "hónglǜdēng"
+        }
+      }
+    },
+    {
+      "id": "trashCan",
+      "english": "rubbish bin",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Mülleimer",
+          "reading": "Mülleimer"
+        },
+        "ja": {
+          "text": "ごみ箱",
+          "reading": "gomibako"
+        },
+        "es": {
+          "text": "papelera",
+          "reading": "papelera"
+        },
+        "zh": {
+          "text": "垃圾桶",
+          "reading": "lājītǒng"
+        }
+      }
+    },
+    {
+      "id": "guitar",
+      "english": "guitar",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Gitarre",
+          "reading": "Gitarre"
+        },
+        "ja": {
+          "text": "ギター",
+          "reading": "gitā"
+        },
+        "es": {
+          "text": "guitarra",
+          "reading": "guitarra"
+        },
+        "zh": {
+          "text": "吉他",
+          "reading": "jítā"
+        }
+      }
+    },
+    {
+      "id": "piano",
+      "english": "piano",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Klavier",
+          "reading": "Klavier"
+        },
+        "ja": {
+          "text": "ピアノ",
+          "reading": "piano"
+        },
+        "es": {
+          "text": "piano",
+          "reading": "piano"
+        },
+        "zh": {
+          "text": "钢琴",
+          "reading": "gāngqín"
+        }
+      }
+    },
+    {
+      "id": "drum",
+      "english": "drum",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Trommel",
+          "reading": "Trommel"
+        },
+        "ja": {
+          "text": "太鼓",
+          "reading": "taiko"
+        },
+        "es": {
+          "text": "tambor",
+          "reading": "tambor"
+        },
+        "zh": {
+          "text": "鼓",
+          "reading": "gǔ"
+        }
+      }
+    },
+    {
+      "id": "microphone",
+      "english": "microphone",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Mikrofon",
+          "reading": "Mikrofon"
+        },
+        "ja": {
+          "text": "マイク",
+          "reading": "maiku"
+        },
+        "es": {
+          "text": "micrófono",
+          "reading": "micrófono"
+        },
+        "zh": {
+          "text": "麦克风",
+          "reading": "màikèfēng"
+        }
+      }
+    },
+    {
+      "id": "camera",
+      "english": "camera",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Kamera",
+          "reading": "Kamera"
+        },
+        "ja": {
+          "text": "カメラ",
+          "reading": "kamera"
+        },
+        "es": {
+          "text": "cámara",
+          "reading": "cámara"
+        },
+        "zh": {
+          "text": "相机",
+          "reading": "xiàngjī"
+        }
+      }
+    },
+    {
+      "id": "screen",
+      "english": "screen",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Bildschirm",
+          "reading": "Bildschirm"
+        },
+        "ja": {
+          "text": "画面",
+          "reading": "gamen"
+        },
+        "es": {
+          "text": "pantalla",
+          "reading": "pantalla"
+        },
+        "zh": {
+          "text": "屏幕",
+          "reading": "píngmù"
+        }
+      }
+    },
+    {
+      "id": "ball",
+      "english": "ball",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Ball",
+          "reading": "Ball"
+        },
+        "ja": {
+          "text": "ボール",
+          "reading": "bōru"
+        },
+        "es": {
+          "text": "pelota",
+          "reading": "pelota"
+        },
+        "zh": {
+          "text": "球",
+          "reading": "qiú"
+        }
+      }
+    },
+    {
+      "id": "racket",
+      "english": "racket",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Schläger",
+          "reading": "Schläger"
+        },
+        "ja": {
+          "text": "ラケット",
+          "reading": "raketto"
+        },
+        "es": {
+          "text": "raqueta",
+          "reading": "raqueta"
+        },
+        "zh": {
+          "text": "球拍",
+          "reading": "qiúpāi"
+        }
+      }
+    },
+    {
+      "id": "medicine",
+      "english": "medicine",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Medizin",
+          "reading": "Medizin"
+        },
+        "ja": {
+          "text": "薬",
+          "reading": "kusuri"
+        },
+        "es": {
+          "text": "medicina",
+          "reading": "medicina"
+        },
+        "zh": {
+          "text": "药",
+          "reading": "yào"
+        }
+      }
+    },
+    {
+      "id": "bandage",
+      "english": "bandage",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Verband",
+          "reading": "Verband"
+        },
+        "ja": {
+          "text": "包帯",
+          "reading": "hōtai"
+        },
+        "es": {
+          "text": "venda",
+          "reading": "venda"
+        },
+        "zh": {
+          "text": "绷带",
+          "reading": "bēngdài"
+        }
+      }
+    },
+    {
+      "id": "thermometer",
+      "english": "thermometer",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Thermometer",
+          "reading": "Thermometer"
+        },
+        "ja": {
+          "text": "体温計",
+          "reading": "taionkei"
+        },
+        "es": {
+          "text": "termómetro",
+          "reading": "termómetro"
+        },
+        "zh": {
+          "text": "温度计",
+          "reading": "wēndùjì"
+        }
+      }
+    },
+    {
+      "id": "toothbrush",
+      "english": "toothbrush",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Zahnbürste",
+          "reading": "Zahnbürste"
+        },
+        "ja": {
+          "text": "歯ブラシ",
+          "reading": "haburashi"
+        },
+        "es": {
+          "text": "cepillo de dientes",
+          "reading": "cepillo de dientes"
+        },
+        "zh": {
+          "text": "牙刷",
+          "reading": "yáshuā"
+        }
+      }
+    },
+    {
+      "id": "notebook",
+      "english": "notebook",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Heft",
+          "reading": "Heft"
+        },
+        "ja": {
+          "text": "ノート",
+          "reading": "nōto"
+        },
+        "es": {
+          "text": "cuaderno",
+          "reading": "cuaderno"
+        },
+        "zh": {
+          "text": "笔记本",
+          "reading": "bǐjìběn"
+        }
+      }
+    },
+    {
+      "id": "scissors",
+      "english": "scissors",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Schere",
+          "reading": "Schere"
+        },
+        "ja": {
+          "text": "はさみ",
+          "reading": "hasami"
+        },
+        "es": {
+          "text": "tijeras",
+          "reading": "tijeras"
+        },
+        "zh": {
+          "text": "剪刀",
+          "reading": "jiǎndāo"
+        }
+      }
+    },
+    {
+      "id": "fabric",
+      "english": "fabric",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Stoff",
+          "reading": "Stoff"
+        },
+        "ja": {
+          "text": "布",
+          "reading": "nuno"
+        },
+        "es": {
+          "text": "tela",
+          "reading": "tela"
+        },
+        "zh": {
+          "text": "布料",
+          "reading": "bùliào"
+        }
+      }
+    },
+    {
+      "id": "thread",
+      "english": "thread",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Faden",
+          "reading": "Faden"
+        },
+        "ja": {
+          "text": "糸",
+          "reading": "ito"
+        },
+        "es": {
+          "text": "hilo",
+          "reading": "hilo"
+        },
+        "zh": {
+          "text": "线",
+          "reading": "xiàn"
+        }
+      }
+    },
+    {
+      "id": "needle",
+      "english": "needle",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Nadel",
+          "reading": "Nadel"
+        },
+        "ja": {
+          "text": "針",
+          "reading": "hari"
+        },
+        "es": {
+          "text": "aguja",
+          "reading": "aguja"
+        },
+        "zh": {
+          "text": "针",
+          "reading": "zhēn"
+        }
+      }
+    },
+    {
+      "id": "button",
+      "english": "button",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Knopf",
+          "reading": "Knopf"
+        },
+        "ja": {
+          "text": "ボタン",
+          "reading": "botan"
+        },
+        "es": {
+          "text": "botón",
+          "reading": "botón"
+        },
+        "zh": {
+          "text": "纽扣",
+          "reading": "niǔkòu"
+        }
+      }
+    },
+    {
+      "id": "suitcase",
+      "english": "suitcase",
+      "emoji": "◇",
+      "category": "travel",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Koffer",
+          "reading": "Koffer"
+        },
+        "ja": {
+          "text": "スーツケース",
+          "reading": "sūtsukēsu"
+        },
+        "es": {
+          "text": "maleta",
+          "reading": "maleta"
+        },
+        "zh": {
+          "text": "行李箱",
+          "reading": "xínglǐxiāng"
+        }
+      }
+    },
+    {
+      "id": "money",
+      "english": "money",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Geld",
+          "reading": "Geld"
+        },
+        "ja": {
+          "text": "お金",
+          "reading": "okane"
+        },
+        "es": {
+          "text": "dinero",
+          "reading": "dinero"
+        },
+        "zh": {
+          "text": "钱",
+          "reading": "qián"
+        }
+      }
+    },
+    {
+      "id": "coin",
+      "english": "coin",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Münze",
+          "reading": "Münze"
+        },
+        "ja": {
+          "text": "硬貨",
+          "reading": "kōka"
+        },
+        "es": {
+          "text": "moneda",
+          "reading": "moneda"
+        },
+        "zh": {
+          "text": "硬币",
+          "reading": "yìngbì"
+        }
+      }
+    },
+    {
+      "id": "popcorn",
+      "english": "popcorn",
+      "emoji": "◇",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Popcorn",
+          "reading": "Popcorn"
+        },
+        "ja": {
+          "text": "ポップコーン",
+          "reading": "poppukōn"
+        },
+        "es": {
+          "text": "palomitas",
+          "reading": "palomitas"
+        },
+        "zh": {
+          "text": "爆米花",
+          "reading": "bàomǐhuā"
+        }
+      }
+    },
+    {
+      "id": "headphones",
+      "english": "headphones",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Kopfhörer",
+          "reading": "Kopfhörer"
+        },
+        "ja": {
+          "text": "ヘッドホン",
+          "reading": "heddohon"
+        },
+        "es": {
+          "text": "auriculares",
+          "reading": "auriculares"
+        },
+        "zh": {
+          "text": "耳机",
+          "reading": "ěrjī"
+        }
+      }
+    },
+    {
+      "id": "speaker",
+      "english": "loudspeaker",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Lautsprecher",
+          "reading": "Lautsprecher"
+        },
+        "ja": {
+          "text": "スピーカー",
+          "reading": "supīkā"
+        },
+        "es": {
+          "text": "altavoz",
+          "reading": "altavoz"
+        },
+        "zh": {
+          "text": "扬声器",
+          "reading": "yángshēngqì"
+        }
+      }
+    },
+    {
+      "id": "train",
+      "english": "train",
+      "emoji": "◇",
+      "category": "travel",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Zug",
+          "reading": "Zug"
+        },
+        "ja": {
+          "text": "電車",
+          "reading": "densha"
+        },
+        "es": {
+          "text": "tren",
+          "reading": "tren"
+        },
+        "zh": {
+          "text": "火车",
+          "reading": "huǒchē"
+        }
+      }
+    },
+    {
+      "id": "sausage",
+      "english": "sausage",
+      "emoji": "◇",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Wurst",
+          "reading": "Wurst"
+        },
+        "ja": {
+          "text": "ソーセージ",
+          "reading": "sōsēji"
+        },
+        "es": {
+          "text": "salchicha",
+          "reading": "salchicha"
+        },
+        "zh": {
+          "text": "香肠",
+          "reading": "xiāngcháng"
+        }
+      }
+    },
+    {
+      "id": "chicken",
+      "english": "chicken meat",
+      "emoji": "◇",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Hähnchen",
+          "reading": "Hähnchen"
+        },
+        "ja": {
+          "text": "鶏肉",
+          "reading": "toriniku"
+        },
+        "es": {
+          "text": "pollo",
+          "reading": "pollo"
+        },
+        "zh": {
+          "text": "鸡肉",
+          "reading": "jīròu"
+        }
+      }
+    },
+    {
+      "id": "oil",
+      "english": "cooking oil",
+      "emoji": "◇",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Öl",
+          "reading": "Öl"
+        },
+        "ja": {
+          "text": "油",
+          "reading": "abura"
+        },
+        "es": {
+          "text": "aceite",
+          "reading": "aceite"
+        },
+        "zh": {
+          "text": "食用油",
+          "reading": "shíyòngyóu"
+        }
+      }
+    },
+    {
+      "id": "vinegar",
+      "english": "vinegar",
+      "emoji": "◇",
+      "category": "food",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Essig",
+          "reading": "Essig"
+        },
+        "ja": {
+          "text": "酢",
+          "reading": "su"
+        },
+        "es": {
+          "text": "vinagre",
+          "reading": "vinagre"
+        },
+        "zh": {
+          "text": "醋",
+          "reading": "cù"
+        }
+      }
+    },
+    {
+      "id": "pepperMill",
+      "english": "pepper mill",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Pfeffermühle",
+          "reading": "Pfeffermühle"
+        },
+        "ja": {
+          "text": "胡椒挽き",
+          "reading": "koshōhiki"
+        },
+        "es": {
+          "text": "molinillo de pimienta",
+          "reading": "molinillo de pimienta"
+        },
+        "zh": {
+          "text": "胡椒研磨器",
+          "reading": "hújiāo yánmóqì"
+        }
+      }
+    },
+    {
+      "id": "apron",
+      "english": "apron",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Schürze",
+          "reading": "Schürze"
+        },
+        "ja": {
+          "text": "エプロン",
+          "reading": "epuron"
+        },
+        "es": {
+          "text": "delantal",
+          "reading": "delantal"
+        },
+        "zh": {
+          "text": "围裙",
+          "reading": "wéiqún"
+        }
+      }
+    },
+    {
+      "id": "menu",
+      "english": "menu",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Speisekarte",
+          "reading": "Speisekarte"
+        },
+        "ja": {
+          "text": "メニュー",
+          "reading": "menyū"
+        },
+        "es": {
+          "text": "carta",
+          "reading": "carta"
+        },
+        "zh": {
+          "text": "菜单",
+          "reading": "càidān"
+        }
+      }
+    },
+    {
+      "id": "receipt",
+      "english": "receipt",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Kassenbon",
+          "reading": "Kassenbon"
+        },
+        "ja": {
+          "text": "レシート",
+          "reading": "reshīto"
+        },
+        "es": {
+          "text": "recibo",
+          "reading": "recibo"
+        },
+        "zh": {
+          "text": "收据",
+          "reading": "shōujù"
+        }
+      }
+    },
+    {
+      "id": "calendar",
+      "english": "calendar",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Kalender",
+          "reading": "Kalender"
+        },
+        "ja": {
+          "text": "カレンダー",
+          "reading": "karendā"
+        },
+        "es": {
+          "text": "calendario",
+          "reading": "calendario"
+        },
+        "zh": {
+          "text": "日历",
+          "reading": "rìlì"
+        }
+      }
+    },
+    {
+      "id": "plant",
+      "english": "houseplant",
+      "emoji": "◇",
+      "category": "nature",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Zimmerpflanze",
+          "reading": "Zimmerpflanze"
+        },
+        "ja": {
+          "text": "観葉植物",
+          "reading": "kan'yōshokubutsu"
+        },
+        "es": {
+          "text": "planta de interior",
+          "reading": "planta de interior"
+        },
+        "zh": {
+          "text": "室内植物",
+          "reading": "shìnèi zhíwù"
+        }
+      }
+    },
+    {
+      "id": "paint",
+      "english": "paint",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "die Farbe",
+          "reading": "Farbe"
+        },
+        "ja": {
+          "text": "絵の具",
+          "reading": "enogu"
+        },
+        "es": {
+          "text": "pintura",
+          "reading": "pintura"
+        },
+        "zh": {
+          "text": "颜料",
+          "reading": "yánliào"
+        }
+      }
+    },
+    {
+      "id": "paintbrush",
+      "english": "paintbrush",
+      "emoji": "◇",
+      "category": "home",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Pinsel",
+          "reading": "Pinsel"
+        },
+        "ja": {
+          "text": "絵筆",
+          "reading": "efude"
+        },
+        "es": {
+          "text": "pincel",
+          "reading": "pincel"
+        },
+        "zh": {
+          "text": "画笔",
+          "reading": "huàbǐ"
+        }
+      }
+    },
+    {
+      "id": "helmet",
+      "english": "helmet",
+      "emoji": "◇",
+      "category": "travel",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "der Helm",
+          "reading": "Helm"
+        },
+        "ja": {
+          "text": "ヘルメット",
+          "reading": "herumetto"
+        },
+        "es": {
+          "text": "casco",
+          "reading": "casco"
+        },
+        "zh": {
+          "text": "头盔",
+          "reading": "tóukuī"
+        }
+      }
+    },
+    {
+      "id": "skateboard",
+      "english": "skateboard",
+      "emoji": "◇",
+      "category": "travel",
+      "region": "village",
+      "translations": {
+        "de": {
+          "text": "das Skateboard",
+          "reading": "Skateboard"
+        },
+        "ja": {
+          "text": "スケートボード",
+          "reading": "sukētobōdo"
+        },
+        "es": {
+          "text": "monopatín",
+          "reading": "monopatín"
+        },
+        "zh": {
+          "text": "滑板",
+          "reading": "huábǎn"
+        }
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": "food",
+      "name": "Food & drink",
+      "emoji": "🍎"
+    },
+    {
+      "id": "home",
+      "name": "Home & everyday",
+      "emoji": "🏠"
+    },
+    {
+      "id": "nature",
+      "name": "The natural world",
+      "emoji": "🌿"
+    },
+    {
+      "id": "animals",
+      "name": "Animal friends",
+      "emoji": "🐈"
+    },
+    {
+      "id": "travel",
+      "name": "Around the island",
+      "emoji": "⛵"
+    }
+  ]
+}

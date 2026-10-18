@@ -8,3 +8,6 @@ playwright-report/
 *.log
 __pycache__/
 *.pyc
+native/.godot/
+native/build/
+native/test-output/

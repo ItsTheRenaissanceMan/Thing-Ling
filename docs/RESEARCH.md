@@ -1,5 +1,7 @@
 # Noun Town research and the Thing-Ling design brief
 
+**Current implementation: native version 2.0.** Thing Ling now has a local Godot desktop edition with a connected town and 28 enterable interiors, 5,030 placed objects, 36 residents, 12 missions containing 100 ordered stages, 239 nouns, 120 authored sentence challenges, venue work and spaced review in German, Japanese, Spanish and Chinese. See the [native manual](NATIVE_GAME.md), [native validation record](NATIVE_VALIDATION.md) and [request checklist](USER_REQUEST_CHECKLIST.md). The browser v1.1 comparison later in this report is retained as historical implementation context; it does not describe the expanded native edition. The original research sources, sample counts and conclusions below have not been replaced by claims about an untested commercial game.
+
 Researched **18 October 2026, Europe/Berlin** (requests around 17 October 22:22–22:25 UTC). This is a source-based product and review analysis, not a first-hand playthrough or an independent assessment of learning outcomes. The sources were initially blocked on 17 October; research resumed after the environment's network policy changed and direct requests succeeded.
 
 ## What Noun Town actually offers

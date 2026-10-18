@@ -1,4 +1,6 @@
-# Validation record — v1.1
+# Historical browser validation — version 1.1
+
+This is the retained validation record for the earlier browser edition, not evidence for the current native executable. See the [native validation record](NATIVE_VALIDATION.md) and [native player manual](NATIVE_GAME.md) for version 2.0. Historical references below to `npm run package:windows` now correspond to `npm run package:browser-windows`; the current Windows command exports the native Godot game.
 
 Checked on 18 October 2026 in the managed Linux cloud environment with Node.js 24.19.0, Vite 8.3.4, and system Chromium. Browser automation uses software WebGL and reduced motion; normal play uses the player's GPU and does not require those flags.
 
