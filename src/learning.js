@@ -1,4 +1,5 @@
 import { LANGUAGES, WORDS } from './data.js';
+import { QUESTS } from './story.js';
 
 const WORD_BY_ID = new Map(WORDS.map((word) => [word.id, word]));
 const LANGUAGE_IDS = new Set(LANGUAGES.map((language) => language.id));
@@ -6,6 +7,7 @@ const DAY = 86_400_000;
 const INTERVALS = [600_000, DAY, 3 * DAY, 7 * DAY, 14 * DAY];
 const PROJECT_IDS = new Set(['lanterns', 'picnic', 'wildflowers']);
 const CONVERSATION_IDS = new Set(['cafe-conversation', 'garden-conversation', 'harbor-conversation', 'village-conversation']);
+const QUEST_BY_ID = new Map(QUESTS.map((quest) => [quest.id, quest]));
 const own = (object, key) => Object.prototype.hasOwnProperty.call(object, key);
 
 /** Create a save for one target language. Each language uses a separate save. */
@@ -19,6 +21,8 @@ export function createProgress(language = 'de') {
     quests: [],
     projects: [],
     conversations: [],
+    mapId: 'home',
+    missions: {},
     streak: 0,
     lastStudy: null,
     settings: { sound: true, motion: true },
@@ -150,6 +154,8 @@ export function validateProgress(value) {
     // Conversations were added after the initial save format. Absence upgrades
     // cleanly; an explicitly supplied malformed field is still rejected.
     const conversations = plainObject(value) && own(value, 'conversations') ? value.conversations : [];
+    const sourceMissions = plainObject(value) && own(value, 'missions') ? value.missions : {};
+    const sourceMapId = plainObject(value) && own(value, 'mapId') ? value.mapId : 'home';
     if (!plainObject(value) || value.version !== 1 || !LANGUAGE_IDS.has(value.language)
       || !nonnegativeInteger(value.xp) || !nonnegativeInteger(value.coins)
       || !nonnegativeInteger(value.streak) || !(value.lastStudy === null || validDate(value.lastStudy))
@@ -160,6 +166,8 @@ export function validateProgress(value) {
       || ![...value.projects].every((project) => PROJECT_IDS.has(project))
       || !Array.isArray(conversations) || conversations.length > 4
       || ![...conversations].every((conversation) => CONVERSATION_IDS.has(conversation))
+      || !plainObject(sourceMissions) || Object.keys(sourceMissions).length > QUESTS.length
+      || !(sourceMapId === 'home' || QUEST_BY_ID.has(sourceMapId))
       || !plainObject(value.settings) || typeof value.settings.sound !== 'boolean' || typeof value.settings.motion !== 'boolean') return null;
     const learned = {};
     for (const [id, entry] of Object.entries(value.learned)) {
@@ -168,10 +176,29 @@ export function validateProgress(value) {
         || !validTime(entry.dueAt) || !validTime(entry.discoveredAt)) return null;
       learned[id] = { level: entry.level, correct: entry.correct, wrong: entry.wrong, dueAt: entry.dueAt, discoveredAt: entry.discoveredAt };
     }
+    const missions = {};
+    for (const [id, entry] of Object.entries(sourceMissions)) {
+      const quest = QUEST_BY_ID.get(id);
+      if (!quest || !plainObject(entry) || !Array.isArray(entry.collected)
+        || entry.collected.length > quest.wordIds.length
+        || ![...entry.collected].every((wordId) => quest.wordIds.includes(wordId) && own(learned, wordId))
+        || new Set(entry.collected).size !== entry.collected.length
+        || typeof entry.assessmentPassed !== 'boolean'
+        || (entry.assessmentPassed && entry.collected.length !== quest.wordIds.length)
+        || (own(entry, 'submitted') && typeof entry.submitted !== 'boolean')
+        || (entry.submitted === true && (!entry.assessmentPassed || !value.quests.includes(id)))) return null;
+      missions[id] = { collected: [...entry.collected], assessmentPassed: entry.assessmentPassed };
+      if (own(entry, 'submitted')) missions[id].submitted = entry.submitted;
+    }
+    // Existing version-one saves keep every completed quest and discovery.
+    // A formerly visited map whose prerequisites are absent returns to the hub.
+    const mapId = sourceMapId === 'home' || QUEST_BY_ID.get(sourceMapId).requires.every((id) => value.quests.includes(id))
+      || value.quests.includes(sourceMapId) ? sourceMapId : 'home';
     return {
       version: 1, language: value.language, xp: value.xp, coins: value.coins, learned,
       quests: [...new Set(value.quests)], projects: [...new Set(value.projects)],
       conversations: [...new Set(conversations)], streak: value.streak, lastStudy: value.lastStudy,
+      mapId, missions,
       settings: { sound: value.settings.sound, motion: value.settings.motion },
     };
   } catch {

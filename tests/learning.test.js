@@ -11,7 +11,7 @@ test('all vocabulary IDs and translations exist in each supported language', () 
   assert.deepEqual(LANGUAGES.map((language) => language.id), ['de', 'ja', 'es', 'zh']);
   assert.equal(createProgress().language, 'de');
   assert.equal(createProgress('unavailable').language, 'de');
-  assert.equal(WORDS.length, 48);
+  assert.equal(WORDS.length, 179);
   assert.equal(new Set(WORDS.map((word) => word.id)).size, WORDS.length);
   for (const word of WORDS) {
     assert.deepEqual(Object.keys(word.translations), ['de', 'ja', 'es', 'zh']);
@@ -184,6 +184,63 @@ test('empty saves validate and previous saves migrate the conversation list', ()
   delete legacy.conversations;
   assert.deepEqual(validateProgress(legacy), empty);
   assert.equal(Object.hasOwn(legacy, 'conversations'), false);
+});
+
+test('version-one saves migrate mission fields without losing learning or other progress', () => {
+  const current = {
+    ...learnWord(createProgress('ja'), 'apple', NOW),
+    xp: 215, coins: 37, quests: ['little-hello'], projects: ['wildflowers'],
+    conversations: ['village-conversation'], settings: { sound: false, motion: false },
+  };
+  assert.equal(current.mapId, 'home');
+  assert.deepEqual(current.missions, {});
+  const legacy = JSON.parse(JSON.stringify(current));
+  delete legacy.mapId;
+  delete legacy.missions;
+  assert.deepEqual(validateProgress(legacy), current);
+  assert.equal(Object.hasOwn(legacy, 'mapId'), false);
+  assert.equal(Object.hasOwn(legacy, 'missions'), false);
+  assert.equal(validateProgress({ ...legacy, mapId: 'little-hello' }).mapId, 'little-hello');
+  assert.equal(validateProgress({ ...legacy, mapId: 'harbor-lanterns' }).mapId, 'home');
+  assert.equal(validateProgress({ ...legacy, mapId: 'kettle-on' }).mapId, 'kettle-on');
+  assert.equal(validateProgress({ ...legacy, quests: ['harbor-lanterns'], mapId: 'harbor-lanterns' }).mapId, 'harbor-lanterns');
+});
+
+test('mission save validation clones authored targets and rejects unsafe or incoherent records', () => {
+  const learned = ['apple', 'book', 'flower'].reduce((state, id) => learnWord(state, id, NOW), createProgress());
+  const original = {
+    ...learned, mapId: 'little-hello',
+    missions: { 'little-hello': { collected: ['book', 'apple', 'flower'], assessmentPassed: true } },
+  };
+  const copy = validateProgress(original);
+  assert.deepEqual(copy, original);
+  assert.notEqual(copy.missions, original.missions);
+  assert.notEqual(copy.missions['little-hello'], original.missions['little-hello']);
+  assert.notEqual(copy.missions['little-hello'].collected, original.missions['little-hello'].collected);
+  const submitted = { ...original, quests: ['little-hello'], missions: { 'little-hello': { ...original.missions['little-hello'], submitted: true } } };
+  assert.deepEqual(validateProgress(submitted), submitted);
+  const emptyRecord = { collected: [], assessmentPassed: false };
+  assert.deepEqual(validateProgress({ ...learned, missions: { 'little-hello': emptyRecord } }).missions['little-hello'], emptyRecord);
+  for (const mapId of [null, undefined, '', 'village', '__proto__', [], {}]) assert.equal(validateProgress({ ...original, mapId }), null);
+  for (const missions of [null, undefined, [], 'little-hello', 1, { unknown: emptyRecord }]) assert.equal(validateProgress({ ...original, missions }), null);
+  for (const record of [null, [], {}, { collected: [], assessmentPassed: 1 },
+    { collected: null, assessmentPassed: false }, { collected: 'apple', assessmentPassed: false },
+    { collected: Array(1), assessmentPassed: false }, { collected: ['apple', , 'flower'], assessmentPassed: false },
+    { collected: ['apple', 'apple'], assessmentPassed: false },
+    { collected: ['coffee'], assessmentPassed: false }, { collected: ['__proto__'], assessmentPassed: false },
+    { collected: ['apple', 'book', 'flower', 'apple'], assessmentPassed: false },
+    { collected: ['apple'], assessmentPassed: true },
+    { collected: [], assessmentPassed: false, submitted: 'yes' },
+    { collected: [], assessmentPassed: false, submitted: true },
+    { collected: ['apple', 'book', 'flower'], assessmentPassed: true, submitted: true }]) {
+    assert.equal(validateProgress({ ...original, missions: { 'little-hello': record } }), null);
+  }
+  assert.equal(validateProgress({ ...original, learned: {} }), null);
+  const unsafe = JSON.parse(JSON.stringify(original));
+  Object.defineProperty(unsafe.missions, '__proto__', { value: emptyRecord, enumerable: true });
+  assert.equal(validateProgress(unsafe), null);
+  const polluted = Object.create({ injected: emptyRecord });
+  assert.equal(validateProgress({ ...original, missions: polluted }), null);
 });
 
 test('conversation saves allow only known IDs and sanitize duplicates', () => {

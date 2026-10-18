@@ -10,7 +10,10 @@ The game does not need Node.js, Python, administrator rights, an account, or
 an internet connection for its core gameplay.
 
 Choose German, Japanese, Spanish, or Chinese in the top-right menu.
-Say hello to Theo or open your wordbook to begin your first little favor.
+Open Island atlas and visit Almanac Courtyard to begin Theo's first favor.
+Use Labels or Objects here to find things and their words. Complete each
+object's task, pass the word check, then return to Theo to finish the favor.
+The twelve missions each have a different map; new places unlock as you help.
 
 YOUR PROGRESS
 
@@ -27,8 +30,8 @@ IF THE LAUNCHER DOES NOT OPEN
 - You can also double-click Thing-Ling.html to play directly in your browser.
   Direct-file play uses a different save location; use Export/Import to move saves.
 - If your browser cannot display the 3D island, check that graphics acceleration
-  is enabled and your graphics driver is current. All words, lessons and quests
-  are also available from the wordbook and navigation.
+  is enabled and your graphics driver is current. The wordbook and lessons remain available.
+  Use Island atlas and Objects here to complete missions without 3D graphics.
 
 The launcher serves only the included game file to your own computer using
 built-in Windows PowerShell. It does not install a service or change Windows

@@ -1,52 +1,64 @@
-# Validation record
+# Validation record — v1.1
 
-Validated on 17 October 2026 in the managed cloud environment with Node.js 24.19.0, Vite 8.3.4, and system Chromium. Browser automation used software WebGL and reduced motion; the normal game does not require those test flags.
+Checked on 18 October 2026 in the managed Linux cloud environment with Node.js 24.19.0, Vite 8.3.4, and system Chromium. Browser automation uses software WebGL and reduced motion; normal play uses the player's GPU and does not require those flags.
 
-## Installation and production build
+## Content and unit tests
 
-- A clean `npm ci --cache /workspace/.cache/thing-ling/npm --no-audit --no-fund` succeeded with the project’s dependency lock.
-- `npm run build` succeeded. The result is a roughly 1.18 MB HTML file embedding the application, styles, fonts, and procedural 3D world.
-- The development server answered its internal readiness request with HTTP 200. The application and production build both mounted and rendered the actual WebGL island.
-- Installation/startup instructions and the actual repository mount path were saved to the environment configuration draft. This confirms draft persistence, not publication or restoration in another task.
+`npm test`: **44 passed, 0 failed, 0 skipped**.
 
-## Learning and story tests
+The checked content contains exactly German, Japanese, Spanish, and Mandarin Chinese; **179 vocabulary entries per language**, **12 mission definitions**, **13 maps**, and **471 authored prop placements**. Generated terrain and structural parts add further discoverable instances.
 
-`npm test`: **25 passed, 0 failed, 0 skipped**.
+Tests cover all of the following:
 
-The suite exercises vocabulary coverage for exactly German, Japanese, Spanish, and Chinese; immutable one-time discovery rewards; due-date ordering; successful and incorrect review scheduling; mastery caps; early practice without mastery inflation; daily streak rules; four distinct answer options; typed native/romanized answers; XP levels; safe save import validation and migrations; quest prerequisites and completion rewards; a valid quest graph; and complete, idempotent conversation scenarios.
+- One-time discovery and mission rewards, review scheduling, early practice without mastery inflation, streaks, answer normalization, and session generation.
+- All twelve physical mission chains in each of the four languages, including branch dependencies, correct-map enforcement, task collection, full perfect assessments, and explicit handovers.
+- No progression shortcut through wordbook discoveries, incomplete checks, locked locations, or repeat submissions.
+- Version-one save migration, legacy completed quests, independent language state, malformed imports, and inconsistent mission records.
+- Complete vocabulary references, unique maps, model footprints, rotated/scaled bounds, NPC clearance, and all mission targets physically present.
+- Geometry failure cases: intersecting ground props, overlapping dishes on one table, unsupported tabletop items, missing labels, absent targets, and out-of-bounds placements. Parent support exemptions do not exempt sibling items from collision checks.
 
 ## Browser playtests
 
-`npm run test:e2e`: **8 passed, 0 failed, 0 skipped** in the final run.
+`npm run test:e2e`: **14 passed, 0 failed, 0 skipped** in 10.9 minutes. A newly added valid-backup import regression reproduced a stale task-card reference, then passed after the imported map was loaded before refreshing the HUD. The existing preferences/export/invalid-import case also passed again after that correction (**2 targeted cases passed in 32.4 seconds**). This covers **15 distinct browser cases** overall.
 
-1. The WebGL island starts, neighborhood navigation works, no runtime or console errors occur, and all main sections fit a 390 px mobile viewport.
-2. Discovering a word grants its reward once; separate language wordbooks and the active selection persist through reload.
-3. A complete mixed review session accepts matching, written listening fallback, and romanized Japanese typing. Immediate repetitions do not inflate spaced mastery.
-4. An incorrect typed answer shows the actual correct answer, updates the review record, and waits for the player to continue.
-5. The opening quest requires its discoveries, awards its completed challenge once, and remains complete after reload.
-6. Sound/motion preferences survive reload, exports contain the actual save, and malformed imports preserve existing progress.
-7. A German conversation explains an incorrect phrase, permits retry, completes all three contextual moments, and grants its reward once, including after replay/reload.
-8. Valid earned quest branches restore the garden and café independently, including switching languages with the same number of completed landmarks. A lantern project charges exactly once, persists after reload, and leaves another language’s coins untouched.
+The browser suite exercises the actual UI rather than a hidden progression API:
 
-## Portable build check
+1. Play all twelve missions in Japanese, travelling to every map, completing each authored object action, passing its randomized word check, and explicitly handing work to its character. Verify rewards remain unavailable before the handover and all twelve completions survive reload.
+2. Audit scene labels and the object directory on every map: every rendered semantic instance has a unique ID, a real vocabulary entry, nonempty text, and an accessible inventory entry. Every authored prop and every mission target must also have a label.
+3. Complete the opening mission independently in German, Japanese, Spanish, and Chinese; switch language and reload without mixing map or learning progress.
+4. Preserve legacy completed quests, reject wordbook shortcuts, save partially completed tasks across reload, and retain tasks after a failed assessment followed by a successful retry.
+5. Check atlas, object directory, scene controls, and the other game sections at a 390 × 844 phone viewport without horizontal overflow.
+6. Load every map through the actual Three.js renderer, inspect rendered model bounds, and require no oversized models, unintended intersections, or meshes without vocabulary/character ownership. This is additional to the data-level geometry audit.
+7. Import a valid backup whose current map differs from the open scene, use the refreshed task card to complete an actual action, and verify its state after reload.
+8. Exercise discovery rewards, Japanese written/romanized practice, matching/listening fallbacks, error feedback, preferences, export, invalid import protection, a complete German conversation, separate restoration branches, and one-time cosmetic purchases.
 
-The managed browser rejects direct `file:` navigation with `ERR_BLOCKED_BY_ADMINISTRATOR`. Direct file opening was therefore **not** verified in this environment. The same unmodified production HTML was served locally instead.
+The complete campaign case has a longer timeout because 26 full-size screenshots and all twelve missions run sequentially in a software-rendered browser. Its assertions and required interactions are unchanged.
 
-After its initial response, browser networking was disabled. The following real UI flow passed: choose Chinese; discover 苹果; answer a typed recall question using `ping guo`; export progress; cancel a reset; confirm a reset; import the exported backup through the confirmation flow; compare the restored save exactly to the export. After reconnecting to the local server, reload preserved the Chinese selection and word record. There were **zero separate asset/external requests and zero page errors**. Local-file restrictions on a player’s device can be handled by the documented local server option.
+## Production and portable build
 
-## Visual and world interaction checks
+`npm run package:windows` builds a single self-contained HTML file (about 1.28 MB) and prepares the Windows launch folder. The build embeds application code, styles, fonts, and procedural geometry; no separate game asset downloads are required.
 
-Desktop and mobile screenshots were inspected for the island, wordbook, practice, quests, phrases, conversations, word dialogs, quizzes, and settings. Original scene interactions were also checked directly: NPC selection, actual canvas raycasting on the apple, discovered-word markers, independent milestone visuals, cosmetic project visibility, pause/resume, and disposal. Geometry batching reduced the measured scene draw calls from about 1,822 to 328 per rendered frame. Inactive scenes produced no draw calls during the sampled interval.
+The unmodified production HTML passed an offline Chinese mission: travel to Almanac Courtyard, perform all three object actions, answer the full word check, hand over to Theo, and export the resulting save. Networking was disabled after the initial HTML response. After reconnecting and reloading, the language, map, learned words, task records and completion matched the saved state. **Zero separate asset requests and zero page errors** occurred. A final production lighthouse view also verified the lighter night heading and produced the documentation screenshot.
 
-## Limits
+The managed browser rejects direct `file:` navigation. Portable HTML is tested unmodified through a loopback server instead. Direct local-file opening is therefore not verified in this environment.
 
-- Noun Town's official site, Steam page, metadata, and reviews were blocked during the initial 17 October build. Network access became available before publication on 18 October; the completed [research report](RESEARCH.md) now records the actual sources, review sample, findings, and remaining uncertainties.
-- Device-specific native speech playback and microphone recognition need testing on the player’s device; this environment has no matching installed voices. Written fallbacks were tested.
-- No cross-device cloud save, VR mode, certified proficiency scoring, trained pronunciation assessment, or native-speaker curriculum review is claimed.
-- This is a tested first playable edition with the content volume documented in the README. Long-term learning effectiveness, every hardware/browser combination, direct local-file launch, environment publication, and a newly restored cloud task were not verified.
+## Visual inspection
 
-## Windows package
+Desktop scene screenshots are captured with and without optional labels for all thirteen maps. Mobile atlas, object inventory, and mission screenshots cover the narrow layout. The map camera resets on travel after object focus; the phone view is positioned above its mission controls. House façades retain labelled doors, windows, shutters, planters, flowers, chimneys and roof detail. A house with authored fixtures uses those fixtures instead of adding duplicate generic doors or windows.
 
-The Windows package adds `Play Thing Ling.cmd` and a readable PowerShell launcher source, without changing the game code. `npm run package:windows` successfully rebuilt the identical portable HTML and generated the launch folder. The launcher uses Windows PowerShell 5.1 APIs, binds a TCP listener to IPv4 loopback on a fixed port, and serves only the included game HTML. It does not install a service, require an execution-policy override, or open an existing unidentified service when its port is occupied.
+Floating labels avoid one another on screen. Hover cards, the scene inventory, and the full wordbook provide access when a floating label cannot fit. Repeated parts of one recognizable object share a semantic noun; every polygon does not become a separate vocabulary entry.
 
-Static review checked CMD quoting and real CRLF line endings, the 2,991-character command against CMD's limit, environment-variable handling of folder paths, PowerShell 5.1 syntax, bounded request reads, raw UTF-8 game bytes, response lengths, GET/HEAD handling, and save-origin consistency. The generated package was checked for ZIP integrity and byte-for-byte equality between its game HTML and the tested production build. No Windows machine or PowerShell runtime is available in this workspace, so **native Windows launcher execution has not been tested**.
+## Windows and published archives
+
+The Windows launcher uses built-in Windows PowerShell 5.1 APIs and a fixed IPv4 loopback port. It serves only the included HTML and opens the default browser. It does not install a service, require administrator rights, or change execution policy. Its command and CRLF line endings were statically reviewed in the initial release; this update retains that launcher.
+
+Release generation verifies both ZIPs, checks that their HTML is identical to the production build, includes the complete editable project and packaging sources, and refreshes SHA-256 checksums. Archive source checks exclude dependencies, caches, credentials, and browser-test outputs.
+
+**Native Windows launcher execution has not been tested:** this workspace has no Windows or PowerShell runtime. Browser gameplay is tested on Linux Chromium.
+
+## Other limits
+
+- Device voices and microphone recognition need testing on the player's device. Written readings and choice/typing fallbacks are tested; recorded native-speaker audio is not supplied.
+- The campaign's authored actions use contextual buttons and visible completion feedback. They do not imply freeform physics, a cooking simulation, or plant-growth timers.
+- Long-term retention, independent native-speaker curriculum review, every hardware/browser combination, VR, and cross-device cloud saves are not verified or supplied.
+- The [research report](RESEARCH.md) records the actual Noun Town sources and review sample. The current content is documented in [CAMPAIGN.md](CAMPAIGN.md); equivalent commercial content volume is not claimed.

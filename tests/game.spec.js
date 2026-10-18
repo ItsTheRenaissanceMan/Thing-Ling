@@ -1,8 +1,9 @@
 import { test, expect } from '@playwright/test';
 import { readFile } from 'node:fs/promises';
 import { WORDS } from '../src/data.js';
-import { QUESTS, PHRASES, CONVERSATIONS, awardQuest } from '../src/story.js';
+import { QUESTS, PHRASES, CONVERSATIONS } from '../src/story.js';
 import { createProgress, learnWord, validateProgress } from '../src/learning.js';
+import { startMission, collectMissionWord, markMissionAssessment, submitMission } from '../src/missions.js';
 
 const STORAGE = 'thing-ling.saves.v1';
 
@@ -55,7 +56,7 @@ test.beforeEach(async ({ page }) => {
   await page.getByLabel('Learning language').selectOption('ja');
 });
 
-test('3D island starts, neighborhoods and all sections work on a narrow screen', async ({ page }) => {
+test('3D village starts, map travel and all sections work on a narrow screen', async ({ page }) => {
   const pageErrors = [];
   const consoleErrors = [];
   page.on('pageerror', error => pageErrors.push(error.message));
@@ -64,10 +65,10 @@ test('3D island starts, neighborhoods and all sections work on a narrow screen',
   await expect(page.locator('#world canvas')).toBeVisible();
   await expect(page.locator('.world-fallback')).toHaveCount(0);
   expect(await page.locator('#world canvas').evaluate(canvas => Boolean(canvas.getContext('webgl2')))).toBe(true);
-  await page.getByRole('button', { name: 'The Garden', exact: true }).click();
-  await expect(page.locator('#location-name')).toHaveText('Wildflower Garden');
-  await page.getByRole('button', { name: 'The Harbor', exact: true }).click();
-  await expect(page.locator('#location-name')).toHaveText('Moonrise Harbor');
+  await page.locator('#open-atlas').click();
+  await page.locator(`[data-travel="${QUESTS[0].id}"]`).click();
+  await expect(page.locator('#world')).toHaveAttribute('data-map-id', QUESTS[0].id);
+  await expect(page.locator('#location-name')).not.toHaveText('The Village');
   await page.setViewportSize({ width: 390, height: 844 });
   for (const [name, title] of [
     ['Wordbook', 'Your wordbook.'],
@@ -153,27 +154,32 @@ test('a mistake shows the correct answer and waits before advancing', async ({ p
   await expect(page.getByRole('dialog')).toHaveCount(0);
 });
 
-test('opening quest requires discovery, awards a perfect challenge once, and persists', async ({ page }) => {
+test('opening quest requires physical discovery and explicit turn-in, awards once, and persists', async ({ page }) => {
   const quest = QUESTS[0];
-  await navigate(page, 'Quests');
-  await page.locator(`#section-page [data-quest="${quest.id}"]`).click();
-  await expect(page.locator('#quest-start')).toBeDisabled();
-  await page.getByRole('button', { name: 'Close dialog' }).click();
   for (const id of quest.wordIds) await learn(page, id);
-  await navigate(page, 'Quests');
-  await page.locator(`#section-page [data-quest="${quest.id}"]`).click();
-  await page.locator('#quest-start').click();
+  await navigate(page, 'Explore');
+  await page.locator('#open-atlas').click();
+  await page.locator(`[data-travel="${quest.id}"]`).click();
+  // Learning the words in a menu must not replace doing the actual mission.
+  await expect(page.locator('#mission-challenge')).toHaveCount(0);
+  for (const id of quest.wordIds) {
+    await page.locator('#open-map-objects').click();
+    await page.getByRole('dialog').locator(`[data-map-word="${id}"]`).first().click();
+    await page.locator('#mission-word-action').click();
+    await expect(page.getByRole('dialog')).toHaveCount(0);
+  }
+  await page.locator('#mission-challenge').click();
   for (let index = 0; index < quest.wordIds.length; index += 1) await answerCurrent(page);
-  await expect(page.getByRole('heading', { name: 'You made someone’s day.' })).toBeVisible();
+  expect((await readSave(page)).quests).toEqual([]);
+  await page.locator('#finish-practice').click();
+  await page.locator('#mission-return').click();
+  await page.locator('#mission-turn-in').click();
   const completed = await readSave(page);
   expect(completed.quests).toEqual([quest.id]);
   expect(completed.xp).toBe(3 * 10 + 3 * 8 + quest.reward.xp);
   expect(completed.coins).toBe(3 * 2 + 3 + quest.reward.coins);
-  await page.getByRole('button', { name: /Back to my little world/ }).click();
-  await navigate(page, 'Quests');
-  await page.locator(`#section-page [data-quest="${quest.id}"]`).click();
-  await expect(page.locator('#quest-start')).toHaveText(/Favor complete/);
-  await expect(page.locator('#quest-start')).toBeDisabled();
+  await page.locator('#mission-complete-done').click();
+  await expect(page.locator('#mission-challenge')).toHaveCount(0);
   expect(await readSave(page)).toEqual(completed);
   await page.reload();
   expect(await readSave(page)).toEqual(completed);
@@ -245,7 +251,10 @@ test('independent restoration branches and a single project purchase persist per
     const complete = id => {
       const quest = QUESTS.find(item => item.id === id);
       for (const requirement of quest.requires) if (!progress.quests.includes(requirement)) complete(requirement);
-      progress = awardQuest(progress, id);
+      progress = startMission(progress, id);
+      for (const wordId of quest.wordIds) progress = collectMissionWord(progress, id, wordId);
+      progress = markMissionAssessment(progress, id, quest.wordIds.length, quest.wordIds.length);
+      progress = submitMission(progress, id);
     };
     complete(target);
     expect(validateProgress(progress)).toEqual(progress);

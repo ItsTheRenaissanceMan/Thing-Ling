@@ -1,6 +1,6 @@
 # Thing Ling
 
-A cozy language-learning game on a small, explorable 3D island. Meet four neighbors, fill the Community Almanac, and make the island a little lovelier as your words take root.
+A cozy language-learning game with an explorable 3D village and twelve mission maps. Meet four neighbors, fill the Community Almanac, and make the island a little lovelier as your words take root.
 
 **Languages:** German, Japanese, Spanish, and Mandarin Chinese. Chinese uses simplified characters and pinyin; Japanese includes romanized readings. German includes noun articles, and typed exercises accept the noun with or without its article. Progress is separate for each language.
 
@@ -33,22 +33,25 @@ To refresh both complete ZIPs, the portable HTML, and SHA-256 checksums in `down
 
 In the managed cloud environment, use the existing checkout at `/workspace/Thing-Ling`. Each cloud task is already isolated; no Git worktree is needed. If the default npm cache is read-only, use `npm ci --cache /workspace/.cache/thing-ling/npm`.
 
+![The village hub in Thing Ling v1.1](docs/preview.png)
+
 ## Your first few minutes
 
 1. Pick your learning language in the top bar. German is the initial selection.
-2. Drag the island to look around, scroll to zoom, and click a neighbor or an object. The three neighborhood tabs move the camera for you.
-3. Meet Theo and open **A little hello**. Discover an apple, a book, and a flower. You can also reach every object from the wordbook.
-4. Add discoveries to your wordbook, then finish the favor’s short challenge. A perfect round completes the favor; mistakes explain the answer and allow another try.
-5. Visit the café, garden, and harbor. Each neighborhood has its own chain of favors.
+2. Drag to look around, scroll to zoom, and click a neighbor or object. **Labels** shows translated names; **Objects here** lists every object and building part in the current map.
+3. Open the **Atlas**, visit **Almanac Courtyard**, and help Theo with the apple, book, and flower. Use each object’s task button to record your work.
+4. Finish the map’s word check with every answer correct, then return to Theo and hand over your work to complete the favor. Mistakes explain the answer; tasks stay saved while you retry.
+5. Follow the branching café, garden, and harbor stories. All twelve favors have their own populated map. Completed locations remain available to revisit.
 6. Try a conversation with a neighbor, or use the Phrasebook to practice ordering, greetings, directions, and asking for help.
 7. Revisit words in Practice. Earn coins and spend them on visible island projects from the quest board.
 
 ## Implemented game
 
-- An original, hand-built low-poly 3D island with a café, cottage, lighthouse, orchard, vegetable beds, stream, bridge, waterfront, boats, pets, and discoverable objects.
-- Three camera neighborhoods, draggable orbit/zoom, object tooltips, four character markers, and review markers on learned objects.
-- 48 object words in each of four languages, organized into five categories.
-- Four characters, 12 dependency-linked quests, and three visible landmark restorations.
+- Thirteen original low-poly 3D maps: a village hub and twelve distinct mission locations, including a tea house, bakery, café, planting terraces, citrus grove, animal sanctuary, conservatory, cove, parcel exchange, cottage, and lighthouse.
+- 471 authored object placements, plus individually labelled building parts and scenery. Every rendered mesh belongs to a vocabulary object or named character. Ground spacing, tabletop supports, and actual model bounds are validated to prevent unintended overlaps.
+- A travel atlas, translated labels, searchable map object directory, draggable orbit/zoom, object tooltips, and four character markers.
+- 179 vocabulary words in each of four languages, organized into five categories.
+- Twelve complete dependency-linked missions with distinct authored tasks, perfect word checks, explicit character handovers, persistent progress, and three visible landmark restorations. See the [campaign guide](docs/CAMPAIGN.md).
 - Four three-step contextual conversations using 12 practical phrases per language. Wrong choices explain their meaning and allow retries.
 - Matching, listening, and typed recall, including Japanese romanization and Mandarin pinyin.
 - A spaced-review schedule: correct due reviews advance through 10 minutes, 1 day, 3 days, 7 days, and 14 days. Early extra practice keeps its existing mastery and due time; mistakes lower mastery and return after one minute.
@@ -75,7 +78,7 @@ npm run test:e2e
 npm run build
 ```
 
-Unit tests exercise the real learning and story rules, including repeat rewards, review intervals, answer normalization, malformed save imports, quest prerequisites, and conversation references. Browser tests play the actual discovery, practice, quest, conversation, language switching, and save flows.
+Unit tests exercise learning, story and mission rules, all four full campaign chains, legacy save migration, and map placement geometry. Browser tests play all twelve missions through their real UI, inspect every map’s actual rendered bounds and labels, and cover practice, conversations, language switching, mobile layouts, and saved progress. See [validation details](docs/VALIDATION.md).
 
 Browser tests use the system Chromium at `/usr/bin/chromium`; set `CHROMIUM_PATH` for another installation. The Playwright configuration starts Vite if needed and uses a software WebGL renderer in headless environments. Test-only software-rendering flags are not required for normal play.
 
@@ -83,13 +86,16 @@ Browser tests use the system Chromium at `/usr/bin/chromium`; set `CHROMIUM_PATH
 
 This is an original playable first edition, with its own island, characters, story, geometry, and interface. Its cozy low-poly direction is inspired by the broad aesthetic requested by the user. It contains no extracted Noun Town assets, map, characters, music, or code.
 
-Network access became available before publication, and [the research report](docs/RESEARCH.md) now analyzes Noun Town's official description, screenshots, release announcements, and a documented sample of real Steam reviews. It separates verified features, player reports, design proposals, and the actual delivered scope. Noun Town advertises over 1,000 words and phrases, 11 areas, and 16 characters; Thing Ling's first edition has 48 object words per language, three neighborhoods, and four characters. It does not claim equivalent commercial content, VR support, a trained pronunciation assessment system, or professionally recorded dialogue.
+Network access became available before publication, and [the research report](docs/RESEARCH.md) now analyzes Noun Town's official description, screenshots, release announcements, and a documented sample of real Steam reviews. It separates verified features, player reports, design proposals, and the actual delivered scope. Noun Town advertises over 1,000 words and phrases, 11 areas, and 16 characters; Thing Ling v1.1 has 179 vocabulary words per language, thirteen maps, twelve complete missions, and four characters. It does not claim equivalent commercial content, VR support, a trained pronunciation assessment system, or professionally recorded dialogue.
 
 ## Source map
 
 | File | Responsibility |
 | --- | --- |
-| `src/world.js` | Original 3D environment, camera, interaction, animations, restorations |
+| `src/world.js` | Map rendering, semantic labels, camera, interaction, animation, diagnostics |
+| `src/props.js` | Low-poly object models, semantic parts, shared model bounds |
+| `src/maps.js` | Thirteen authored maps, placements, geometry validation |
+| `src/missions.js` | Physical objectives, assessments, handovers, mission progress |
 | `src/data.js` | Shared vocabulary and language metadata |
 | `src/learning.js` | Learning rules, reviews, session generation, save validation |
 | `src/story.js` | Characters, quest graph, phrases, conversation scenarios |

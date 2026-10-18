@@ -1236,3 +1236,308 @@ input.switch:checked:before { transform: translateX(16px); }
   .quest-checklist { margin-top: 13px; }
   .tip-card { padding-top: 11px; padding-bottom: 11px; }
 }
+
+/* The field guide and its twelve playable destinations. */
+.map-tools { position: absolute; top: 28px; right: 29px; z-index: 4; display: flex; align-items: center; gap: 7px; }
+.map-tools .button { min-height: 37px; padding: 10px 13px; font-size: 10px; background: #fffff6f2; border-color: #ffffffd9; box-shadow: 0 3px 16px #435e3410; backdrop-filter: blur(12px); }
+.map-tools .button svg { width: 15px; height: 15px; }
+.map-tools .icon-button { display: grid; place-items: center; width: 37px; height: 37px; border: 1px solid #ffffffd9; border-radius: 11px; color: #718664; background: #fffff6f2; box-shadow: 0 3px 16px #435e3410; }
+.map-tools .icon-button[aria-pressed="true"] { color: #486939; background: #e2eccb; border-color: #c8dbab; }
+.game-layout:has(.map-tools) .region-switch { top: 78px; }
+.game-layout:has(.map-tools) .right-rail { top: 143px; max-height: calc(100% - 165px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: #d3dfbd transparent; padding-bottom: 2px; }
+.explore-top.mission-hero { max-width: calc(100% - 380px); }
+.explore-top.mission-hero h1 { font-size: clamp(28px, 2.6vw, 39px); letter-spacing: -1.6px; margin-top: 10px; }
+.explore-top.mission-hero .world-subtitle { max-width: 340px; margin-top: 9px; line-height: 1.7; }
+.game-layout:has(.mission-hero) .right-rail { top: 93px; max-height: calc(100% - 116px); }
+.game-layout:has(.mission-hero) .daily-card,
+.game-layout:has(.mission-hero) .tip-card { display: none; }
+.map-object-count { display: inline-flex !important; align-items: center; width: fit-content; padding: 3px 7px; background: #e8efd8; border-radius: 20px; color: #6e8755 !important; font-size: 8px !important; white-space: nowrap; }
+.mission-state-banner { display: flex; align-items: center; gap: 6px; width: fit-content; max-width: 100%; margin-top: 12px; padding: 6px 9px; border: 1px solid #ffffffa6; border-radius: 8px; color: #5c774b; background: #fffff5ba; font-size: 10px; line-height: 1.5; backdrop-filter: blur(8px); }
+.mission-state-banner svg { width: 13px; height: 13px; }
+
+.mission-card { padding: 20px !important; }
+.quest-card:has(> .mission-card) { padding: 0; }
+.mission-card .card-eyebrow { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 14px; font-size: 8px; line-height: 1.5; }
+.mission-card .quest-title { margin-bottom: 8px; font-size: 19px; font-weight: 500; line-height: 1.35; letter-spacing: -.6px; }
+.mission-card .quest-description { font-size: 11px; line-height: 1.75; }
+.mission-stage-pill { display: inline-flex; align-items: center; gap: 4px; flex-shrink: 0; padding: 5px 7px; border: 1px solid #e2e9d4; border-radius: 99px; color: #6f8d53; background: #f0f5e4; font-size: 8px; letter-spacing: .1px; text-transform: none; font-weight: 500; }
+.mission-path { display: flex; align-items: flex-start; gap: 5px; margin: 19px 0 16px; }
+.mission-path > * { position: relative; flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 0; color: #9ca790; font-size: 9px; text-align: center; line-height: 1.5; }
+.mission-path > *:not(:last-child)::after { content: ''; position: absolute; left: calc(50% + 15px); top: 12px; width: calc(100% - 25px); height: 1px; background: #e2e9d6; }
+.mission-path > * > span:first-child, .mission-path > * > i { width: 25px; height: 25px; display: grid; place-items: center; border: 1px solid #dfe7d0; border-radius: 50%; background: #f7f9ef; font-size: 9px; font-style: normal; }
+.mission-path > .active { color: #5f7e44; }
+.mission-path > .active > span:first-child, .mission-path > .active > i { background: #e6efcf; border-color: #c8dca7; box-shadow: 0 0 0 3px #e9f1da; }
+.mission-path > .done { color: #7b9b5a; }
+.mission-path > .done > span:first-child, .mission-path > .done > i { background: #e8f0d8; border-color: #d2e1b8; }
+.mission-path svg { width: 12px; height: 12px; }
+.mission-progress { color: #98a58a; font-size: 9px; line-height: 1.7; }
+.mission-progress-track { height: 4px; overflow: hidden; border-radius: 99px; background: #edf1e3; margin: 14px 0; }
+.mission-progress-track > span { display: block; height: 100%; border-radius: inherit; background: #adc782; transition: width .35s ease; }
+.mission-context { margin: 14px 0; padding: 11px 12px; border: 1px solid #e8eddf; border-radius: 11px; background: #f6f8ed; color: #839471; font-size: 10px; line-height: 1.8; }
+.mission-context strong { color: #637f4b; font-weight: 500; }
+.mission-objectives { display: flex; flex-direction: column; gap: 6px; margin: 14px 0; }
+.mission-objective { display: flex; align-items: center; gap: 9px; width: 100%; text-align: left; padding: 9px 10px; border: 1px solid #e7ecdc; border-radius: 10px; color: #728862; background: #fbfcf5; transition: border-color .18s, background .18s; }
+.mission-objective:hover { border-color: #c5d8aa; background: #f1f6e7; }
+.mission-objective > span:first-child { width: 27px; flex: 0 0 27px; font-size: 21px; text-align: center; }
+.mission-objective > div { flex: 1; min-width: 0; }
+.mission-objective strong { display: block; font-size: 10px; line-height: 1.5; font-weight: 500; }
+.mission-objective small, .mission-item-instruction { display: block; font-size: 9px; line-height: 1.6; color: #9aa58b; margin-top: 2px; }
+.mission-objective > svg { width: 13px; height: 13px; color: #b5c2a2; }
+.mission-objective.checked, .mission-objective.completed { border-color: #d8e5c4; background: #eff5e5; }
+.mission-objective.checked > svg, .mission-objective.completed > svg { color: #7e9f5a; }
+.mission-objective.active { border-color: #bad29a; background: #f0f6e4; }
+.mission-actions { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 15px; }
+.mission-actions > .button { width: 100%; min-height: 39px; font-size: 10px; }
+.mission-actions > .button.ghost { min-height: 31px; font-size: 9px; }
+.mission-actions > .muted { width: 100%; font-size: 9px; }
+.mission-actions > .text-button { font-size: 9px; margin-top: 3px; }
+
+.atlas-modal { width: min(100%, 1020px); }
+.atlas-modal .modal-header { padding-bottom: 18px; }
+.atlas-modal .modal-title { font-family: 'Fraunces', Georgia, serif; font-size: 32px; letter-spacing: -.9px; }
+.atlas-intro { display: flex; align-items: center; justify-content: space-between; gap: 20px; color: #8a9a79; font-size: 11px; line-height: 1.8; margin-bottom: 20px; }
+.modal-header.atlas-intro { display: block; margin-bottom: 0; }
+.atlas-modal .atlas-intro > #modal-title { font-family: 'Fraunces', Georgia, serif; font-size: 31px; }
+.atlas-intro > p { max-width: 520px; }
+.atlas-intro .chip { flex-shrink: 0; font-size: 10px; padding: 8px 12px; background: #eef3e2; }
+.atlas-region-heading { display: flex; align-items: center; gap: 8px; margin: 24px 0 13px; font-size: 11px; line-height: 1.5; color: #718b59; font-weight: 500; }
+.atlas-region-heading::after { content: ''; height: 1px; background: #e6ebda; flex: 1; margin-left: 6px; }
+.atlas-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.atlas-card { display: flex; flex-direction: column; text-align: left; min-width: 0; position: relative; border: 1px solid #e2e9d5; border-radius: 15px; padding: 0; overflow: hidden; background: #fbfcf4; transition: transform .18s, box-shadow .18s, border-color .18s; }
+.atlas-card:not(:disabled):hover { transform: translateY(-3px); box-shadow: 0 7px 21px #4f633411; border-color: #bdd39f; }
+.atlas-card.current { border-color: #a9c87f; box-shadow: 0 0 0 2px #dfecc9; }
+.atlas-card.completed { border-color: #cfdfb8; }
+.atlas-card.locked { opacity: .7; }
+.atlas-art { width: 100%; min-height: 105px; position: relative; isolation: isolate; display: grid; place-items: center; overflow: hidden; background: linear-gradient(160deg, #e8f0d9, #d5e3c1); font-size: 45px; }
+.atlas-art::before, .atlas-art::after { content: ''; position: absolute; z-index: -1; width: 150px; height: 70px; border-radius: 50%; transform: rotate(-15deg); bottom: -26px; left: -20px; background: #b8d19466; }
+.atlas-art::after { left: auto; right: -25px; width: 210px; bottom: -40px; transform: rotate(12deg); background: #a9c58b55; }
+.atlas-art > span { filter: drop-shadow(0 6px 0 #59733b13); }
+.atlas-art > i { position: absolute; top: 11px; right: 11px; display: grid; place-items: center; width: 25px; height: 25px; border-radius: 50%; background: #fffff4b3; color: #8a9e71; }
+.atlas-art > i svg { width: 13px; height: 13px; }
+.atlas-card:nth-child(4n + 2) .atlas-art { background: linear-gradient(155deg, #f3ebd8, #eaddc0); }
+.atlas-card:nth-child(4n + 2) .atlas-art::before { background: #d6be8d55; }
+.atlas-card:nth-child(4n + 2) .atlas-art::after { background: #d4bc9266; }
+.atlas-card:nth-child(4n + 3) .atlas-art { background: linear-gradient(155deg, #e1edef, #c6dedb); }
+.atlas-card:nth-child(4n + 3) .atlas-art::before { background: #a9c8c455; }
+.atlas-card:nth-child(4n + 3) .atlas-art::after { background: #8bb8b255; }
+.atlas-card:nth-child(4n + 4) .atlas-art { background: linear-gradient(155deg, #ece8f1, #dcd6e8); }
+.atlas-card:nth-child(4n + 4) .atlas-art::before { background: #c0afd455; }
+.atlas-card:nth-child(4n + 4) .atlas-art::after { background: #b5a7cb55; }
+.atlas-card-region { font-size: 8px; text-transform: uppercase; letter-spacing: 1.1px; color: #96a481; padding: 15px 16px 0; }
+.atlas-card-title { display: block; color: #617d4b; font-size: 16px; font-weight: 500; line-height: 1.45; letter-spacing: -.3px; padding: 7px 16px 0; }
+.atlas-card-description { display: block; flex: 1; font-size: 10px; line-height: 1.8; color: #94a383; padding: 7px 16px 13px; }
+.atlas-card-stats { display: flex; align-items: center; flex-wrap: wrap; gap: 7px 10px; width: calc(100% - 32px); margin: 0 16px; padding: 11px 0; border-top: 1px solid #e9edde; color: #8d9f78; font-size: 9px; line-height: 1.5; }
+.atlas-card-stats svg { width: 12px; height: 12px; }
+.atlas-card-stats > span { display: inline-flex; align-items: center; gap: 4px; }
+.atlas-card-status { display: flex; align-items: center; justify-content: space-between; gap: 7px; width: 100%; background: #f1f5e7; padding: 10px 16px; font-size: 9px; color: #78945d; line-height: 1.5; }
+.atlas-card-status svg { width: 13px; height: 13px; }
+.atlas-card.current .atlas-card-status, .atlas-card.completed .atlas-card-status { background: #e8f1d9; color: #678749; }
+.atlas-card.locked .atlas-card-status { color: #9ba68e; background: #f0f2e9; }
+
+.map-objects-modal { width: min(100%, 790px); }
+.map-object-summary { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; color: #91a17e; font-size: 10px; line-height: 1.8; margin-bottom: 17px; }
+.object-list-toolbar { display: flex; gap: 10px; margin-bottom: 18px; }
+.object-list-toolbar .search-input, .object-list-toolbar input.search { width: 100%; min-width: 0; border: 1px solid #dde6ce; border-radius: 11px; background: #fcfdf7; font-size: 11px; color: #698253; padding: 12px 14px; }
+.object-list-toolbar .search-box { flex: 1; }
+.object-list-toolbar .search-box .search-input { padding-left: 38px; }
+.object-list-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+.map-object-row { display: flex; align-items: center; text-align: left; gap: 10px; min-width: 0; min-height: 72px; padding: 12px; border: 1px solid #e3ead6; border-radius: 12px; background: #fafcf3; color: #70895b; position: relative; transition: background .18s, border-color .18s; }
+.map-object-row:hover { background: #eff5e3; border-color: #c0d6a2; }
+.map-object-row > span:first-child { font-size: 26px; flex: 0 0 30px; text-align: center; }
+.map-object-row > div { min-width: 0; }
+.map-object-row > svg { width: 13px; height: 13px; margin-left: auto; color: #a3b58d; }
+.map-object-row strong { display: block; font-size: 11px; line-height: 1.5; font-weight: 500; overflow-wrap: anywhere; }
+.map-object-row small, .map-object-row .object-native { display: block; font-size: 10px; line-height: 1.6; color: #9aa78b; margin-top: 3px; overflow-wrap: anywhere; }
+.map-object-row.is-target, .map-object-row.target { border-color: #c7dca9; background: #f0f6e4; }
+.target-badge { display: inline-flex; align-items: center; gap: 3px; padding: 3px 5px; margin-top: 5px; width: fit-content; border-radius: 5px; color: #8b9963; background: #e9efcf; font-size: 7px; font-style: normal; line-height: 1.3; text-transform: uppercase; letter-spacing: .4px; }
+.map-object-row > .target-badge { flex-shrink: 0; margin-left: auto; margin-top: 0; }
+.target-badge svg { width: 9px; height: 9px; }
+.object-list-grid > .empty-state { grid-column: 1 / -1; padding: 35px 10px; }
+.mission-action-box { margin-top: 21px; padding: 16px; border: 1px solid #d8e5c1; border-radius: 13px; text-align: left; background: #f0f5e4; }
+.mission-action-box .eyebrow { font-size: 8px; letter-spacing: 1px; color: #8a9f70; }
+.mission-action-box p, .mission-action-box .mission-item-instruction { margin: 9px 0 13px; color: #83956f; font-size: 11px; line-height: 1.8; }
+.mission-action-box .button { width: 100%; min-height: 40px; }
+.mission-completion-modal { width: min(100%, 540px); text-align: center; }
+.mission-completion-modal .modal-title { font-family: 'Fraunces', Georgia, serif; font-size: 29px; }
+.mission-completion-modal .modal-eyebrow, .mission-completion-modal .modal-title { padding-right: 0; }
+.mission-completion-modal .result-icon { display: grid; place-items: center; width: 90px; height: 90px; margin: 8px auto 23px; border-radius: 50%; background: #edf3dd; font-size: 45px; }
+.mission-completion-modal .result-actions { padding-top: 0; border-top: 0; }
+.mission-summary { padding: 16px; border: 1px solid #e1e9d3; border-radius: 13px; background: #f5f8eb; margin-top: 22px; color: #8c9d78; font-size: 11px; line-height: 1.8; }
+.mission-summary strong { font-weight: 500; color: #708b55; }
+.mission-summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 19px; }
+.mission-summary-grid > div { padding: 15px 8px; border-radius: 12px; background: #f0f5e5; color: #91a27d; font-size: 10px; }
+.mission-summary-grid strong { display: block; color: #6a8750; font-size: 23px; font-weight: 500; margin-bottom: 5px; }
+
+.world-object-label { position: absolute; z-index: 2; display: inline-flex; flex-direction: column; align-items: center; gap: 0; padding: 5px 8px; max-width: 165px; border: 1px solid #ffffffed; border-radius: 8px; color: #59764a; background: #fffff7f2; box-shadow: 0 2px 9px #40583115; font-family: 'DM Sans', sans-serif; font-size: 11px; line-height: 1.4; white-space: nowrap; pointer-events: auto; backdrop-filter: blur(6px); }
+.world-object-label:hover { background: #f3f9e7; border-color: #c4dba5; z-index: 3; }
+.world-object-label.is-target { color: #6c7644; border-color: #d4dca8; background: #fbfcecf5; }
+.world-object-label.is-complete { color: #688950; border-color: #c7dcae; background: #f1f7e7f2; }
+.world-object-label.is-npc { color: #6c6680; border-color: #ddd5e7; background: #fbf8fdf5; }
+.world-object-label .world-label-native { display: block; font-weight: 500; }
+.world-object-label .world-label-english { display: block; color: #8d9a7e; font-size: 9px; opacity: .8; }
+.world-tooltip { pointer-events: none; }
+.world-tooltip { padding: 8px 11px; border: 1px solid #ffffffed; border-radius: 9px; background: #fffff6f5; color: #5d7850; box-shadow: 0 4px 14px #385a4420; font-family: 'DM Sans', sans-serif; text-align: center; white-space: nowrap; }
+.world-tooltip .world-label-native { display: block; font-size: 13px; font-weight: 500; }
+.world-tooltip .world-label-english { display: block; font-size: 10px; opacity: .75; margin-top: 3px; }
+.world-tooltip .world-tooltip-native { font-size: 13px; font-weight: 500; }
+.world-tooltip .world-tooltip-english { font-size: 10px; opacity: .8; margin-top: 3px; }
+.world-marker--npc .world-label-native { display: block; font-size: 11px; font-weight: 500; line-height: 1.5; }
+.world-marker--npc .world-label-english { display: block; font-size: 9px; font-weight: 400; line-height: 1.5; opacity: .7; }
+
+@media (min-width: 1500px) {
+  .map-tools { top: 34px; right: 35px; }
+  .game-layout:has(.map-tools) .region-switch { top: 84px; }
+  .game-layout:has(.map-tools) .right-rail { top: 151px; }
+  .game-layout:has(.mission-hero) .right-rail { top: 100px; }
+}
+@media (max-height: 820px) and (min-width: 901px) {
+  .game-layout:has(.map-tools) .tip-card { display: none; }
+  .mission-card { padding: 17px !important; }
+  .mission-card .quest-title { font-size: 17px; }
+  .mission-card .quest-description { font-size: 10px; }
+  .mission-card .card-eyebrow { margin-bottom: 10px; }
+  .mission-path { margin: 14px 0 11px; }
+  .mission-objectives { gap: 5px; margin: 11px 0; }
+  .mission-objective { padding: 7px 8px; }
+  .mission-context { margin: 11px 0; padding: 9px 10px; font-size: 9px; }
+}
+@media (max-width: 1150px) {
+  .map-tools { right: 22px; }
+  .map-tools .button { padding: 9px 11px; font-size: 9px; }
+  .explore-top.mission-hero { max-width: calc(100% - 325px); }
+  .explore-top.mission-hero h1 { font-size: 31px; }
+  .mission-card { padding: 17px !important; }
+  .mission-card .quest-title { font-size: 17px; }
+  .mission-card .quest-description { font-size: 10px; }
+  .mission-objective { padding: 8px; gap: 7px; }
+  .mission-objective > span:first-child { flex-basis: 23px; width: 23px; font-size: 19px; }
+}
+@media (max-width: 900px) {
+  .map-tools { top: 24px; right: 20px; gap: 5px; }
+  .map-tools .button { min-height: 33px; padding: 8px 10px; font-size: 9px; }
+  .map-tools .button svg { width: 13px; height: 13px; }
+  .map-tools .icon-button { width: 33px; height: 33px; border-radius: 10px; }
+  .map-tools .icon-button svg { width: 15px; height: 15px; }
+  .game-layout:has(.map-tools) .region-switch { top: 70px; flex-direction: row; }
+  .game-layout:has(.map-tools) .right-rail { top: 124px; max-height: calc(100% - 145px); }
+  .explore-top.mission-hero { max-width: calc(100% - 275px); }
+  .explore-top.mission-hero h1 { font-size: 29px; }
+  .game-layout:has(.mission-hero) .right-rail { top: 78px; max-height: calc(100% - 99px); }
+  .mission-card { padding: 15px !important; }
+  .mission-card .quest-title { font-size: 16px; }
+  .mission-card .quest-description { font-size: 9px; }
+  .mission-card .card-eyebrow { font-size: 7px; margin-bottom: 10px; }
+  .mission-stage-pill { padding: 4px 6px; font-size: 7px; }
+  .mission-path { margin: 13px 0 11px; }
+  .mission-path > * { font-size: 8px; }
+  .mission-objective { padding: 7px; gap: 6px; }
+  .mission-objective strong { font-size: 9px; }
+  .mission-objective small, .mission-item-instruction { font-size: 8px; }
+  .mission-context { font-size: 9px; padding: 10px; }
+  .mission-actions > .button { font-size: 9px; }
+  .atlas-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .atlas-art { min-height: 95px; font-size: 40px; }
+  .atlas-modal .modal-title { font-size: 28px; }
+  .object-list-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 650px) {
+  .map-tools { top: 110px; right: 17px; left: 17px; justify-content: flex-start; gap: 6px; }
+  .map-tools .button { min-height: 33px; padding: 8px 11px; font-size: 9px; border-radius: 10px; }
+  .map-tools .icon-button { margin-left: auto; }
+  .game-layout:has(.map-tools) .explore-top { max-width: calc(100% - 38px); }
+  .game-layout:has(.map-tools) .explore-top h1 { font-size: 27px; line-height: 1.2; }
+  .game-layout:has(.map-tools) .explore-top .world-subtitle { display: none; }
+  .game-layout:has(.map-tools) .region-switch { top: 154px; right: 17px; left: auto; flex-direction: row; padding: 3px; }
+  .game-layout:has(.map-tools) .region-tab { min-height: 27px; padding: 6px 8px; }
+  .game-layout:has(.map-tools) .region-tab span { display: inline; font-size: 8px; }
+  .game-layout:has(.map-tools) .right-rail { top: auto; bottom: 15px; max-height: 176px; overflow-y: auto; padding: 0; }
+  .game-layout:has(.map-tools) .world-hud { bottom: 190px; }
+  .game-layout:has(.map-tools) .onboarding-banner { bottom: 243px; width: 220px; }
+  .game-layout:has(.map-tools) .tip-card { display: none; }
+  .explore-top.mission-hero { max-width: calc(100% - 38px); }
+  .explore-top.mission-hero h1 { font-size: 27px; margin-top: 7px; }
+  .explore-top.mission-hero .world-subtitle { max-width: 100%; }
+  .game-layout:has(.mission-hero) .map-tools { top: 106px; }
+  .game-layout:has(.mission-hero) .right-rail { top: auto; bottom: 14px; grid-template-columns: 1fr; max-height: 224px; }
+  .game-layout:has(.mission-hero) .world-hud { bottom: 251px; }
+  .mission-card { position: relative; padding: 10px 12px !important; border-radius: 14px; }
+  .mission-card .card-eyebrow { margin-bottom: 2px; font-size: 7px !important; letter-spacing: 1px; padding-right: 104px; }
+  .mission-card .quest-title { padding-right: 104px; margin-bottom: 3px; font-size: 15px; line-height: 1.4; }
+  .mission-card .quest-description { font-size: 9px; line-height: 1.65; }
+  .mission-stage-pill { font-size: 7px; }
+  .mission-path { position: absolute; top: 13px; right: 13px; width: 95px; margin: 0; gap: 3px; }
+  .mission-path > * { gap: 3px; font-size: 6px; }
+  .mission-path > * > span:first-child, .mission-path > * > i { width: 21px; height: 21px; font-size: 8px; }
+  .mission-path > *:not(:last-child)::after { left: calc(50% + 12px); top: 10px; width: calc(100% - 20px); }
+  .mission-context { padding: 5px 8px; font-size: 8px; line-height: 1.5; margin: 6px 0; }
+  .mission-objectives { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; margin: 6px 0; }
+  .mission-objectives:has(> :nth-child(4)) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .mission-objectives:has(> :nth-child(5)) { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .mission-objective { padding: 5px; gap: 4px; border-radius: 8px; }
+  .mission-objectives:has(> :nth-child(4)) .mission-objective { flex-direction: column; justify-content: center; gap: 2px; text-align: center; }
+  .mission-objective > span:first-child { flex-basis: 20px; width: 20px; font-size: 16px; }
+  .mission-objectives:has(> :nth-child(4)) .mission-objective > span:first-child { flex-basis: auto; line-height: 1.2; }
+  .mission-objective strong { font-size: 8px; line-height: 1.5; overflow-wrap: anywhere; }
+  .mission-objective small, .mission-objective .mission-item-instruction { display: none; }
+  .mission-objective > svg { width: 10px; height: 10px; }
+  .mission-progress-track { height: 3px; margin: 6px 0; }
+  .mission-actions { flex-wrap: wrap; margin-top: 5px; gap: 6px; }
+  .mission-actions > .button { min-height: 31px; width: auto; flex: 1; padding: 8px 10px; font-size: 8px; }
+  .mission-actions > .button.ghost { min-height: 31px; font-size: 8px; }
+  .mission-actions > .muted { display: none; }
+  .mission-actions > .text-button { font-size: 8px; }
+  .mission-progress { font-size: 8px; }
+  .mission-state-banner { margin-top: 8px; padding: 4px 7px; font-size: 8px; }
+  .map-object-count { font-size: 7px !important; padding: 2px 5px; }
+  .atlas-modal .modal-header { padding-bottom: 14px; }
+  .atlas-modal .modal-title { font-size: 27px; }
+  .atlas-modal .atlas-intro > #modal-title { font-size: 26px; }
+  .atlas-intro { align-items: flex-start; flex-direction: column; gap: 9px; font-size: 10px; margin-bottom: 16px; }
+  .atlas-intro .chip { font-size: 9px; padding: 6px 9px; }
+  .atlas-grid { grid-template-columns: 1fr; gap: 14px; }
+  .atlas-art { min-height: 105px; font-size: 43px; }
+  .atlas-card-title { font-size: 17px; }
+  .atlas-card-region { font-size: 8px; }
+  .atlas-card-description { font-size: 10px; }
+  .atlas-card-stats { font-size: 9px; }
+  .atlas-card-status { font-size: 10px; padding-top: 11px; padding-bottom: 11px; }
+  .atlas-region-heading { margin-top: 21px; font-size: 10px; }
+  .map-object-summary { font-size: 9px; margin-bottom: 14px; }
+  .object-list-toolbar { margin-bottom: 13px; }
+  .object-list-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+  .map-object-row { min-height: 76px; padding: 9px; gap: 7px; }
+  .map-object-row > span:first-child { flex-basis: 24px; font-size: 23px; }
+  .map-object-row strong { font-size: 10px; }
+  .map-object-row small, .map-object-row .object-native { font-size: 9px; }
+  .target-badge { font-size: 6px; }
+  .mission-action-box { padding: 13px; margin-top: 18px; }
+  .mission-action-box p { font-size: 10px; }
+  .mission-completion-modal .modal-title { font-size: 25px; }
+  .mission-summary-grid { gap: 6px; }
+  .mission-summary-grid > div { padding: 12px 5px; font-size: 9px; }
+  .mission-summary-grid strong { font-size: 20px; }
+  .world-object-label { padding: 4px 6px; border-radius: 7px; font-size: 8px; max-width: 130px; }
+  .world-object-label .world-label-english { font-size: 7px; }
+  .world-marker--npc .world-label-native { font-size: 9px; }
+  .world-marker--npc .world-label-english { font-size: 7px; }
+}
+@media (max-height: 740px) and (max-width: 650px) {
+  .game-layout:has(.map-tools) .explore-top { top: 15px; }
+  .game-layout:has(.map-tools) .explore-top h1 { font-size: 24px; margin-top: 7px; }
+  .game-layout:has(.map-tools) .explore-top .world-subtitle { font-size: 8px; }
+  .game-layout:has(.map-tools) .map-tools { top: 100px; }
+  .game-layout:has(.mission-hero) .map-tools { top: 92px; }
+  .game-layout:has(.map-tools) .region-switch { top: 142px; }
+  .game-layout:has(.mission-hero) .right-rail { max-height: 185px; bottom: 11px; }
+  .game-layout:has(.mission-hero) .world-hud { bottom: 208px; }
+  .mission-card .quest-description { font-size: 8px; }
+  .mission-context { font-size: 7px; margin: 6px 0; }
+  .mission-objectives { margin: 6px 0; }
+  .mission-card .quest-title { font-size: 14px; }
+}
+
+/* Keep the chapter heading legible against the lighthouse night sky. */
+#world[data-map-id="harbor-lanterns"] + .explore-ui .explore-top h1 { color: #fff7e2; }
+#world[data-map-id="harbor-lanterns"] + .explore-ui .explore-top .eyebrow,
+#world[data-map-id="harbor-lanterns"] + .explore-ui .world-subtitle,
+#world[data-map-id="harbor-lanterns"] + .explore-ui .map-caption { color: #d7e4da; }

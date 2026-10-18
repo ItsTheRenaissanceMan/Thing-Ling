@@ -60,6 +60,8 @@ def main():
         "THING LING - A little world of words\n\n"
         "Extract this archive and open Thing-Ling.html in a modern browser.\n"
         "Choose German, Japanese, Spanish, or Mandarin Chinese.\n"
+        "Open Island atlas and visit Almanac Courtyard for Theo's first favor.\n"
+        "Use Labels or Objects here; complete tasks, pass the check, and return to Theo.\n"
         "On Windows, the separate Thing-Ling-Windows.zip includes a double-click launcher.\n"
         "If local HTML is restricted, run a local server or use that Windows package.\n\n"
         "Core gameplay embeds all assets and needs no account or internet connection.\n"

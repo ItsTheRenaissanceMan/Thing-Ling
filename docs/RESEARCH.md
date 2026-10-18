@@ -74,11 +74,11 @@ Statements accusing developers of neglect, motives or misconduct were not adopte
 
 Thing-Ling was designed while source access was blocked; this completed research checks the resulting direction and identifies remaining gaps. It must not be presented as if all implementation decisions came from reviews read beforehand.
 
-| Area | Noun Town: verified source description | Thing-Ling: implemented first edition |
+| Area | Noun Town: verified source description | Thing-Ling: implemented v1.1 |
 | --- | --- | --- |
-| Language/content scope | Publisher advertises 1,000+ words/phrases and 12 learning languages | 48 object words in each of German, Japanese, Spanish and Mandarin Chinese; 12 practical phrases per language |
-| World and residents | 11 areas and 16 voiced NPCs, according to publisher | One original 3D island, three camera neighborhoods, four characters, 12 dependency-linked favors and four three-step conversations |
-| Learning loop | Spatial object learning, mini-games, SRS, speech/no-speech inputs | Discover objects; matching, listening and typed recall; scheduled reviews; quest challenges and authored conversations |
+| Language/content scope | Publisher advertises 1,000+ words/phrases and 12 learning languages | 179 vocabulary words in each of German, Japanese, Spanish and Mandarin Chinese; 12 practical phrases per language |
+| World and residents | 11 areas and 16 voiced NPCs, according to publisher | Thirteen original 3D maps (village hub and twelve mission maps), 471 authored object placements, four characters, 12 dependency-linked missions and four three-step conversations |
+| Learning loop | Spatial object learning, mini-games, SRS, speech/no-speech inputs | Discover labelled objects and building parts; complete map-specific tasks, a perfect word check and a character handover; matching, listening and typed recall; scheduled reviews and authored conversations |
 | Progression | Greyscale-to-color restoration and relationships | XP, levels, coins, visible restorations, cosmetic projects, daily discovery goal and study streaks |
 | Audio | Advertised native-speaker recordings and speech recognition | Installed browser/device TTS voices; written fallback if none matches; optional browser speech recognition. No recorded cast or pronunciation assessment |
 | Save/revision | LINK synchronization and browser SRS | Separate local saves per language, validated JSON import/export; no account or cloud synchronization |

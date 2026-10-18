@@ -7,8 +7,10 @@ import './style.css';
 import { icon } from './icons.js';
 import { WORDS, LANGUAGES, CATEGORIES } from './data.js';
 import { createProgress, learnWord, gradeWord, getDueWords, getLevel, buildSession, checkAnswer, validateProgress } from './learning.js';
-import { REGIONS, CHARACTERS, QUESTS, PHRASES, CONVERSATIONS, getQuestState, awardQuest, awardConversation } from './story.js';
+import { REGIONS, CHARACTERS, QUESTS, PHRASES, CONVERSATIONS, getQuestState, awardConversation } from './story.js';
 import { createWorld } from './world.js';
+import { MAPS, getMap } from './maps.js';
+import { getMissionDefinition, getMissionSummary, startMission, goHome, collectMissionWord, markMissionAssessment, submitMission } from './missions.js';
 
 const STORAGE = 'thing-ling.saves.v1';
 const WORD_BY_ID = new Map(WORDS.map(word => [word.id, word]));
@@ -34,6 +36,8 @@ let modalClose = null;
 let session = null;
 let world;
 let audioContext;
+let labelsVisible = false;
+try { labelsVisible = localStorage.getItem('thing-ling.labels') === 'true'; } catch { /* Optional preference. */ }
 const prefersReducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const esc = value => String(value).replace(/[&<>"']/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[char]);
@@ -41,6 +45,19 @@ const lang = () => LANGUAGES.find(language => language.id === activeLanguage);
 const translation = word => word.translations[activeLanguage];
 const learnedIds = () => Object.keys(progress.learned);
 const restoredMilestones = () => QUESTS.filter(quest => quest.milestone && progress.quests.includes(quest.id)).map(quest=>quest.milestone);
+const currentMap = () => getMap(progress.mapId || 'home') || getMap('home');
+const currentMission = () => QUESTS.find(quest=>quest.id === progress.mapId);
+
+function syncWorldProgress() {
+  world?.setLearned(learnedIds());
+  world?.setRestored(restoredMilestones());
+  world?.setProjects?.(progress.projects);
+  world?.setLanguage?.(activeLanguage);
+  world?.setLabels?.(labelsVisible);
+  const quest = currentMission();
+  const summary = quest ? getMissionSummary(progress, quest.id) : null;
+  world?.setMissionState?.(quest ? {questId:quest.id,completedWordIds:summary.doneWordIds,phase:summary.phase} : null);
+}
 
 function save() {
   saves[activeLanguage] = progress;
@@ -53,9 +70,7 @@ function save() {
     storageAvailable = false;
   }
   updateHUD();
-  world?.setLearned(learnedIds());
-  world?.setRestored(restoredMilestones());
-  world?.setProjects?.(progress.projects);
+  syncWorldProgress();
 }
 
 function sound(type = 'success') {
@@ -115,7 +130,7 @@ function renderShell() {
       <div class="nav-group">
         ${[['explore','compass','Explore'],['wordbook','book','Wordbook'],['practice','sparkles','Practice'],['quests','flag','Quests'],['phrases','chat','Phrasebook']].map(([id,symbol,label]) => `<button class="nav-item ${id === page ? 'active' : ''}" data-page="${id}" aria-label="${label}" ${id === page ? 'aria-current="page"' : ''}>${icon(symbol,22)}<span>${label}</span></button>`).join('')}
       </div>
-      <div class="sidebar-bottom"><button class="nav-item" data-action="help" aria-label="How to play">${icon('help',22)}<span>How to play</span></button><button class="nav-item" data-action="settings" aria-label="Settings">${icon('settings',22)}<span>Settings</span></button><span class="version">v1.0 · made for you</span></div>
+      <div class="sidebar-bottom"><button class="nav-item" data-action="help" aria-label="How to play">${icon('help',22)}<span>How to play</span></button><button class="nav-item" data-action="settings" aria-label="Settings">${icon('settings',22)}<span>Settings</span></button><span class="version">v1.1 · made for you</span></div>
     </aside>
     <div class="workspace">
       <header class="topbar"><a class="wordmark" href="#explore">thing<span>ling</span><i class="wordmark-dot"></i></a><span class="breadcrumb">A little world of words</span>
@@ -126,6 +141,7 @@ function renderShell() {
         <div class="explore-ui">
           <div class="explore-top"><div class="eyebrow"><span class="live-dot"></span> YOUR ISLAND, YOUR PACE</div><h1>A little world.<br>A lot to discover<span>.</span></h1><p class="world-subtitle">Make yourself at home in a new language.</p></div>
           <div class="region-switch" role="group" aria-label="Explore a neighborhood">${[['village','home','The Village'],['garden','flower','The Garden'],['harbor','anchor','The Harbor']].map(([id,symbol,title])=>`<button class="region-tab ${id===region?'active':''}" data-region="${id}">${icon(symbol,16)}<span>${title}</span></button>`).join('')}</div>
+          <div class="map-tools"><button class="button secondary" id="open-atlas" data-action="atlas">${icon('compass',17)} Island atlas</button><button class="button secondary" id="open-map-objects" data-action="objects">${icon('search',17)} Objects here</button><button class="button secondary icon-button" id="toggle-labels" data-action="labels" aria-label="Show all object labels" aria-pressed="false" title="Show all object labels">${icon('book',17)}</button></div>
           <aside class="right-rail"><div class="daily-card" id="daily-card"></div><div class="quest-card" id="active-quest"></div><div class="tip-card">${icon('leaf',20)}<p>No rush. No wrong turns.<br><strong>Every little word is progress.</strong></p></div></aside>
           <div class="onboarding-banner" id="welcome-banner"><button class="banner-close" data-action="dismiss-welcome" aria-label="Dismiss welcome">${icon('close',16)}</button><div class="eyebrow">A NEW ADVENTURE</div><h3>Oh, hello there. ${icon('leaf',20)}</h3><p>This island has a story to tell. Click something that catches your eye, or say hello to Theo.</p><button class="button primary" data-character="theo">Meet your first neighbor ${icon('arrow',16)}</button></div>
           <div class="world-hud"><div class="location-card"><span class="location-icon">${icon('pin',20)}</span><div><strong id="location-name">The Village</strong><span id="location-subtitle">The beginning of something good</span></div><span class="location-weather">${icon('sun',20)} 24°</span></div><div class="world-controls"><button data-action="sound" title="Toggle game sounds" aria-label="Toggle game sounds">${icon(progress.settings.sound?'speaker':'mute',18)}</button><button data-action="reset-camera" title="Reset camera" aria-label="Reset camera">${icon('reset',18)}</button><button data-action="help" title="Controls" aria-label="Show controls">${icon('help',18)}</button></div></div>
@@ -149,13 +165,27 @@ function onRootClick(event) {
   if (!button || button.disabled) return;
   if (button.dataset.page) return navigate(button.dataset.page);
   if (button.dataset.region) return setRegion(button.dataset.region);
+  if (button.dataset.travel) return travelTo(button.dataset.travel);
+  if (button.dataset.mapWord) return openWord(button.dataset.mapWord,{fromMap:true,instanceId:button.dataset.instance});
   if (button.dataset.word) return openWord(button.dataset.word);
   if (button.dataset.character) return openCharacter(button.dataset.character);
   if (button.dataset.quest) return openQuest(button.dataset.quest);
   if (button.dataset.action === 'settings') return openSettings();
   if (button.dataset.action === 'help') return openHelp();
   if (button.dataset.action === 'dismiss-welcome') return dismissWelcome();
-  if (button.dataset.action === 'reset-camera') { world?.setRegion(region); toast('Back to your favorite view.', 'compass'); }
+  if (button.dataset.action === 'atlas') return openAtlas();
+  if (button.dataset.action === 'objects') return openMapObjects();
+  if (button.dataset.action === 'labels') {
+    labelsVisible = !labelsVisible;
+    world?.setLabels?.(labelsVisible);
+    button.setAttribute('aria-pressed',String(labelsVisible));
+    button.setAttribute('aria-label',labelsVisible?'Hide all object labels':'Show all object labels');
+    try { localStorage.setItem('thing-ling.labels',String(labelsVisible)); } catch { /* Optional preference. */ }
+    return;
+  }
+  if (button.dataset.action === 'mission-challenge') return startMissionChallenge();
+  if (button.dataset.action === 'mission-return') return openCharacter(currentMission()?.characterId);
+  if (button.dataset.action === 'reset-camera') { if(currentMission())world?.loadMap?.(progress.mapId);else world?.setRegion(region);syncWorldProgress();toast('Back to your favorite view.', 'compass'); }
   if (button.dataset.action === 'sound') { progress.settings.sound = !progress.settings.sound; save(); button.innerHTML = icon(progress.settings.sound?'speaker':'mute',18); }
 }
 
@@ -179,6 +209,8 @@ function updateHUD() {
   const todayLearned = Object.values(progress.learned).filter(entry => new Date(entry.discoveredAt).toISOString().slice(0,10) === today).length;
   const goal = Math.min(todayLearned,5);
   document.querySelector('#daily-card').innerHTML = `<div class="card-eyebrow">A LITTLE EVERY DAY ${icon('sun',16)}</div><div class="daily-heading"><div><h2>${goal >= 5 ? 'Look at you grow.' : 'Five words. Fresh possibilities.'}</h2><p class="muted">${goal >=5 ? 'Your daily discovery goal is complete.' : 'Your small step for today.'}</p></div><div class="progress-ring" style="--progress:${goal*20}%"><span>${goal}<small>/5</small></span></div></div><div class="progress-line"><span style="width:${goal*20}%"></span></div><button class="daily-review" data-page="practice">${icon('clock',14)} ${due ? `${due} ${due===1?'word is':'words are'} ready to revisit` : 'A little practice makes it stick'} ${icon('chevron',14)}</button>`;
+  updateMapChrome();
+  if(currentMission()){ renderMissionCard(); return; }
   const current = QUESTS.find(quest => ['available','ready'].includes(getQuestState(quest, progress)) && quest.region === region) || QUESTS.find(quest => ['available','ready'].includes(getQuestState(quest, progress)));
   const card = document.querySelector('#active-quest');
   if (!current) {
@@ -187,11 +219,12 @@ function updateHUD() {
   }
   const character = CHARACTERS.find(character => character.id === current.characterId);
   const known = current.wordIds.filter(id => progress.learned[id]).length;
-  card.innerHTML = `<div class="card-eyebrow">YOUR NEXT CHAPTER <span>0${Math.min(progress.quests.length+1,12)}</span></div><div class="quest-person"><span class="tiny-avatar" style="--avatar-color:${character?.color||'#e8d8b6'}">${character?.emoji||'🌿'}</span><span>${esc(character?.name||'Mika')} has a little favor</span></div><h3 class="quest-title">${esc(current.title)}</h3><p class="quest-description">${esc(current.description)}</p><div class="quest-checklist">${current.wordIds.slice(0,3).map(id=>`<div class="quest-step ${progress.learned[id]?'done':''}"><span>${progress.learned[id]?icon('check',10):''}</span>${esc(WORD_BY_ID.get(id)?.english||id)}</div>`).join('')}${current.wordIds.length>3?`<small>+ ${current.wordIds.length-3} more discoveries</small>`:''}</div><div class="quest-meta"><span>${icon('book',14)} ${known}/${current.wordIds.length} discovered</span><span>${icon('coin',14)} ${current.reward.coins}</span></div><button class="button primary quest-action" data-quest="${current.id}">${getQuestState(current,progress)==='ready'?'Try the little challenge':'Let’s take a look'} ${icon('arrow',16)}</button>`;
+  card.innerHTML = `<div class="card-eyebrow">YOUR NEXT CHAPTER <span>${String(Math.min(progress.quests.length+1,QUESTS.length)).padStart(2,'0')}</span></div><div class="quest-person"><span class="tiny-avatar" style="--avatar-color:${character?.color||'#e8d8b6'}">${character?.emoji||'🌿'}</span><span>${esc(character?.name||'Mika')} has a little favor</span></div><h3 class="quest-title">${esc(current.title)}</h3><p class="quest-description">${esc(current.description)}</p><div class="quest-checklist">${current.wordIds.slice(0,3).map(id=>`<div class="quest-step ${progress.learned[id]?'done':''}"><span>${progress.learned[id]?icon('check',10):''}</span>${esc(WORD_BY_ID.get(id)?.english||id)}</div>`).join('')}${current.wordIds.length>3?`<small>+ ${current.wordIds.length-3} more discoveries</small>`:''}</div><div class="quest-meta"><span>${icon('book',14)} ${known}/${current.wordIds.length} discovered</span><span>${icon('coin',14)} ${current.reward.coins}</span></div><button class="button primary quest-action" data-quest="${current.id}">Visit ${esc(getMap(current.id).name)} ${icon('arrow',16)}</button>`;
 }
 
 function setRegion(id) {
   if (!REGIONS.some(item=>item.id===id)) return;
+  if(currentMission()) travelTo('home');
   region = id;
   navigate('explore');
   const info = REGIONS.find(item=>item.id===id);
@@ -224,6 +257,7 @@ function changeLanguage(id) {
   saves[activeLanguage] = progress;
   activeLanguage = id;
   progress = saves[id] || createProgress(id);
+  world?.loadMap?.(progress.mapId || 'home');
   save(); closeModal();
   world?.setMotion(progress.settings.motion && !prefersReducedMotion);
   navigate(page);
@@ -263,9 +297,111 @@ function openModal(contents, className = '', onClose) {
 
 function closeModal() { modalClose?.(); }
 
-function openWord(id) {
+function updateMapChrome() {
+  const map=currentMap();
+  if(!map)return;
+  const quest=currentMission();
+  const hero=document.querySelector('.explore-top');
+  hero.classList.toggle('mission-hero',Boolean(quest));
+  hero.querySelector('.eyebrow').textContent=quest?`CHAPTER ${String(QUESTS.indexOf(quest)+1).padStart(2,'0')} · ${REGIONS.find(item=>item.id===quest.region).name.toUpperCase()}`:'YOUR ISLAND, YOUR PACE';
+  hero.querySelector('h1').innerHTML=quest?esc(map.name):'A little world.<br>A lot to discover<span>.</span>';
+  hero.querySelector('.world-subtitle').textContent=quest?map.subtitle:'Make yourself at home in a new language.';
+  document.querySelector('.region-switch').hidden=Boolean(quest);
+  const location=quest?map:REGIONS.find(item=>item.id===region);
+  document.querySelector('#location-name').textContent=location.name;
+  document.querySelector('#location-subtitle').textContent=quest?`${map.objects.length} things to discover · ${map.subtitle}`:location.subtitle;
+  const toggle=document.querySelector('#toggle-labels');
+  toggle.setAttribute('aria-pressed',String(labelsVisible));
+  toggle.setAttribute('aria-label',labelsVisible?'Hide all object labels':'Show all object labels');
+  if(quest)document.querySelector('#welcome-banner').hidden=true;
+}
+
+function mapWordObjects() {
+  const rendered=world?.getObjects?.()||[];
+  const objects=rendered.length?rendered:currentMap().objects.map(object=>({...object,instanceId:object.id,name:WORD_BY_ID.get(object.wordId)?.english}));
+  return objects.filter(object=>WORD_BY_ID.has(object.wordId));
+}
+
+function renderMissionCard() {
+  const quest=currentMission();
+  if(!quest)return;
+  const summary=getMissionSummary(progress,quest.id);
+  const definition=summary.definition||getMissionDefinition(quest.id);
+  const person=CHARACTERS.find(character=>character.id===quest.characterId);
+  const phaseLabel={locked:'A little later',discover:'Explore & help',challenge:'Word check',return:'Bring it back',complete:'Chapter complete'}[summary.phase];
+  const stage=summary.phase==='discover'?0:summary.phase==='challenge'?1:2;
+  const objects=mapWordObjects();
+  document.querySelector('#active-quest').innerHTML=`<div class="mission-card"><div class="card-eyebrow">YOUR LITTLE MISSION <span class="mission-stage-pill">${phaseLabel}</span></div><h3 class="quest-title">${esc(quest.title)}</h3><p class="mission-context">${esc(definition.instruction)}</p><div class="mission-path">${['Explore','Remember','Return'].map((label,index)=>`<span class="${index<stage||summary.phase==='complete'?'done':index===stage?'active':''}"><i>${index<stage||summary.phase==='complete'?icon('check',11):index+1}</i>${label}</span>`).join('')}</div><p id="mission-progress" class="mission-progress">${summary.completed} / ${summary.total} ${summary.phase==='complete'?'little tasks complete':'little tasks helped with'}</p><div class="mission-progress-track"><span style="width:${summary.completed/summary.total*100}%"></span></div><div class="mission-objectives">${definition.steps.map(step=>{
+    const word=WORD_BY_ID.get(step.wordId);const done=summary.doneWordIds.includes(step.wordId);const object=objects.find(object=>object.wordId===step.wordId);
+    return `<button class="mission-objective ${done?'checked':'active'}" data-map-word="${step.wordId}" data-instance="${esc(object?.instanceId||'')}"><span>${done?icon('check',16):word.emoji}</span><div><strong>${esc(word.english)}</strong><small class="mission-item-instruction">${esc(done?step.completionText:step.actionLabel)}</small></div></button>`;
+  }).join('')}</div><div class="mission-actions">${summary.phase==='challenge'?`<button class="button primary" id="mission-challenge" data-action="mission-challenge">Check my new words ${icon('sparkles',16)}</button><p class="muted">Your tasks are done. Remember the words before visiting ${person.name}.</p>`:summary.phase==='return'?`<button class="button primary" id="mission-return" data-action="mission-return">Bring it back to ${person.name} ${icon('arrow',16)}</button><p class="muted">${esc(definition.turnInText)}</p>`:summary.phase==='complete'?`<p class="learned-badge">${icon('check',17)} A favor finished. A place renewed.</p><button class="button secondary" data-action="atlas">Choose another chapter ${icon('compass',16)}</button>`:`<p class="muted">Click the real objects, or use a task card to find them. Each has its own little action.</p>`}<button class="text-button" data-travel="home">${icon('arrowleft',14)} Back to Lantern Village</button></div></div>`;
+}
+
+function travelTo(id) {
+  const map=getMap(id);
+  if(!map){toast('That little place is not on the atlas.','compass');return;}
+  const previous=progress;
+  const next=id==='home'?goHome(progress):startMission(progress,id);
+  if(id!=='home'&&next.mapId!==id){toast('Finish the earlier favor before visiting this chapter.','lock');return;}
+  closeModal();
+  progress=next;
+  if(id!=='home')region=map.region;
+  world?.loadMap?.(id);
+  navigate('explore');
+  save();
+  if(previous.mapId!==id)sound('learn');
+}
+
+function openAtlas() {
+  const symbols={home:'🏡','little-hello':'📖','kettle-on':'🫖','breakfast-club':'🥐','lantern-cafe':'🏮','first-seedlings':'🌱','orchard-colors':'🍊','small-neighbors':'🐑','garden-in-bloom':'🌦️','water-edge':'🐚','lost-and-found':'📦','homecoming-parcel':'🛋️','harbor-lanterns':'🗼'};
+  openModal(`<div class="modal-header atlas-intro"><div class="modal-eyebrow">A LITTLE WORLD, TWELVE NEW CHAPTERS</div><h2 id="modal-title">Where shall we wander?</h2><p class="modal-subtitle">Every favor has a place of its own. Explore, help with the real objects, remember their words, and bring your work back to your neighbor.</p></div><div class="modal-body"><div class="atlas-grid">${MAPS.map(map=>{
+    const quest=QUESTS.find(quest=>quest.id===map.id);const summary=quest?getMissionSummary(progress,quest.id):null;
+    const locked=summary?.phase==='locked';const complete=summary?.phase==='complete';const current=map.id===(progress.mapId||'home');
+    return `<button class="atlas-card ${locked?'locked':''} ${complete?'completed':''} ${current?'current':''}" data-travel="${map.id}" ${locked?'disabled':''}><div class="atlas-art" style="--map-color:${map.groundColor||'#b8c99b'}"><span>${symbols[map.id]||'🌿'}</span><i>${locked?icon('lock',18):complete?icon('check',18):icon('compass',18)}</i></div><span class="atlas-card-region">${map.id==='home'?'YOUR HOME':REGIONS.find(item=>item.id===map.region)?.name||'Island chapter'}</span><h3 class="atlas-card-title">${esc(map.name)}</h3><p class="atlas-card-description">${esc(map.description)}</p><div class="atlas-card-stats"><span>${icon('book',13)} ${map.objects.length} objects</span>${summary?`<span>${summary.completed}/${summary.total} tasks</span>`:''}</div><span class="atlas-card-status">${current?'You are here':locked?'Complete the earlier favors':complete?'Revisit this chapter':'Let’s take a little trip'} ${icon(locked?'lock':'arrow',14)}</span></button>`;
+  }).join('')}</div></div>`,'atlas-modal');
+}
+
+function openMapObjects() {
+  const map=currentMap();
+  const objects=mapWordObjects();
+  const quest=currentMission();
+  const targets=new Set(quest?.wordIds||[]);
+  const panel=openModal(`<div class="modal-header"><div class="modal-eyebrow">LOOK A LITTLE CLOSER · ${esc(map.name)}</div><h2 id="modal-title">Every little thing has a word.</h2><p class="modal-subtitle map-object-summary">${objects.length} labelled objects here. Choose one to find it, hear its name, and help with a task.</p></div><div class="modal-body"><div class="object-list-toolbar"><label class="search-box">${icon('search',18)}<input id="map-object-search" class="search-input" type="search" placeholder="Find something here…" aria-label="Search map objects"></label></div><div class="object-list-grid" id="map-object-grid"></div></div>`,'map-objects-modal');
+  const sorted=[...objects].sort((a,b)=>Number(targets.has(b.wordId))-Number(targets.has(a.wordId))||WORD_BY_ID.get(a.wordId).english.localeCompare(WORD_BY_ID.get(b.wordId).english));
+  const render=query=>{
+    const needle=query.trim().toLocaleLowerCase();
+    const visible=sorted.filter(object=>{const word=WORD_BY_ID.get(object.wordId);const text=translation(word);return `${word.english} ${text.text} ${text.reading}`.toLocaleLowerCase().includes(needle);});
+    panel.querySelector('#map-object-grid').innerHTML=visible.length?visible.map(object=>{
+      const word=WORD_BY_ID.get(object.wordId);const text=translation(word);
+      return `<button class="map-object-row" data-map-word="${word.id}" data-instance="${esc(object.instanceId)}"><span>${word.emoji}</span><div><strong>${esc(word.english)}</strong><small lang="${activeLanguage}">${esc(text.text)}</small></div>${targets.has(word.id)?'<i class="target-badge">Task</i>':icon(progress.learned[word.id]?'check':'plus',13)}</button>`;
+    }).join(''):'<p class="muted">Try another little word.</p>';
+  };
+  panel.querySelector('#map-object-search').oninput=event=>render(event.target.value);
+  render('');
+}
+
+function startMissionChallenge() {
+  const quest=currentMission();
+  if(!quest||getMissionSummary(progress,quest.id).phase!=='challenge')return;
+  startSession('mixed',{wordIds:quest.wordIds,questId:quest.id,title:quest.title,length:quest.wordIds.length});
+}
+
+function turnInMission() {
+  const quest=currentMission();
+  if(!quest)return;
+  const next=submitMission(progress,quest.id);
+  if(next===progress){toast('Finish the little tasks and word check first.','flag');return;}
+  progress=next;save();sound();
+  const person=CHARACTERS.find(item=>item.id===quest.characterId);
+  const nextQuest=QUESTS.find(item=>getMissionSummary(progress,item.id).phase==='discover'&&item.region===quest.region)||QUESTS.find(item=>getMissionSummary(progress,item.id).phase==='discover');
+  const panel=openModal(`<div class="modal-header session-result mission-completion-modal"><div class="result-icon">${icon(quest.milestone?'flower':'trophy',50)}</div><div class="modal-eyebrow">${esc(person.name)}’S LITTLE FAVOR · COMPLETE</div><h2 id="modal-title">A favor finished. A place renewed.</h2><p class="modal-subtitle">“${esc(quest.completionLine)}”</p><div class="result-stats"><div><strong>+${quest.reward.xp}</strong><span>XP earned</span></div><div><strong>+${quest.reward.coins}</strong><span>island coins</span></div><div><strong>${progress.quests.length}/${QUESTS.length}</strong><span>chapters complete</span></div></div>${quest.milestone?'<p class="learned-badge">'+icon('sparkles',18)+' Your work has brought this place back to life.</p>':''}</div><div class="modal-footer result-actions"><button class="button primary" id="mission-complete-done">Stay a little longer ${icon('check',16)}</button>${nextQuest?`<button class="button secondary" data-travel="${nextQuest.id}">Next chapter ${icon('arrow',16)}</button>`:'<button class="button secondary" data-travel="home">Home to the village</button>'}</div>`);
+  panel.querySelector('#mission-complete-done').onclick=closeModal;
+}
+
+function openWord(id, context = {}) {
   const word = WORD_BY_ID.get(id);
   if (!word) return;
+  if(context.fromMap)world?.focusObject?.(context.instanceId||id);
   dismissWelcome();
   const text = translation(word);
   const entry = progress.learned[id];
@@ -277,9 +413,26 @@ function openWord(id) {
     if (entry) { startSession('mixed',{wordIds:[id],title:'One little word',length:3}); return; }
     progress = learnWord(progress,id); save(); sound('learn');
     toast(`${text.text} — a little word, a lovely start. +10 XP`, 'book');
-    openWord(id);
+    openWord(id,context);
     if(page==='wordbook') renderWordbook();
   };
+  const quest=currentMission();
+  const summary=quest?getMissionSummary(progress,quest.id):null;
+  const step=quest?getMissionDefinition(quest.id)?.steps.find(step=>step.wordId===id):null;
+  const physicallyHere=context.fromMap&&mapWordObjects().some(object=>object.wordId===id&&(!context.instanceId||object.instanceId===context.instanceId));
+  if(physicallyHere&&step&&summary.phase!=='locked'&&summary.phase!=='complete'){
+    const done=summary.doneWordIds.includes(id);
+    const action=document.createElement('div');
+    action.className='mission-action-box';
+    action.innerHTML=`<div class="eyebrow">A LITTLE HELP · ${esc(quest.title)}</div><p>${esc(done?step.completionText:step.instruction)}</p><button class="button primary" id="mission-word-action" ${done?'disabled':''}>${icon(done?'check':'leaf',17)} ${esc(done?'Little task complete':step.actionLabel)}</button>`;
+    panel.querySelector('.modal-body').append(action);
+    action.querySelector('#mission-word-action').onclick=()=>{
+      const next=collectMissionWord(progress,quest.id,id);
+      if(next===progress)return;
+      progress=next;save();sound('learn');closeModal();
+      toast(step.completionText,'check');
+    };
+  }
 }
 
 function openCharacter(id) {
@@ -290,6 +443,14 @@ function openCharacter(id) {
   const current = quests.find(quest=>getQuestState(quest,progress)!=='completed');
   const panel = openModal(`<div class="modal-header character-header"><span class="character-avatar" style="background:${character.color}">${character.emoji}</span><div class="modal-eyebrow">${esc(character.role)} · ${esc(REGIONS.find(r=>r.id===character.region).name)}</div><h2 id="modal-title">${esc(character.name)}</h2></div><div class="modal-body"><p class="dialogue-text">“${esc(character.greeting)}”</p><p class="muted">${esc(character.dialogue[progress.quests.length % character.dialogue.length])}</p>${current?`<div class="character-quest"><span class="eyebrow">A LITTLE FAVOR</span><h3>${esc(current.title)}</h3><p>${esc(current.description)}</p><div class="quest-objectives">${current.wordIds.map(id=>`<button class="chip ${progress.learned[id]?'discovered':''}" data-word="${id}">${WORD_BY_ID.get(id).emoji} ${esc(WORD_BY_ID.get(id).english)} ${progress.learned[id]?icon('check',12):icon('plus',12)}</button>`).join('')}</div></div>`:'<p class="learned-badge">'+icon('heart',18)+' You’ve helped with every little favor here.</p>'}</div><div class="modal-footer">${current?`<button class="button primary" id="character-quest">${getQuestState(current,progress)==='ready'?'Take the challenge':'See the favor'} ${icon('arrow',16)}</button>`:''}<button class="button secondary" id="character-close">Back to the island</button></div>`, 'character-modal');
   panel.querySelector('#character-close').onclick=closeModal;
+  const activeQuest=currentMission();
+  if(activeQuest?.characterId===id&&getMissionSummary(progress,activeQuest.id).phase==='return'){
+    const handover=document.createElement('button');
+    handover.className='button primary';handover.id='mission-turn-in';
+    handover.innerHTML=`${icon('flag',17)} Finish the little favor`;
+    handover.onclick=turnInMission;
+    panel.querySelector('.modal-footer').prepend(handover);
+  }
   if(!current && QUESTS.some(quest=>quest.characterId===id && getQuestState(quest,progress)!=='completed')){
     const badge=panel.querySelector('.learned-badge');
     if(badge) badge.innerHTML=`${icon('book',18)} Say hello to Theo and open the Almanac’s first page. There will be more little favors soon.`;
@@ -306,13 +467,20 @@ function openCharacter(id) {
 }
 
 function openQuest(id) {
-  const quest = QUESTS.find(item=>item.id===id);
-  if (!quest) return;
-  const state = getQuestState(quest,progress);
-  const character = CHARACTERS.find(item=>item.id===quest.characterId);
-  const panel = openModal(`<div class="modal-header"><span class="character-avatar" style="background:${character.color}">${character.emoji}</span><div class="modal-eyebrow">${esc(character.name)}’S LITTLE FAVOR</div><h2 id="modal-title">${esc(quest.title)}</h2><p class="modal-subtitle">${esc(quest.description)}</p></div><div class="modal-body"><div class="quest-objectives">${quest.wordIds.map(id=>`<button class="objective-word ${progress.learned[id]?'discovered':''}" data-word="${id}"><span>${WORD_BY_ID.get(id).emoji}</span><div><strong>${esc(WORD_BY_ID.get(id).english)}</strong><small>${progress.learned[id]?esc(translation(WORD_BY_ID.get(id)).text):'Click to discover'}</small></div>${icon(progress.learned[id]?'check':'plus',17)}</button>`).join('')}</div><div class="quest-reward">${icon('sparkles',18)} A little thank-you <strong>+${quest.reward.xp} XP</strong><span>${icon('coin',16)} ${quest.reward.coins}</span></div>${state==='locked'?'<p class="muted">Finish the earlier favors to begin this chapter.</p>':state==='completed'?`<p class="dialogue-text">“${esc(quest.completionLine)}”</p>`:state==='ready'?'<p class="muted">You’ve found every word. Now use them in a short challenge to help your neighbor. Mistakes are welcome — you can try again.</p>':'<p class="muted">Find these objects on the island, or click the cards above to get acquainted. Then put your new words to use.</p>'}</div><div class="modal-footer"><button class="button primary" id="quest-start" ${state!=='ready'?'disabled':''}>${state==='completed'?'Favor complete':state==='ready'?'Let’s give it a go':'Discover the words first'} ${icon(state==='completed'?'check':'arrow',17)}</button><button class="button secondary" id="quest-explore">${icon('compass',17)} Explore ${esc(REGIONS.find(item=>item.id===quest.region).name)}</button></div>`, 'quest-modal');
-  panel.querySelector('#quest-explore').onclick=()=>{closeModal();setRegion(quest.region);};
-  panel.querySelector('#quest-start').onclick=()=>startSession('mixed',{wordIds:quest.wordIds,questId:quest.id,title:quest.title,length:quest.wordIds.length});
+  const quest=QUESTS.find(item=>item.id===id);
+  if(!quest)return;
+  const summary=getMissionSummary(progress,id);
+  const definition=getMissionDefinition(id);
+  const map=getMap(id);
+  const character=CHARACTERS.find(item=>item.id===quest.characterId);
+  const here=progress.mapId===id;
+  const ready=here&&summary.phase==='challenge';
+  const panel=openModal(`<div class="modal-header"><span class="character-avatar" style="background:${character.color}">${character.emoji}</span><div class="modal-eyebrow">${esc(character.name)}’S LITTLE FAVOR · ${esc(map.name)}</div><h2 id="modal-title">${esc(quest.title)}</h2><p class="modal-subtitle">${esc(definition.instruction)}</p></div><div class="modal-body"><p class="map-object-summary">${icon('compass',17)} A place of its own: <strong>${esc(map.name)}</strong> · ${map.objects.length} objects to discover</p><div class="quest-objectives">${quest.wordIds.map(wordId=>{
+    const word=WORD_BY_ID.get(wordId);const done=summary.doneWordIds.includes(wordId);
+    const object=here?mapWordObjects().find(object=>object.wordId===wordId):null;
+    return `<button class="objective-word ${done?'discovered':''}" ${here?`data-map-word="${wordId}" data-instance="${esc(object?.instanceId||'')}"`:`data-word="${wordId}"`}><span>${word.emoji}</span><div><strong>${esc(word.english)}</strong><small>${done?'Little task complete':progress.learned[wordId]?'Word learned · task still to do':'Waiting to be discovered'}</small></div>${icon(done?'check':'compass',17)}</button>`;
+  }).join('')}</div><div class="quest-reward">${icon('sparkles',18)} A little thank-you <strong>+${quest.reward.xp} XP</strong><span>${icon('coin',16)} ${quest.reward.coins}</span></div>${summary.phase==='locked'?'<p class="muted">Finish the earlier favors to visit this chapter.</p>':summary.phase==='complete'?`<p class="dialogue-text">“${esc(quest.completionLine)}”</p>`:summary.phase==='return'?`<p class="muted">${esc(definition.turnInText)}</p>`:'<p class="muted">Travel to the mission, help with its real objects, then check the words and return to your neighbor. Learning a word in the wordbook gives you a head start; the hands-on tasks happen in the map.</p>'}</div><div class="modal-footer"><button class="button primary" id="quest-travel" data-travel="${id}" ${summary.phase==='locked'?'disabled':''}>${icon('compass',17)} ${here?'Back to':summary.phase==='complete'?'Revisit':'Travel to'} ${esc(map.name)}</button><button class="button secondary" id="quest-start" ${ready?'':'disabled'}>${summary.phase==='complete'?'Favor complete':ready?'Check my new words':'Help with the map tasks first'} ${icon(summary.phase==='complete'?'check':'sparkles',17)}</button></div>`,'quest-modal');
+  panel.querySelector('#quest-start').onclick=startMissionChallenge;
 }
 
 function pageHeader(eyebrow,title,subtitle,extra='') {
@@ -354,8 +522,8 @@ function renderPractice() {
 
 function renderQuests() {
   document.querySelector('#section-page').innerHTML = `${pageHeader('GOOD WORDS BRING US TOGETHER','A few little favors<span>.</span>',`Help your neighbors bring the island’s Community Almanac back to life. ${progress.quests.length} of ${QUESTS.length} chapters complete.`)}<div class="quest-list">${QUESTS.map((quest,index)=>{
-    const state=getQuestState(quest,progress);const character=CHARACTERS.find(person=>person.id===quest.characterId);
-    return `<article class="quest-tile ${state}"><div class="quest-tile-top"><span class="tiny-avatar" style="--avatar-color:${character.color}">${character.emoji}</span><span>${esc(character.name)} · ${esc(REGIONS.find(item=>item.id===quest.region).name)}</span><span>${state==='completed'?icon('check',17):state==='locked'?icon('lock',16):String(index+1).padStart(2,'0')}</span></div><h3>${esc(quest.title)}</h3><p>${esc(quest.description)}</p><div class="quest-tile-bottom"><span>${icon('sparkles',14)} ${quest.reward.xp} XP ${quest.milestone?' · Island restoration':''}</span><button class="button ${state==='ready'?'primary':'secondary'}" data-quest="${quest.id}" ${state==='locked'?'disabled':''}>${state==='completed'?'Complete':state==='locked'?'Coming soon':state==='ready'?'Take the challenge':'Take a look'} ${icon(state==='completed'?'check':'arrow',15)}</button></div></article>`;
+    const mission=getMissionSummary(progress,quest.id);const state=mission.phase==='complete'?'completed':mission.phase==='locked'?'locked':mission.phase==='challenge'||mission.phase==='return'?'ready':'available';const character=CHARACTERS.find(person=>person.id===quest.characterId);
+    return `<article class="quest-tile ${state}"><div class="quest-tile-top"><span class="tiny-avatar" style="--avatar-color:${character.color}">${character.emoji}</span><span>${esc(character.name)} · ${esc(REGIONS.find(item=>item.id===quest.region).name)}</span><span>${state==='completed'?icon('check',17):state==='locked'?icon('lock',16):String(index+1).padStart(2,'0')}</span></div><h3>${esc(quest.title)}</h3><p class="quest-map-name">${icon('compass',14)} ${esc(getMap(quest.id).name)} · ${getMap(quest.id).objects.length} objects</p><p>${esc(quest.description)}</p><div class="quest-tile-bottom"><span>${icon('sparkles',14)} ${quest.reward.xp} XP ${quest.milestone?' · Island restoration':''}</span><button class="button ${state==='ready'?'primary':'secondary'}" data-quest="${quest.id}" ${state==='locked'?'disabled':''}>${state==='completed'?'Complete':state==='locked'?'Locked':state==='ready'?'Take the challenge':'Take a look'} ${icon(state==='completed'?'check':'arrow',15)}</button></div></article>`;
   }).join('')}</div><h2 class="section-heading">Make the island a little lovelier</h2><p class="page-subtitle">A good home grows with you. Spend the coins you earn on little island projects.</p><div class="project-grid">${[['lanterns','🏮','Evening lanterns','A little glow for your favorite paths.',25],['picnic','🧺','A place to gather','Set out a cozy spot for your neighbors.',40],['wildflowers','🌼','Wildflower wishes','A few more reasons to stop and smile.',60]].map(([id,emoji,title,description,cost])=>`<article class="project-card"><span>${emoji}</span><div><h3>${title}</h3><p>${description}</p></div><button class="button ${progress.projects.includes(id)?'secondary':'primary'}" data-project="${id}" data-cost="${cost}" ${progress.projects.includes(id)||progress.coins<cost?'disabled':''}>${progress.projects.includes(id)?icon('check',16)+' All planted':icon('coin',16)+' '+cost+' coins'}</button></article>`).join('')}</div>`;
   document.querySelectorAll('[data-project]').forEach(button=>button.onclick=()=>{
     const id=button.dataset.project;const cost=Number(button.dataset.cost);
@@ -424,6 +592,7 @@ function startConversation(id) {
 }
 
 function startSession(mode='mixed',options={}) {
+  if(options.questId&&getMissionSummary(progress,options.questId).phase!=='challenge'){toast('Help with the little map tasks before checking the words.','flag');return;}
   const length=options.length||5;
   let questions;
   if(options.wordIds?.length){
@@ -510,10 +679,15 @@ function showSessionResult(panel) {
   const result=session;
   const perfect=result.correct===result.questions.length;
   const quest=result.questId?QUESTS.find(item=>item.id===result.questId):null;
-  let completed=false;
-  if(quest&&perfect){const before=progress.quests.length;progress=awardQuest(progress,quest.id);completed=progress.quests.length>before;save();}
+  let readyToReturn=false;
+  if(quest&&perfect){
+    progress=markMissionAssessment(progress,quest.id,result.correct,result.questions.length);
+    readyToReturn=getMissionSummary(progress,quest.id).phase==='return';
+    save();
+  }
   const earned=progress.xp-result.initialXP;
-  panel.querySelector('#quiz-content').innerHTML=`<div class="modal-header session-result"><div class="result-icon">${icon(perfect?'trophy':'leaf',52)}</div><div class="modal-eyebrow">${completed?'A LITTLE FAVOR, A BIG THANK-YOU':'LOOK AT YOU GROW'}</div><h2 id="modal-title">${completed?'You made someone’s day.':perfect?'A lovely little success.':'A little better than before.'}</h2><p class="modal-subtitle">${completed?esc(quest.completionLine):perfect?'Those words are starting to feel like home.':'Every try helps a word take root. Let’s give the tricky ones a little more love.'}</p><div class="result-stats"><div><strong>${result.correct}/${result.questions.length}</strong><span>words remembered</span></div><div><strong>+${earned}</strong><span>XP earned</span></div><div><strong>${progress.streak}</strong><span>day streak</span></div></div>${quest&&!perfect?'<p class="quest-retry-note">Remember every word to finish this favor. Your neighbor’s happy to wait while you try again.</p>':''}${completed&&quest.milestone?'<div class="learned-badge">'+icon('flower',20)+' A little part of the island has come back to life.</div>':''}</div><div class="modal-footer result-actions"><button class="button primary" id="finish-practice">Back to my little world ${icon('arrow',17)}</button>${!perfect?`<button class="button secondary" id="retry-session">${icon('reset',16)} ${quest?'Try the favor again':'Revisit the tricky words'}</button>`:'<button class="button secondary" id="another-session">A little more practice</button>'}</div>`;
+  const person=quest?CHARACTERS.find(item=>item.id===quest.characterId):null;
+  panel.querySelector('#quiz-content').innerHTML=`<div class="modal-header session-result"><div class="result-icon">${icon(perfect?'trophy':'leaf',52)}</div><div class="modal-eyebrow">${readyToReturn?'ONE LAST LITTLE VISIT':'LOOK AT YOU GROW'}</div><h2 id="modal-title">${readyToReturn?`Ready for ${esc(person.name)}.`:perfect?'A lovely little success.':'A little better than before.'}</h2><p class="modal-subtitle">${readyToReturn?`You remembered every word. Bring your work back to ${esc(person.name)} in ${esc(currentMap().name)} to finish the favor and collect your thank-you.`:perfect?'Those words are starting to feel like home.':'Every try helps a word take root. Let’s give the tricky ones a little more love.'}</p><div class="result-stats"><div><strong>${result.correct}/${result.questions.length}</strong><span>words remembered</span></div><div><strong>+${earned}</strong><span>practice XP earned</span></div><div><strong>${progress.streak}</strong><span>day streak</span></div></div>${quest&&!perfect?'<p class="quest-retry-note">Your little tasks are saved. Remember every word in a fresh check before returning to your neighbor.</p>':''}${readyToReturn?'<p class="learned-badge">'+icon('flag',18)+' Your mission reward is waiting with your neighbor.</p>':''}</div><div class="modal-footer result-actions"><button class="button primary" id="finish-practice">Back to my little world ${icon('arrow',17)}</button>${!perfect?`<button class="button secondary" id="retry-session">${icon('reset',16)} ${quest?'Try the word check again':'Revisit the tricky words'}</button>`:!quest?'<button class="button secondary" id="another-session">A little more practice</button>':''}</div>`;
   panel.querySelector('#finish-practice').onclick=()=>{closeModal();navigate('explore');};
   panel.querySelector('#retry-session')?.addEventListener('click',()=>startSession('mixed',{wordIds:quest?quest.wordIds:result.missed,questId:quest?.id,title:quest?.title||'A little second chance',length:quest?quest.wordIds.length:Math.max(result.missed.length,1)}));
   panel.querySelector('#another-session')?.addEventListener('click',()=>startSession('mixed'));
@@ -548,18 +722,18 @@ function openSettings() {
       const count=Object.keys(imported).length;
       const confirmPanel=openModal(`<div class="modal-header"><div class="modal-eyebrow">BRING YOUR WORDS HOME</div><h2 id="modal-title">Import this little backup?</h2><p class="modal-subtitle">This will replace ${count} language ${count===1?'save':'saves'} in this browser. Other languages will stay as they are.</p></div><div class="modal-footer"><button class="button primary" id="confirm-import">Import my progress</button><button class="button secondary" id="cancel-import">Keep my current progress</button></div>`);
       confirmPanel.querySelector('#cancel-import').onclick=()=>{saves=backupSaves;closeModal();};
-      confirmPanel.querySelector('#confirm-import').onclick=()=>{saves={...saves,...imported};progress=saves[activeLanguage]||createProgress(activeLanguage);save();world?.setMotion(progress.settings.motion&&!prefersReducedMotion);closeModal();navigate(page);toast('Welcome home. Your words came with you.','book');};
+      confirmPanel.querySelector('#confirm-import').onclick=()=>{saves={...saves,...imported};progress=saves[activeLanguage]||createProgress(activeLanguage);world?.loadMap?.(progress.mapId||'home');save();world?.setMotion(progress.settings.motion&&!prefersReducedMotion);syncWorldProgress();closeModal();navigate(page);toast('Welcome home. Your words came with you.','book');};
     }catch{toast('This doesn’t look like a valid Thing Ling backup. Your progress is safe.','help');}
   };
   panel.querySelector('#reset-progress').onclick=()=>{
     const confirmPanel=openModal(`<div class="modal-header"><div class="modal-eyebrow">A FRESH LITTLE START</div><h2 id="modal-title">Begin ${lang().name} again?</h2><p class="modal-subtitle">This clears your ${lang().name} wordbook, coins, and quests. Other languages stay as they are. Export a backup first if you want to keep this chapter.</p></div><div class="modal-footer"><button class="button secondary" id="cancel-reset">Keep my little world</button><button class="button danger-button" id="confirm-reset">Yes, start over</button></div>`);
     confirmPanel.querySelector('#cancel-reset').onclick=closeModal;
-    confirmPanel.querySelector('#confirm-reset').onclick=()=>{progress=createProgress(activeLanguage);save();closeModal();navigate('explore');toast('A fresh page. The island is happy to see you.','leaf');};
+    confirmPanel.querySelector('#confirm-reset').onclick=()=>{progress=createProgress(activeLanguage);world?.loadMap?.('home');save();closeModal();navigate('explore');toast('A fresh page. The island is happy to see you.','leaf');};
   };
 }
 
 function openHelp() {
-  const panel=openModal(`<div class="modal-header"><div class="modal-eyebrow">WELCOME TO THING LING</div><h2 id="modal-title">Good things start small.</h2><p class="modal-subtitle">Your little island is full of words waiting to become familiar.</p></div><div class="modal-body"><div class="help-grid">${[['compass','1. Take a little wander','Drag to look around the island and scroll to zoom. Choose a neighborhood at the top. Click an object or a neighbor.'],['book','2. Find your first words','Discover objects and add them to your wordbook. Listen if a device voice is available, or use the written reading.'],['flag','3. Lend a helping hand','Meet Mika, Jun, Luna, and Theo. Discover what they need, then remember the words in a short challenge.'],['leaf','4. Let your words take root','Revisit words with listening, matching, and typing. Reviews return after 10 minutes, 1 day, 3 days, 7 days, and 14 days.']].map(([symbol,title,body])=>`<div class="help-item"><span>${icon(symbol,23)}</span><div><h3>${title}</h3><p>${body}</p></div></div>`).join('')}</div><div class="settings-note">${icon('heart',19)}<p>No microphone, account, or subscription required. Progress saves automatically in this browser. You can export a backup in Settings.</p></div><p class="muted keyboard"><kbd>Esc</kbd> closes a dialog. <kbd>Tab</kbd> moves between controls. Every word is also available in the wordbook.</p></div><div class="modal-footer"><button class="button primary" id="help-close">Let’s make ourselves at home ${icon('arrow',17)}</button></div>`,'help-modal');
+  const panel=openModal(`<div class="modal-header"><div class="modal-eyebrow">WELCOME TO THING LING</div><h2 id="modal-title">Good things start small.</h2><p class="modal-subtitle">Your little island is full of words waiting to become familiar.</p></div><div class="modal-body"><div class="help-grid">${[['compass','1. Take a little wander','Drag to look around and scroll to zoom. Open the atlas to visit the village and twelve mission maps. Click objects and neighbors, or use Objects here to find every little part.'],['book','2. Find your first words','Turn on Labels to see the words around you. Every object, including building parts and scenery, has a word card. Listen if a device voice is available, or use the written reading.'],['flag','3. Lend a helping hand','Travel to a favor’s own map. Help with each marked object, pass its word check, then return to Mika, Jun, Luna, or Theo to finish the favor and collect your reward.'],['leaf','4. Let your words take root','Revisit words with listening, matching, and typing. Reviews return after 10 minutes, 1 day, 3 days, 7 days, and 14 days.']].map(([symbol,title,body])=>`<div class="help-item"><span>${icon(symbol,23)}</span><div><h3>${title}</h3><p>${body}</p></div></div>`).join('')}</div><div class="settings-note">${icon('heart',19)}<p>No microphone, account, or subscription required. Progress saves automatically in this browser. You can export a backup in Settings.</p></div><p class="muted keyboard"><kbd>Esc</kbd> closes a dialog. <kbd>Tab</kbd> moves between controls. Every word is also available in the wordbook.</p></div><div class="modal-footer"><button class="button primary" id="help-close">Let’s make ourselves at home ${icon('arrow',17)}</button></div>`,'help-modal');
   panel.querySelector('#help-close').onclick=closeModal;
 }
 
@@ -568,14 +742,14 @@ try {
   world=await createWorld(document.querySelector('#world'),{
     onSelect:object=>{
       if(object.kind==='npc')openCharacter(object.id);
-      else openWord(object.id);
+      else openWord(object.id,{fromMap:true,instanceId:object.instanceId});
     },
     onRegionChange:id=>{region=id;updateHUD();},
     motion:progress.settings.motion&&!prefersReducedMotion,
   });
-  world?.setLearned(learnedIds());
-  world?.setRestored(restoredMilestones());
-  world?.setProjects?.(progress.projects);
+  world?.loadMap?.(progress.mapId||'home');
+  syncWorldProgress();
+  updateHUD();
 }catch(error){
   console.error('The 3D island could not start:',error);
   document.querySelector('#world').innerHTML=`<div class="world-fallback"><span>🌴</span><h2>A little island, waiting for you.</h2><p>Your browser couldn’t start 3D graphics. You can still discover every word and complete every favor.</p><button class="button primary" data-page="wordbook">Open the wordbook ${icon('book',17)}</button></div>`;
